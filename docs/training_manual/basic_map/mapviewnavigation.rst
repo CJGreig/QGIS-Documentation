@@ -2,7 +2,7 @@
 ===============================================================================
 This section will focus on basic QGIS navigation tools used to navigate within 
 the Map Canvas. These tools will allow you to visually explore the layers at 
-different scales.
+different scales
 
 **The goal for this lesson:** Learn how to use Pan and Zoom tools within QGIS 
 and learn about map scale.
