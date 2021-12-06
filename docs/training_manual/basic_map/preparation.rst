@@ -43,12 +43,12 @@ Let's get started right away!
       :align: center
       :width: 100 %
 
-#. Load the :file:`protected_areas.shp` vector dataset:
+#. Load the :file:`ELC_campus.shp` vector dataset:
    
    #. Click on the :guilabel:`Vector` tab.
    #. Enable the |radioButtonOn|:guilabel:`File` source type.
    #. Press the :guilabel:`...` button next to :guilabel:`Vector Dataset(s)`.
-   #. Select the :file:`exercise_data/shapefile/protected_areas.shp` file
+   #. Select the :file:`exercise_data/shapefile/ELC_campus.shp` file
       in your training directory.
    #. Click :guilabel:`Open`. You will see the original dialog,
       with the file path filled in.
@@ -57,10 +57,10 @@ Let's get started right away!
          :align: center
 
    #. Click :guilabel:`Add` here as well. The data you specified will now load:
-      you can see a ``protected_areas`` item in the :guilabel:`Layers` panel
+      you can see a ``ELC_campus`` item in the :guilabel:`Layers` panel
       (bottom left) with its features shown in the main map canvas.
 
-      .. figure:: img/first_loaded_layer.png
+      .. figure:: img/ELC_campus_preparation.png
          :align: center
          :width: 100%
 

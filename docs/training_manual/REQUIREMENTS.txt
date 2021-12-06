@@ -1,0 +1,9 @@
+Sphinx
+sphinx-intl
+sphinx_rtd_theme
+sphinx-intl[transifex]
+sphinxext-rediraffe
+sphinx_togglebutton
+transifex-client
+PyYAML
+pdflatex
