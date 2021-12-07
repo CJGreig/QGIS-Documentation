@@ -56,8 +56,8 @@ but we can learn more about the ELC polygons by exploring the
    These definitions are commonly used in GIS, so it is good to become
    familiar with them.
 
-   In the ``ELC_campus`` layer, there are 87 **features**, which are
-   represented by the polygons we see on the Map Canvas. 
+   In the ``ELC_campus`` layer, there are 82 **features** (noted at the top of the 
+   attribute table window), which are represented by the polygons we see on the Map Canvas. 
 
    .. Note:: In order to understand what the **fields** and **attribute values** 
       represent, one may need to find documentation (or metadata) describing 
@@ -120,7 +120,7 @@ You can also select a feature using the Attribute Table.
      :align: center
 
 #. Go back to the main QGIS window and look at the Map Canvas. You should 
-   see another polygon colored yellow.  
+   see a different polygon colored yellow.  
 #. To deselect the feature, go to the :guilabel:`Attribute Table` window 
    and click on |deselectActiveLayer| :sup:`Deselect all features from the layer` button.
 
