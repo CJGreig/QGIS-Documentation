@@ -12,12 +12,20 @@ layer.
 |basic| |FA| Using Labels
 -------------------------------------------------------------------------------
 
-First, ensure that the |labeling| button is visible in the GUI:
+First, ensure that the |labeling| button is visible in the Graphic User interface 
+(GUI):
 
 #. Go to the menu item :menuselection:`View --> Toolbars`
 #. Ensure that the :guilabel:`Label Toolbar` item has a check mark next to it.
    If it doesn't, click on the :guilabel:`Label Toolbar` item to activate it.
-#. Click on the ``places`` layer in the :guilabel:`Layers` panel so that
+
+Note
+
+Take a moment and examine the list of available toolbars.  As we move forward in
+the course, we will be working with some of these toolbars (e.g., Digitizing toolbar,
+Snapping toolbar, Raster toolbar, etc.).
+
+#. Click on the ``wild_species`` layer in the :guilabel:`Layers` panel so that
    it is highlighted
 #. Click on the |labeling| toolbar button to open the
    :guilabel:`Labels` tab of the :guilabel:`Layer Styling` panel
@@ -25,10 +33,10 @@ First, ensure that the |labeling| button is visible in the GUI:
 #. Switch from :guilabel:`No Labels` to |labeling| :guilabel:`Single Labels`
 
    You'll need to choose which field in the attributes will be used for the
-   labels. In the previous lesson, you decided that the ``name`` field was the
+   labels. In the previous lesson, you decided that the ``project_name`` field was the
    most suitable one for this purpose.
 
-#. Select ``name`` from the Value list:
+#. Select ``project_name`` from the Value list:
 
    .. figure:: img/select_label_with.png
       :align: center
@@ -55,7 +63,7 @@ are too far away from their point markers.
    dialog. Here, you'll use the :guilabel:`Layer Properties` dialog.
 
 #. Open the :guilabel:`Layer Properties` dialog by double-clicking on the
-   ``places`` layer
+   ``wild_species`` layer
 #. Select the |labeling| :guilabel:`Labels` tab
 #. Make sure :guilabel:`Text` is selected in the left-hand options list, then
    update the text formatting options to match those shown here:
@@ -102,11 +110,12 @@ are too far away from their point markers.
 |moderate| |FA| Using Labels Instead of Layer Symbology
 -------------------------------------------------------------------------------
 
-In many cases, the location of a point doesn't need to be very specific. For
-example, most of the points in the ``places`` layer refer to entire
-towns or suburbs, and the specific point associated with such features is not
-that specific on a large scale. In fact, giving a point that is too specific is
-often confusing for someone reading a map.
+In many cases, such as point datasets associated with places (e.g., cities, provinces, 
+countries, etc.), the location of a point doesn't need to be very specific. 
+The points in the ``wild_species`` layer refer to specific locations, however,
+you may work with datasets for towns, suburbs, etc., where the specific point 
+associated with such features is not specific on a large scale. In fact, giving a 
+point that is too specific is often confusing for someone reading a map.
 
 To name an example: on a map of the world, the point given for the European
 Union may be somewhere in Poland, for instance. To someone reading the map,
@@ -114,13 +123,14 @@ seeing a point labeled *European Union* in Poland, it may seem that the capital
 of the European Union is therefore in Poland.
 
 So, to prevent this kind of misunderstanding, it's often useful to deactivate
-the point symbols and replace them completely with labels.
+the point symbols and replace them completely with labels.  For the purpose of
+practice, we will use the wild_species dataset.
 
 In QGIS, you can do this by changing the position of the labels to be rendered
 directly over the points they refer to.
 
 #. Open the |labeling| :guilabel:`Labels` tab of the
-   :guilabel:`Layer Properties` dialog for the ``places`` layer
+   :guilabel:`Layer Properties` dialog for the ``wild_species`` layer
 #. Select the :guilabel:`Placement` option from the options list
 #. Click on the :guilabel:`Offset from point` button
 
@@ -167,7 +177,7 @@ and see what happens.
    .. figure:: img/customised_labels_one.png
       :align: center
 
-* Set the map to the scale ``1:100000``. You can do this by typing it into
+* Set the map to the scale ``1:10000``. You can do this by typing it into
   the :guilabel:`Scale` box in the :guilabel:`Status Bar`. Modify your labels
   to be suitable for viewing at this scale.
 
@@ -209,11 +219,11 @@ way as the points, your results would look like this:
 We will now reformat the ``roads`` layer labels so that they are easy to
 understand.
 
-#. Hide the ``places`` layer so that it doesn't distract you
+#. Hide the ``wild_species`` layer so that it doesn't distract you
 #. Activate |labeling| :guilabel:`Single Labels` for the ``roads``
-   layer as you did above for ``places``
+   layer as you did above for ``wild_species``
 #. Set the font :guilabel:`Size` to ``10`` so that you can see more labels
-#. Zoom in on the |majorUrbanName| town area
+#. Zoom in towards the ``roads`` layer
 #. In the :guilabel:`Labels` tab's :guilabel:`Placement` tab, choose the
    following settings:
 
@@ -267,107 +277,6 @@ still being legible. It makes other labels much more useful since they track
 the roads rather than float in space between them. You can decide which of
 these options to use, depending on what you think seems more useful or what
 looks better.
-
-
-|hard| |FA| Data Defined Settings
--------------------------------------------------------------------------------
-
-#. Deactivate labeling for the ``roads`` layer
-#. Reactivate labeling for the ``places`` layer
-#. Open the attribute table for ``places`` via the |openTable| button
-
-   It has one *field* which is of interest to us now: ``place`` which defines
-   the type of urban area for each *record*. We can use this data to influence
-   the label styles.
-
-#. Navigate to the :guilabel:`Text` panel in the ``places``
-   :guilabel:`Labels` panel
-#. Click the |dataDefined| button next to the Italic text button beneath
-   :guilabel:`Style` and select :menuselection:`Edit...` to open the
-   :guilabel:`Expression String Builder`:
-
-   .. figure:: img/expression_string_builder.png
-      :align: center
-
-#. Under :menuselection:`Fields and Values`, double click on ``place``
-   and then click :guilabel:`All Unique`. This will list all unique values
-   of the ``place`` field of this layer. Add a ``=`` in the text
-   editor and then double click on ``town``.
-
-   Alternatively, you can type: ``"place" = 'town'`` directly in the
-   text editor.
-
-#. Click :guilabel:`OK` twice:
-
-   .. figure:: img/expression_builder_settings.png
-      :align: center
-
-Notice that the labels for all places whose ``place``
-field matches ``town`` are displayed in italics.
-
-.. figure:: img/italic_label_result.png
-   :align: center
-
-
-|hard| |TY| Using Data Defined Settings
--------------------------------------------------------------------------------
-
-.. note::  We're jumping ahead a bit here to demonstrate some advanced labeling
-   settings. At the advanced level, it's assumed that you'll know what the
-   following means. If you don't, feel free to leave out this section and come
-   back later when you've covered the requisite materials.
-
-#. Open the Attribute Table for ``places``
-#. Enter edit mode by clicking the |toggleEditing| button
-#. Add a new column with the |newAttribute| button
-#. Configure it like this:
-
-   .. figure:: img/font_size_column.png
-      :align: center
-
-#. Use this to set custom font sizes for each different type of place
-   (each key in the ``place`` field)
-
-.. admonition:: Answer
-   :class: dropdown
-
-   #. Still in edit mode, set the ``FONT_SIZE`` values to whatever you prefer.
-      The example uses ``16`` for towns, ``14`` for suburbs, ``12`` for
-      localities, and ``10`` for hamlets.
-   #. Remember to save changes and exit edit mode
-   #. Return to the :guilabel:`Text` formatting options for the ``places``
-      layer and select ``FONT_SIZE`` in the :guilabel:`Attribute field` of the
-      font size |dataDefined| data defined override dropdown:
-
-      .. figure:: img/font_size_override.png
-         :align: center
-
-   Your results, if using the above values, should be this:
-
-     .. figure:: img/font_override_results.png
-        :align: center
-
-
-|hard| Further Possibilities With Labeling
--------------------------------------------------------------------------------
-
-We can't cover every option in this course, but be aware that the
-:guilabel:`Label` tab has many other useful functions. You can set scale-based
-rendering, alter the rendering priority for labels in a layer, and set every
-label option using layer attributes. You can even set the rotation, XY
-position, and other properties of a label (if you have attribute fields
-allocated for the purpose), then edit these properties using the tools adjacent
-to the main :guilabel:`Layer Labeling Options` button:
-
-|labeling| |showPinnedLabels| |pinLabels|
-|showHideLabels| |moveLabel| |rotateLabel|
-|changeLabelProperties|
-
-(These tools will be active if the required attribute fields exist and you are
-in edit mode.)
-
-Feel free to explore more possibilities of the labeling system.
-
 
 |IC|
 -------------------------------------------------------------------------------
