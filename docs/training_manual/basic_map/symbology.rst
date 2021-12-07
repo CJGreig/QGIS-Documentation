@@ -23,9 +23,9 @@ any vector layer.
 -------------------------------------------------------------------------------
 
 To change a layer's symbology, open its :guilabel:`Layer Properties`. Let's
-begin by changing the color of the :guilabel:`ELC_campus` layer.
+begin by changing the color of the :guilabel:`impervious_surfaces` layer.
 
-#. Right-click on the :guilabel:`ELC_campus` layer in the layers list.
+#. Right-click on the :guilabel:`impervious_surfaces` layer in the layers list.
 #. Select the menu item :guilabel:`Properties...` in the menu that appears.
 
    .. note:: By default, you can also access a layer's properties by
@@ -39,7 +39,7 @@ begin by changing the color of the :guilabel:`ELC_campus` layer.
 #. In the :guilabel:`Layer Properties` window, select the |symbology|
    :guilabel:`Symbology` tab:
 
-   .. figure:: img/ELC_campus_symbology.png
+   .. figure:: img/ELC_campus_symbology.pngXXXX
       :align: center
 
 #. Click the color select button next to the :guilabel:`Color` label.
