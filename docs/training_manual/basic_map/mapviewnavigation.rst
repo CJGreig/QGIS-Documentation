@@ -14,7 +14,7 @@ Before learning how to navigate within the Map Canvas, let's add some
 layers that we can explore during this tutorial.
 
 #. Open a new blank project and using the steps learnt in :ref:`Create a Map
-   <tm_prepare_a_map>`, load the previously seen ``protected_areas``, ``roads``
+   <tm_prepare_a_map>`, load the previously seen ``ELC_campus``, ``roads``
    and ``buildings`` layers to the project.
    The result view should look similar to the snippet in
    :numref:`figure_roads_buildings_added` below (colors do not matter): 
@@ -24,7 +24,7 @@ layers that we can explore during this tutorial.
    .. figure:: img/roads_buildings_added.png
       :align: center
 
-      Protected areas, roads and buildings added
+      Campus ELC, roads and buildings added
 
 Let's first learn how to use the Pan Tool.
 
@@ -38,8 +38,7 @@ Next, let's zoom in and take a closer look at the layers we imported.
 #. Move your mouse to approximately the top left area of where there is the highest 
    density of buildings and roads.
 #. Left click and hold. 
-#. Then drag the mouse, which will create a rectangle, and cover the dense area of 
-   buildings and roads (:numref:`figure_zoom_in_mapview`).
+#. Then drag the mouse, which will create a rectangle, and cover the lagoons (:numref:`figure_zoom_in_mapview`).
 
    .. _figure_zoom_in_mapview:
 
@@ -84,7 +83,7 @@ the real world.
 You can also use this field to set the Map Scale manually.
 
 #. In the Status Bar, click on the :guilabel:`Scale` textfield.
-#. Type in ``50000`` and press :kbd:`Enter`.  This will redraw the features in the 
+#. Type in ``10000`` and press :kbd:`Enter`.  This will redraw the features in the 
    Map Canvas to reflect the scale you typed in.
 #. Alternatively, click on the options arrow of the :guilabel:`Scale` field to see
    the preset map scales.

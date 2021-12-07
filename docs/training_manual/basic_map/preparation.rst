@@ -76,7 +76,7 @@ your work.
 |basic| |TY|
 -------------------------------------------------------------------------------
 
-Repeat the steps above to add the :file:`places.shp` and :file:`rivers.shp`
+Repeat the steps above to add the :file:`wild_species.shp` and :file:`rivers.shp`
 layers from the same folder (:file:`exercise_data/shapefile`) to the map.
 
 .. admonition:: Answer
@@ -106,7 +106,7 @@ handle spatial data.
 
 The `GeoPackage <https://www.geopackage.org/>`_ open format is a container that
 allows you to store GIS data (layers) in a single file.
-Unlike the ESRI Shapefile format (e.g. the :file:`protected_areas.shp` dataset
+Unlike the ESRI Shapefile format (e.g. the :file:`ELC_campus.shp` dataset
 you loaded earlier), a single GeoPackage file can contain various data (both
 vector and raster data) in different coordinate reference systems, as well as
 tables without spatial information; all these features allow you to share data
@@ -141,50 +141,6 @@ Congratulations! You have loaded the first layer from a GeoPackage.
 
 .. _backlink-vector-load-from-database-1:
 
-|basic| |FA| Loading vector data from a SpatiaLite Database with the Browser
--------------------------------------------------------------------------------
-
-QGIS provides access to many other database formats. Like GeoPackage, the
-SpatiaLite database format is an extension of the SQLite library. And adding
-a layer from a SpatiaLite provider follows the same rules as described
-above: Create the connection --> Enable it --> Add the layer(s).
-
-While this is one way to add SpatiaLite data to your map,
-let's explore another powerful way to add data:
-the :guilabel:`Browser`.
-
-#. Click the |dataSourceManager| icon to open the :guilabel:`Data Source Manager`
-   window.
-#. Click on the |fileOpen| :guilabel:`Browser` tab.
-#. In this tab you can see all the storage disks connected to your computer
-   as well as entries for most of the tabs in the left. These allow quick access
-   to connected databases or folders.
-
-   For example, click on the drop-down icon next to the |geoPackage|
-   :guilabel:`GeoPackage` entry. You'll see the :file:`training-data.gpkg` file
-   we previously connected to (and its layers, if expanded).
-#. Right-click the |spatialite| :guilabel:`SpatiaLite` entry and select
-   :guilabel:`New Connection...`.
-#. Navigate to the :file:`exercise_data` folder, select the :file:`landuse.sqlite`
-   file and click :guilabel:`Open`.
-
-   Notice that a |dbSchema| :guilabel:`landuse.sqlite` entry has
-   been added under the :guilabel:`SpatiaLite` one.
-#. Expand the |dbSchema| :guilabel:`landuse.sqlite` entry.
-#. Double-click the |polygonLayer| :guilabel:`landuse` layer or select and
-   drag-and-drop it onto the map canvas. A new layer is added to the
-   :guilabel:`Layers` panel and its features are displayed on the map canvas.
-
-   .. figure:: img/spatialite_dialog_connected.png
-      :align: center
-
-.. tip:: Enable the :guilabel:`Browser` panel in :menuselection:`View --> Panels -->`
-  and use it to add your data. It's a handy shortcut for the :menuselection:`Data Source
-  Manager --> Browser` tab, with the same functionality.
-
-.. note:: Remember to save your project frequently! The project file doesn't contain
-   any of the data itself, but it remembers which layers you loaded into your map.
-
 |moderate| |TY| Load More Vector Data
 -------------------------------------------------------------------------------
 
@@ -197,13 +153,12 @@ using any of the methods explained above:
 .. admonition:: Answer
    :class: dropdown
 
-   Your map should have seven layers:
+   Your map should have six layers:
 
-   * :guilabel:`protected_areas`
-   * :guilabel:`places`
+   * :guilabel:`ELC_campus`
+   * :guilabel:`wild_species`
    * :guilabel:`rivers`
    * :guilabel:`roads`
-   * :guilabel:`landuse`
    * :guilabel:`buildings` (taken from :file:`training_data.gpkg`) and
    * :guilabel:`water` (taken from :file:`exercise_data/shapefile`).
 
@@ -229,7 +184,7 @@ For example, this layer order...
 .. figure:: img/incorrect_layer_order.png
    :align: center
 
-... would result in roads and places being hidden as they run *underneath*
+... would result in roads and wild_species being hidden as they run *underneath*
 the polygons of the landuse layer.
 
 To resolve this problem:
