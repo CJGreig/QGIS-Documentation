@@ -30,22 +30,22 @@ It's important to know that the data you will be working with does not only
 represent **where** objects are in space, but also tells you **what** those
 objects are.
 
-From the previous exercise, you should have the ``protected_areas`` layer
+From the previous exercise, you should have the ``ELC_campus`` layer
 loaded in your map. If it is not loaded, then you can find the 
-:file:`protected_areas.shp` *ESRI Shapefile* format dataset in directory 
+:file:`ELC_campus.shp` *ESRI Shapefile* format dataset in directory 
 :file:`exercise_data/shapefile`.
 
-The polygons representing the protected areas constitute the **spatial data**,
-but we can learn more about the protected areas by exploring the
+The polygons representing the ELC polygons constitute the **spatial data**,
+but we can learn more about the ELC polygons by exploring the
 **attribute table**.
 
-#. In the :guilabel:`Layers` panel, click on the ``protected_areas`` layer to 
+#. In the :guilabel:`Layers` panel, click on the ``ELC_campus`` layer to 
    select it.
 #. In the :guilabel:`Attributes Toolbar` click the |openTable| 
    :sup:`Open Attribute Table` button. This will open a new window showing 
-   the attribute table of the ``protected_areas`` layer.  
+   the attribute table of the ``ELC_campus`` layer.  
 
-   .. figure:: img/attribute_data_preview.png
+   .. figure:: img/ELC_campus_vector_class.png
      :align: center
 
    A row is called a **record** and is associated with a **feature**
@@ -56,13 +56,38 @@ but we can learn more about the protected areas by exploring the
    These definitions are commonly used in GIS, so it is good to become
    familiar with them.
 
-   In the ``protected_areas`` layer, there are two **features**, which are
-   represented by the two polygons we see on the Map Canvas. 
+   In the ``ELC_campus`` layer, there are 87 **features**, which are
+   represented by the polygons we see on the Map Canvas. 
 
    .. Note:: In order to understand what the **fields** and **attribute values** 
       represent, one may need to find documentation (or metadata) describing 
       the meaning of the attribute values.
-      This is usually available from the creator of the data set.
+
+      The ``ELC_campus`` layer was obtained fromt the Niagara Peninsula Conservation 
+      Authority open data portal: https://gis-npca-camaps.opendata.arcgis.com/. The website
+      has many natural resources spatial datasets available for online viewing and download.
+      There is metadata available for each dataset, which helps users better understand 
+      the data they are working with.
+
+      For the ``ELC_campus`` dataset, the abstract is as follows:
+
+      The NPCA Natural Areas Inventory (NAI) Ecological Land Classification (ELC) Community 
+      Series (CS) level DRAFT feature class is a polygon fabric serving as base inventory of
+      natural area features (i.e. Mixed Meadow, Swamp Thicket).
+      
+      The NPCA Natural Areas Inventory (NAI) Ecological Land Classification (ELC)
+      Community Series (CS) level DRAFT feature class is a polygon fabric serving as 
+      base inventory of natural area features (i.e. Mixed Meadow, Swamp Thicket). 
+      Communities are interpreted from 2006 10 cm (Niagara) and 30 cm (Haldimand) 
+      colour orthoimagery using a 1:1000 interpretive threshold. Feature geometry 
+      linework was specified to meet a 1:2000 scale generalization threshold and the 
+      minimum mapping unit used was 0.1 hectares although features may have been captured 
+      beyond (better than) these standards. Some wetland community polygons come from the 
+      MNR Ontario Wetland Evaluation System data. The data forms a scientifically-defensible 
+      baseline for use in planning decisions and policy development and will be linked to 
+      associated ecological survey data collected in the field under various protocols. 
+      The dataset when completed will correspond to the extent of the Niagara Watershed. 
+      
 
 Next, let's see how a record in the attribute table is linked to a polygon 
 feature that we see on the Map Canvas.
@@ -70,31 +95,32 @@ feature that we see on the Map Canvas.
 #. Go back to the main QGIS window.
 #. In the :guilabel:`Attributes Toolbar`, click on the |selectRectangle| 
    :sup:`Select Feature` button.  
-#. Make sure the ``protected_areas`` layer is still selected in the 
+#. Make sure the ``ELC_campus`` layer is still selected in the 
    :guilabel:`Layers` panel.
-#. Move your mouse to the Map Canvas and left click on the smaller  
-   of the two polygons.  The polygon will turn yellow indicating it is selected.
+#. Move your mouse to the Map Canvas and left click on the largest polygon
+   covering Woodend Conservation Area.  The polygon will turn yellow 
+   indicating it is selected.
    
    .. figure:: img/select_polygon.png
       :align: center
    
-#. Go back to the :guilabel:`Attribute Table` window, and you should see a 
-   record (row) highlighted.  These are the attribute values of the
-   selected polygon.
+#. Go back to the :guilabel:`Attribute Table` window, and if you scroll down
+   to the bottom of the table you should see a record (row) highlighted.  
+   These are the attribute values of the selected polygon.
    
-   .. figure:: img/select_record.png
+   .. figure:: img/ELC_campus_vector_class_selectrecord1.png
      :align: center
 
 You can also select a feature using the Attribute Table.
 
-#. In the :guilabel:`Attribute Table` window, on the far left, click on the 
-   row number of the record that is currently not selected.
+#. In the :guilabel:`Attribute Table` window, on the far left, click on a 
+   row number of a record that is currently not selected.
 
-   .. figure:: img/select_record2.png
+   .. figure:: img/ELC_campus_vector_class_selectrecord2.png
      :align: center
 
 #. Go back to the main QGIS window and look at the Map Canvas. You should 
-   see the larger of the two polygons colored yellow.  
+   see another polygon colored yellow.  
 #. To deselect the feature, go to the :guilabel:`Attribute Table` window 
    and click on |deselectActiveLayer| :sup:`Deselect all features from the layer` button.
 
@@ -104,11 +130,11 @@ identify the location of a feature is to use the :guilabel:`Flash Feature`
 tool.
 
 #. In the :guilabel:`Attribute Table`, right-click on any cell in the
-   row that has the attribute value ``r2855697`` for the field ``full_id``.
+   row that has the attribute value ``113554`` for the field ``OBJECTID``.
 #. In the context menu, click on :guilabel:`Flash Feature` and watch the 
    Map Canvas.  
 
-   .. figure:: img/flash_feature.png
+   .. figure:: img/ELC_campus_vector_class_flashfeature.png
      :align: center
    
    You should see the polygon flash red a few times.  If you missed it, 
@@ -118,10 +144,10 @@ Another useful tool is the :guilabel:`Zoom to Feature` tool, that tells QGIS to
 zoom to the feature of interest.
 
 #. In the :guilabel:`Attribute Table`, right-click on  any cell in the
-   row that has the attribute value ``r2855697`` for the field ``full_id``.
+   row that has the attribute value ``113554`` for the field ``OBJECTID``.
 #. In the context menu, click on :guilabel:`Zoom to Feature`
 
-   .. figure:: img/zoom_to_feature.png
+   .. figure:: img/ELC_campus_vector_class_zoomtofeature.png
      :align: center
 
    Look at the Map Canvas.  The polygon should now occupy the extent
@@ -135,14 +161,16 @@ You may now close the attribute table.
 -------------------------------------------------------------------------------
 
 #. How many fields are available in the :guilabel:`rivers` layer?
-#. Tell us a bit about the ``town`` places in your dataset.
-#. Open the attribute table for the :guilabel:`places` layer.
+#. Open the attribute table for the :guilabel:`wild_species` layer.
+   Tell us a bit about the ``ELC_ClassCode`` of the wood ducks in the wild_species 
+   dataset. 
+   If we are creating a map showing the location of different field project monitoring sites,
    Which field would be the most useful to represent in label form, and why?
 
 .. admonition:: Answer
    :class: dropdown
 
-   * There should be 9 fields in the :guilabel:`rivers` layer:
+   * There should be 45 fields in the :guilabel:`rivers` layer:
 
      #. Select the layer in the :guilabel:`Layers` panel.
      #. Right-click and choose :guilabel:`Open Attribute Table`, or press the |openTable|
@@ -153,16 +181,14 @@ You may now close the attribute table.
      open the :menuselection:`Layer properties --> Fields` tab, where you will 
      find a numbered list of the table's fields.
 
-   * Information about towns is available in the :guilabel:`places` layer. Open its
+   * Information about ELC class code for wood ducks is available in the :guilabel:`wild_species` layer. Open its
      attribute table as you did with the :guilabel:`rivers` layer:
-     there are two features whose :guilabel:`place`
-     attribute is set to ``town``: *Swellendam* and *Buffeljagsrivier*.
-     You can add comment on other fields from these two records, if you like.
+     there is a field called ``ELC_ClassCode``.  By clicking on the ``species`` field name,
+     records are automatically sorted alphabetically.  If you scroll down to wood duck records, you will find the
+     ELC class codes associated with the wood ducks in the adjacent field. We can see that wood ducks are found in
+     XXXX XXXX.
 
-   * The ``name`` field is the most useful to show as labels. This is because all its
-     values are unique for every object and are very unlikely to contain *NULL*
-     values. If your data contains some *NULL* values, do not worry as long as most
-     of your places have names.
+   * The ``project_name`` field is the most useful to show as labels for the purpose of our hypothetical map.
 
 |IC|
 -------------------------------------------------------------------------------
