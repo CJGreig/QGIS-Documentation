@@ -415,7 +415,7 @@ that make up the texture.
 |moderate| |TY|
 -------------------------------------------------------------------------------
 
-Apply a green transparent fill color to the :guilabel:`protected_areas` layer,
+Apply a green transparent fill color to the :guilabel:`ELC_campus` layer,
 and change the outline to look like this:
 
 .. figure:: img/marker_line_preview.png
