@@ -153,12 +153,13 @@ using any of the methods explained above:
 .. admonition:: Answer
    :class: dropdown
 
-   Your map should have six layers:
+   Your map should have seven layers:
 
    * :guilabel:`ELC_campus`
    * :guilabel:`wild_species`
    * :guilabel:`rivers`
    * :guilabel:`roads`
+   * :guilabel:'impervious_surfaces'
    * :guilabel:`buildings` (taken from :file:`training_data.gpkg`) and
    * :guilabel:`water` (taken from :file:`exercise_data/shapefile`).
 
