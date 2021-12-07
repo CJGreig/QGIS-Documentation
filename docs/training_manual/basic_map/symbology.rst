@@ -23,9 +23,9 @@ any vector layer.
 -------------------------------------------------------------------------------
 
 To change a layer's symbology, open its :guilabel:`Layer Properties`. Let's
-begin by changing the color of the :guilabel:`landuse` layer.
+begin by changing the color of the :guilabel:`ELC_campus` layer.
 
-#. Right-click on the :guilabel:`landuse` layer in the layers list.
+#. Right-click on the :guilabel:`ELC_campus` layer in the layers list.
 #. Select the menu item :guilabel:`Properties...` in the menu that appears.
 
    .. note:: By default, you can also access a layer's properties by
@@ -39,7 +39,7 @@ begin by changing the color of the :guilabel:`landuse` layer.
 #. In the :guilabel:`Layer Properties` window, select the |symbology|
    :guilabel:`Symbology` tab:
 
-   .. figure:: img/layer_properties_style.png
+   .. figure:: img/ELC_campus_symbology.png
       :align: center
 
 #. Click the color select button next to the :guilabel:`Color` label.
@@ -75,10 +75,9 @@ Change the color of the :guilabel:`water` layer to light blue. Try to use the
 -------------------------------------------------------------------------------
 
 This is good stuff so far, but there's more to a layer's symbology than just
-its color. Next we want to eliminate the lines between the different land use
-areas so as to make the map less visually cluttered.
+its color. Next we want to eliminate the lines between the different impervious surfaces so as to make the map less visually cluttered.
 
-#. Open the :guilabel:`Layer Properties` window for the :guilabel:`landuse`
+#. Open the :guilabel:`Layer Properties` window for the :guilabel:`impervious_surfaces`
    layer.
 
    Under the |symbology| :guilabel:`Symbology` tab, you will see the same kind
@@ -95,7 +94,7 @@ areas so as to make the map less visually cluttered.
 
 #. Click :guilabel:`OK`.
 
-Now the :guilabel:`landuse` layer won't have any lines between areas.
+Now the :guilabel:`impervious_surfaces` layer won't have any lines between areas.
 
 
 |basic| |TY|
