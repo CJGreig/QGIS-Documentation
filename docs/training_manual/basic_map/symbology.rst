@@ -117,8 +117,6 @@ individual changes while symbolizing a layer.
    .. figure:: img/answer_symbology1.png
       :align: center
 
-   If you are a Beginner-level user, you may stop here.
-
    * Use the method above to change the colors and styles for all the remaining
      layers.
    * Try using natural colors for the objects. For example, a road should not be
@@ -130,44 +128,6 @@ individual changes while symbolizing a layer.
       :align: center
 
 
-|moderate| |FA| Scale-Based Visibility
--------------------------------------------------------------------------------
-
-Sometimes you will find that a layer is not suitable for a given scale. For
-example, a dataset of all the continents may have low detail, and not be very
-accurate at street level. When that happens, you want to be able to hide the
-dataset at inappropriate scales.
-
-In our case, we may decide to hide the buildings from view at small scales. This
-map, for example...
-
-.. figure:: img/buildings_small_scale.png
-   :align: center
-
-... is not very useful. The buildings are hard to distinguish at that scale.
-
-To enable scale-based rendering:
-
-#. Open the :guilabel:`Layer Properties` dialog for the :guilabel:`buildings`
-   layer.
-#. Activate the |rendering| :guilabel:`Rendering` tab.
-#. Enable scale-based rendering by clicking on the checkbox labeled
-   :guilabel:`Scale dependent visibility`:
-#. Change the :guilabel:`Minimum` value to ``1:10000``.
-
-   .. figure:: img/scale_dependent_visibility.png
-      :align: center
-
-#. Click :guilabel:`OK`.
-
-Test the effects of this by zooming in and out in your map, noting when the
-:guilabel:`buildings` layer disappears and reappears.
-
-.. note::  You can use your mouse wheel to zoom in increments.
-   Alternatively, use the zoom tools to zoom to a window:
-
-   |zoomIn| |zoomOut|
-
 |moderate| |FA| Adding Symbol Layers
 -------------------------------------------------------------------------------
 
@@ -175,7 +135,7 @@ Now that you know how to change simple symbology for layers, the next step is
 to create more complex symbology. QGIS allows you to do this using symbol
 layers.
 
-#. Go back to the :guilabel:`landuse` layer's symbol properties panel (by clicking
+#. Go back to the :guilabel:`impervious_surfaces` layer's symbol properties panel (by clicking
    :guilabel:`Simple fill` in the symbol layers tree).
 
    In this example, the current symbol has no outline (i.e., it uses the
@@ -353,38 +313,6 @@ rendering order via the :menuselection:`Advanced --> Symbol levels...` dialog.
          :align: center
 
 
-|hard| |TY|
--------------------------------------------------------------------------------
-
-Symbol levels also work for classified layers (i.e., layers having multiple
-symbols). Since we haven't covered classification yet, you will work with some
-rudimentary pre-classified data.
-
-#. Create a new project and add only the :guilabel:`roads` dataset.
-#. Apply the style file :file:`advanced_levels_demo.qml` provided in
-   :file:`exercise_data/styles` to the layer. This can be done through the
-   :menuselection:`Style --> Load Style...` combobox at the bottom of the
-   :guilabel:`Layer Properties` dialog.
-#. Zoom in to the |majorUrbanName| area.
-#. Using symbol layers, ensure that the outlines of layers flow into one another
-   as per the image below:
-
-   .. figure:: img/correct_advanced_levels.png
-      :align: center
-
-
-.. admonition:: Answer
-   :class: dropdown
-
-   #. Adjust your symbol levels to these values:
-
-   .. figure:: img/answer_road_symbol_layers.png
-      :align: center
-
-   #. Experiment with different values to get different results.
-   #. Open your original map again before continuing with the next exercise.
-
-
 |moderate| |FA| Symbol layer types
 -------------------------------------------------------------------------------
 
@@ -399,8 +327,8 @@ types. First we will look at the types available for points.
 Point Symbol Layer Types
 ...............................................................................
 
-#. Uncheck all the layers except for :guilabel:`places`.
-#. Change the symbol properties for the :guilabel:`places` layer:
+#. Uncheck all the layers except for :guilabel:`wild_species`.
+#. Change the symbol properties for the :guilabel:`wild_species` layer:
 
    .. figure:: img/places_layer_properties.png
       :align: center
@@ -504,157 +432,6 @@ and change the outline to look like this:
 
    .. figure:: img/answer_marker_line2.png
       :align: center
-
-
-|hard| |FA| Geometry generator symbology
--------------------------------------------------------------------------------
-
-You can use the Geometry generator symbology with all layer types (points, lines
-and polygons). The resulting symbol depends directly on the layer type.
-
-Very briefly, the Geometry generator symbology allows you to run some spatial
-operations within the symbology itself. For example you can run a real centroid
-spatial operation on a polygon layer without creating a point layer.
-
-Moreover, you have all the styling options to change the appearance of the resulting
-symbol.
-
-Let's give it a try!
-
-#. Select the :guilabel:`water` layer.
-#. Click on :guilabel:`Simple fill` and change the :guilabel:`Symbol layer type`
-   to :guilabel:`Geometry generator`.
-
-   .. figure:: img/geometry_generator.png
-      :align: center
-
-#. Before to start writing the spatial query we have to choose the Geometry Type
-   in output. In this example we are going to create centroids for each feature,
-   so change the Geometry Type to :guilabel:`Point / Multipoint`.
-#. Now let's write the query in the query panel::
-
-    centroid($geometry)
-
-   .. figure:: img/geometry_generator_query.png
-      :align: center
-
-#. When you click on :guilabel:`OK` you will see that the :guilabel:`water` layer
-   is rendered as a point layer! We have just run a spatial operation within the
-   layer symbology itself, isn't that amazing?
-
-   .. figure:: img/geometry_generator_result.png
-      :align: center
-
-With the Geometry generator symbology you can really go over the edge of *normal*
-symbology.
-
-
-|hard| |TY|
-...............................................................................
-
-Geometry generator are just another symbol level. Try to add another
-:guilabel:`Simple fill` underneath the :guilabel:`Geometry generator` one.
-
-Change also the appearance of the Simple marker of the Geometry generator symbology.
-
-The final result should look like this:
-
-.. figure:: img/geometry_generator_preview.png
-   :align: center
-
-
-.. admonition:: Answer
-   :class: dropdown
-
-   #. Click on the |signPlus| button to add another Symbol level.
-   #. Move the new symbol at the bottom of the list clicking the |arrowDown| button.
-   #. Choose a good color to fill the water polygons.
-   #. Click on :guilabel:`Marker` of the Geometry generator symbology and change the
-      circle with another shape as your wish.
-   #. Try experimenting other options to get more useful results.
-
-
-|hard| |FA| Creating a Custom SVG Fill
--------------------------------------------------------------------------------
-
-.. note::  To do this exercise, you will need to have the free vector editing
-   software `Inkscape <https://inkscape.org/>`_ installed.
-
-#. Start the Inkscape program.
-   You will see the following interface:
-
-   .. figure:: img/inkscape_default.png
-      :align: center
-
-   You should find this familiar if you have used other vector image editing
-   programs, like Corel.
-
-   First, we'll change the canvas to a size appropriate for a small texture.
-
-#. Click on the menu item :menuselection:`File --> Document Properties`. This
-   will give you the :guilabel:`Document Properties` dialog.
-#. Change the :guilabel:`Units` to :guilabel:`px`.
-#. Change the :guilabel:`Width` and :guilabel:`Height` to ``100``.
-#. Close the dialog when you are done.
-#. Click on the menu item :menuselection:`View --> Zoom --> Page` to see the
-   page you are working with.
-#. Select the :guilabel:`Circle` tool:
-
-   .. figure:: img/inkscape_circle_tool.png
-      :align: center
-
-#. Click and drag on the page to draw an ellipse. To make the ellipse turn into
-   a circle, hold the :kbd:`Ctrl` button while you're drawing it.
-#. Right-click on the circle you just created and open its :guilabel:`Fill and
-   Stroke` options. You can modify its rendering, such as:
-
-   #. Change the :guilabel:`Fill` color to a somehow pale grey-blue,
-   #. Assign to the border a darker color in :guilabel:`Stroke paint` tab,
-   #. And reduce the border thickness under :guilabel:`Stroke style` tab.
-
-   .. figure:: img/inkscape_stroke_fill.png
-      :align: center
-
-#. Draw a line using the :guilabel:`Pencil` tool:
-
-   #. Click once to start the line. Hold :kbd:`Ctrl` to make it snap to increments
-      of 15 degrees.
-   #. Move the pointer horizontally and place a point with a simple click.
-   #. Click and snap to the vertex of the line and trace a vertical line, ended
-      by a simple click.
-   #. Now join the two end vertices.
-   #. Change the color and width of the triangle symbol to match the circle's stroke
-      and move it around as necessary, so that you end up with a symbol like this one:
-
-   .. figure:: img/inkscape_final_symbol.png
-      :align: center
-
-#. If the symbol you get satisfies you, then save it as :guilabel:`landuse_symbol`
-   under the directory that the course is in, under :file:`exercise_data/symbols`,
-   as SVG file.
-
-In QGIS:
-
-#. Open the :guilabel:`Layer Properties` for the :file:`landuse` layer.
-#. In the |symbology| :guilabel:`Symbology` tab, change the symbol structure by
-   changing the :guilabel:`Symbol Layer Type` to :guilabel:`SVG Fill````
-   shown below.
-#. Click the :guilabel:`...` button and then
-   :guilabel:`Select File...` to select your SVG image.
- 
-   It's added to the symbol tree and you can now customize its different
-   characteristics (colors, angle, effects, units...).
-
-   .. figure:: img/svg_symbol_settings.png
-      :align: center
-
-Once you validate the dialog, features in :guilabel:`landuse` layer should now
-be covered by a set of symbols, showing a texture like the one on the
-following map. If textures are not visible, you may need to zoom in the map
-canvas or set in the layer properties a bigger :guilabel:`Texture width`.
-
-.. figure:: img/svg_symbol_result.png
-   :align: center
 
 |IC|
 -------------------------------------------------------------------------------
