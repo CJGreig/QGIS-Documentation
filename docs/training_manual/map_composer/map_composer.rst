@@ -31,11 +31,11 @@ For this reason, it has a tool called the *Layout Manager*.
 
 #. Under :guilabel:`New from Template`, select
    :guilabel:`Empty layout` and press the :guilabel:`Create...` button.
-#. Give the new layout the name of |majorUrbanName| and
+#. Give the new layout the name of Campus_Ecology and
    click :guilabel:`OK`.
 #. You will now see the *Print Layout* window:
 
-   .. figure:: img/print_composer_dialog.png
+   .. figure:: img/map_composer_layout.png
       :align: center
    
 You could also create this new layout via the
@@ -51,8 +51,11 @@ the :menuselection:`Project --> Layouts -->` menu, as in the image below.
 |basic| |FA| Basic Map Composition
 ----------------------------------------------------------------------
 
-In this example, the composition was already the way we wanted it.
-Ensure that yours is as well.
+The goal of our map is to show wild species monitoring locations in relation
+to ELC classes.  Previously, we had classified ELC polygon area.  Prior to that,
+we classified ELC_campus by CSCODE_MAS, and had saved the style.  The style can
+be reloaded by going to Style at the bottom of the Symbology window. Use this
+classification for the map layout.
 
 #. Right-click on the sheet in the central part of the layout window
    and choose :guilabel:`Page properties...` in the context menu.
@@ -165,7 +168,7 @@ First, let us add a title.
    #. Select the label by clicking on it.
    #. Click on the :guilabel:`Item Properties` tab in the side panel
       of the layout window.
-   #. Change the text of the label to "|majorUrbanName|":
+   #. Change the text of the label to "Campus_Ecology":
 
       .. figure:: img/title_font_alignment.png
          :align: center
