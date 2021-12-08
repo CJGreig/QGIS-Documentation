@@ -4,14 +4,14 @@
 Labels are a good way to communicate information such as the names of
 individual places, but they can't be used for everything.
 For example, let us say that someone wants to know what each
-``landuse`` area is used for.
+``ELC_campus`` area is used for.
 Using labels, you would get this:
 
 .. figure:: img/bad_landuse_labels.png
    :align: center
 
 This makes the map's labeling difficult to read and even overwhelming
-if there are numerous different landuse areas on the map.
+if there are numerous different ELC polygons on the map.
 
 **The goal for this lesson:** To learn how to classify vector data
 effectively.
@@ -19,20 +19,20 @@ effectively.
 |basic| |FA| Classifying Nominal Data
 ----------------------------------------------------------------------
 
-#. Open the :guilabel:`Layer Properties` dialog for the ``landuse``
+#. Open the :guilabel:`Layer Properties` dialog for the ``ELC_campus``
    layer
 #. Go to the :guilabel:`Symbology` tab
 #. Click on the dropdown that says :guilabel:`Single Symbol` and
    change it to :guilabel:`Categorized`:
 
-   .. figure:: img/categorised_styles.png
+   .. figure:: img/ELC_campus_vector_class_categorized.png
       :align: center
 
-#. In the new panel, change the :guilabel:`Value` to ``landuse`` and
+#. In the new panel, change the :guilabel:`Value` to ``CSCODE_MAS`` and
    the :guilabel:`Color ramp` to :guilabel:`Random colors`
 #. Click the button labeled :guilabel:`Classify`
 
-   .. figure:: img/categorised_style_settings.png
+   .. figure:: img/ELC_campus_vector_class_classify.png
       :align: center
 
 #. Click :guilabel:`OK`
@@ -42,30 +42,30 @@ effectively.
    .. figure:: img/categorisation_result.png
       :align: center
 
-#. Click the arrow (or plus sign) next to ``landuse`` in the
+#. Click the arrow (or plus sign) next to ``ELC_campus`` in the
    :guilabel:`Layers` panel, you'll see the categories explained:
 
    .. figure:: img/categories_explained.png
       :align: center
 
-   Now our landuse polygons are colored and are classified so that
-   areas with the same land use are the same color.
+   Now our ELC polygons are colored and are classified so that
+   areas with the same ELC are the same color.
 
-#. If you wish to, you can change the symbol of each landuse
-   area by double-clicking the relevant color block in the
+#. If you wish to, you can change the symbol of each ELC
+   class by double-clicking the relevant color block in the
    :guilabel:`Layers` panel or in the :guilabel:`Layer Properties`
    dialog:
 
-   .. figure:: img/change_layer_color.png
+   .. figure:: img/ELC_campus_vector_class_symbolselector.png
       :align: center
 
 Notice that there is one category that's empty:
 
-.. figure:: img/empty_category.png
+.. figure:: img/ELC_campus_vector_class_emptyclass.png
    :align: center
 
 This empty category is used to color any objects which do not have a
-landuse value defined or which have a *NULL* value.
+ELC class value defined or which have a *NULL* value.
 It can be useful to keep this empty category so that areas with a
 *NULL* value are still represented on the map.
 You may like to change the color to more obviously represent a blank
@@ -73,15 +73,6 @@ or *NULL* value.
 
 Remember to save your map now so that you don't lose all your
 hard-earned changes!
-
-|basic| |TY| More Classification
-----------------------------------------------------------------------
-
-Use the knowledge you gained above to classify the ``buildings`` layer.
-Set the categorisation against the ``building`` field and use the
-:guilabel:`Spectral` color ramp.
-
-.. note:: Remember to zoom into an urban area to see the results.
 
 |moderate| |FA| Ratio Classification
 ----------------------------------------------------------------------
@@ -139,8 +130,8 @@ magnitude.
 * For lines, we can use thickness (thin to thick).
 
 In the example above, we used nominal classification to color each
-record in the ``landuse`` layer based on its ``landuse`` attribute.
-Now we will use ratio classification to classify the records by area.
+record in the ``ELC_campus`` layer based on its ``CSCODE_MAS`` attribute.
+Now we will use ratio classification to classify the records by area m2.
 
 We are going to reclassify the layer, so existing classes will be lost
 if not saved. To store the current classification:
@@ -148,7 +139,7 @@ if not saved. To store the current classification:
 #. Open the layer's properties dialog
 #. Click the :guilabel:`Save Style ...` button in the :guilabel:`Style`
    drop-down menu.
-#. Select :guilabel:`Rename Current...`, enter ``land usage`` and press
+#. Select :guilabel:`Rename Current...`, enter ``ELC class`` and press
    :guilabel:`OK`.
 
    The categories and their symbols are now saved in the layer's properties.
@@ -157,17 +148,34 @@ if not saved. To store the current classification:
    This will store the new classification.
 #. Close the :guilabel:`Layer Properties` dialog
 
-We want to classify the landuse areas by size, but there is a
+We want to classify the ELC polygons by size, but there is a
 problem: they don't have a size field, so we'll have to make one.
 
-#. Open the Attributes Table for the ``landuse`` layer.
+#. Open the Attributes Table for the ``ELC_campus`` layer.
 #. Enter edit mode by clicking the |toggleEditing|  :sup:`Toggle editing`
    button
 #. Add a new column of decimal type, called ``AREA``, using the
    |newAttribute| :sup:`New field` button: 
 
-   .. figure:: img/add_area_column.png
+   .. figure:: img/ELC_campus_vector_class_addfield.png
       :align: center
+
+Note
+
+Take a moment and examine the different field types.  You will notice there
+are five different types:
+
+   Whole number (integer)
+   Whole number (integer 64 bit)
+   Decimal number (real)
+   Text (string)
+   Date 
+
+Attribute data can be stored as one of these five field types.  The five
+data types and their uses will be discussed in later lectures.  For now,
+understand that data can be stored as numbers, characters or dates, and
+based on the data type, data can be manipulated, classified and categorized
+in different ways. 
 
 #. Click :guilabel:`OK`
 
@@ -182,13 +190,13 @@ problem: they don't have a size field, so we'll have to make one.
 
       You will get this dialog:
 
-      .. figure:: img/calculate_field_dialog.png
+      .. figure:: img/ELC_campus_vector_class_fieldcalc.png
          :align: center
 
    #. Check the |checkbox| :guilabel:`Update existing fields`
    #. Select :guilabel:`AREA` in the fields drop-down menu
 
-      .. figure:: img/field_calculator_top.png
+      .. figure:: img/ELC_campus_vector_class_updatefield.png
          :align: center
 
    #. Under the :guilabel:`Expression` tab, expand the :guilabel:`Geometry`
@@ -196,7 +204,7 @@ problem: they don't have a size field, so we'll have to make one.
    #. Double-click on it so that it appears in the :guilabel:`Expression`
       field
 
-      .. figure:: img/geometry_area_select.png
+      .. figure:: img/ELC_campus_vector_class_area.png
          :align: center
 
    #. Click :guilabel:`OK`
@@ -204,17 +212,18 @@ problem: they don't have a size field, so we'll have to make one.
       notice that it is populated with values (you may need to
       click the column header to refresh the data).
 
-   .. note:: These areas respect the project's area unit settings, so
-      they may be in square meters or square degrees.
+   .. note:: If you recall, at the beginning of this project we set the
+      ellipsoid to WGS84 and the project's area unit to meters, therefore
+      the rendered area values will be in square meters.
 
 #. Press |saveEdits| to save the edits and exit the edit mode with
    |toggleEditing| :sup:`Toggle editing`
 #. Close the attribute table
 
-Now that we have the data, let's use them to render the ``landuse`` layer.
+Now that we have the data, let's use them to render the ``ELC_campus`` layer.
 
 #. Open the :guilabel:`Layer properties` dialog's
-   :guilabel:`Symbology` tab for the ``landuse`` layer
+   :guilabel:`Symbology` tab for the ``ELC_campus`` layer
 #. Change the classification style from :guilabel:`Categorized` to
    :guilabel:`Graduated`
 
@@ -223,7 +232,7 @@ Now that we have the data, let's use them to render the ``landuse`` layer.
 #. Under :guilabel:`Color ramp`, choose the option
    :guilabel:`Create New Color Ramp...`:
 
-   .. figure:: img/area_gradient_select.png
+   .. figure:: img/ELC_campus_vector_class_colourramp.png
       :align: center
 
 #. Choose :guilabel:`Gradient` (if it's not selected already) and click
@@ -235,11 +244,18 @@ Now that we have the data, let's use them to render the ``landuse`` layer.
    You'll be using this to denote area, with small areas as
    :guilabel:`Color 1` and large areas as :guilabel:`Color 2`.
 
-#. Choose appropriate colors
+#. Choose appropriate colors. Optionally, you can visit Color Brewer 2: 
+https://colorbrewer2.org/#type=sequential&scheme=BuGn&n=3 to select appropriate,
+attractive colour schemes for your map.
+
+To use the colours available on ColorBrewer2, in the QGIS select colour ramp window,
+click on the coloured rectangle to the right of Color 1 and copy and paste the 
+HTML notation found on the ColorBrewer2 wesbite. Do the same for Color 2.  For the
+example, Color 1 is set as #ffffcc and Color 2 is set as #006837.
 
    In the example, the result looks like this:
 
-   .. figure:: img/gradient_color_example.png
+   .. figure:: img/ELC_campus_vector_class_gradient.png
       :align: center
 
 #. Click :guilabel:`OK`
@@ -280,96 +296,6 @@ Now that we have the data, let's use them to render the ``landuse`` layer.
 
    .. figure:: img/gradient_map_new_mode.png
       :align: center
-
-
-|hard| |FA| Rule-based Classification
-----------------------------------------------------------------------
-
-It's often useful to combine multiple criteria for a classification,
-but unfortunately normal classification only takes one attribute into account.
-That's where rule-based classification comes in handy.
-
-In this lesson, we will represent the ``landuse`` layer in a way to
-easily identify |majorUrbanName| city from the other residential area,
-and from the other types of landuse (based on their area).
-
-#. Open the :guilabel:`Layer Properties` dialog for the ``landuse``
-   layer
-#. Switch to the :guilabel:`Symbology` tab
-#. Switch the classification style to :guilabel:`Rule-based`
-
-   QGIS will automatically show the rules that represent the current
-   classification implemented for this layer.
-   For example, after completing the exercise above, you may see
-   something like this:
-
-   .. figure:: img/rule_based_classification.png
-      :align: center
-
-#. Click and drag to select all the rules
-#. Use the |signMinus| :sup:`Remove selected rules` button to remove
-   all of the existing rules
-
-Let's now add our custom rules.
-
-#. Click the |signPlus| :sup:`Add rule` button
-#. The :guilabel:`Edit rule` dialog then appears
-#. Enter ``Swellendam city`` as :guilabel:`Label`
-#. Click the |expression| button next to the :guilabel:`Filter` text
-   area to open the :guilabel:`Expression String Builder`
-#. Enter the criterion ``"name" = 'Swellendam'`` and validate
-
-   .. figure:: img/query_builder_example.png
-      :align: center
-
-#. Back to the :guilabel:`Edit rule` dalog, assign it a darker
-   grey-blue color in order to indicate the town's
-   importance in the region and remove the border
-
-   .. figure:: img/rule_style_result.png
-      :align: center
-
-#. Press :guilabel:`OK`
-#. Repeat the steps above to add the following rules:
-
-   #. **Other residential** label with the criterion
-      ``"landuse" = 'residential' AND "name" <> 'Swellendam'`` (or
-      ``"landuse" = 'residential' AND "name" != 'Swellendam'``). 
-      Choose a pale blue-grey :guilabel:`Fill color`
-   #. **Big non residential areas** label with the criterion
-      ``"landuse" <> 'residential' AND "AREA" >= 605000``.
-      Choose a mid-green color.
-
-      .. figure:: img/criterion_refined_midway.png
-         :align: center
-
-      These filters are exclusive, in that they exclude areas on the
-      map (non-residential areas which are smaller than 605000
-      (square meters) are not included in any of the rules).
-
-   #. We will catch the remaining features using a new rule labeled
-      **Small non residential areas**. Instead of a filter expression,
-      Check the |radioButtonOn| :guilabel:`Else`.
-      Give this category a suitable pale green color.
-
-      .. figure:: img/criterion_else.png
-         :align: center
-
-   Your rules should now look like this:
-
-   .. figure:: img/criterion_refined_list.png
-      :align: center
-
-#. Apply this symbology
-
-Your map will look something like this:
-
-.. figure:: img/rule_based_map_result.png
-   :align: center
-
-Now you have a map with |majorUrbanName| the most prominent
-residential area and other non-residential areas colored according to
-their size.
 
 |IC|
 ----------------------------------------------------------------------
