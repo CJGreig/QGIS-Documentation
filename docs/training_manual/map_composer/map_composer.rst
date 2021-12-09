@@ -274,7 +274,7 @@ to convey.
 
 Let's add a new scale bar.
 
-#. Click on the |addScaleBar| :sup:`Add Scale Bar` button
+#. Click on the |ScaleBar| :sup:`Add Scale Bar` button
 #. Click on the page and drag a box to place the Scale Bar
 #. Ensure the scale bar units are appropriate for your map (e.g., meters)
 #. The scale bar can be further customized, so take a moment and look at the
@@ -290,7 +290,7 @@ Let's add a new scale bar.
 A North Arrow is also required on your map to provide directional Orientation
 for the user.
 
-#. Click on the |addNorthArrow| :sup:`Add North Arrow` button
+#. Click on the |NorthArrow| :sup:`Add North Arrow` button
 #. Click on the page and drag a box to place the North Arrow
 #. Like the other map elements, the North Arrow can be customized, so take a
    moment and play with different options until you are pleased with your North
@@ -306,7 +306,7 @@ Projection: UTM NAD83 Zone 17N
 Data Source: Niagara Peninsula Conservation Authority Open Data Portal, 
 St. Catharines Open data Portal, Niagara College GIS Server and M. McNight (2021) 
 
-#. Click on the |addLabel| :sup:`Add Label` button
+#. Click on the |Label| :sup:`Add Label` button
 #. Click on the page and drag a box to place the text box
 #. In the Item Properties tab, you can edit the text to include the information
    written above.  Feel free to change text size; typically this information is
