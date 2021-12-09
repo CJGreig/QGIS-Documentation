@@ -274,7 +274,7 @@ to convey.
 
 Let's add a new scale bar.
 
-#. Click on the |mActionScaleBar.png| :sup:`Add Scale Bar` button
+#. Click on the|addScalebar| :sup:`Add Scale Bar` button
 #. Click on the page and drag a box to place the Scale Bar
 #. Ensure the scale bar units are appropriate for your map (e.g., meters)
 #. The scale bar can be further customized, so take a moment and look at the
@@ -290,7 +290,7 @@ Let's add a new scale bar.
 A North Arrow is also required on your map to provide directional Orientation
 for the user.
 
-#. Click on the |NorthArrow| :sup:`Add North Arrow` button
+#. Click on the |northArrow| :sup:`Add North Arrow` button
 #. Click on the page and drag a box to place the North Arrow
 #. Like the other map elements, the North Arrow can be customized, so take a
    moment and play with different options until you are pleased with your North
@@ -317,7 +317,7 @@ St. Catharines Open data Portal, Niagara College GIS Server and M. McNight (2021
 
 Optionally, you can add a Neatline, or border, around your map. 
 
-#. Click on the |addShape| :sup:`Add Shape` button
+#. Click on the |addBasicShape| :sup:`Add Shape` button
 #. Click on the page and drag a box around all your map elements.
 #. However, you may notice that this box covers all your map elements. To fix
    this go to the Items browser on the right side of the window.
