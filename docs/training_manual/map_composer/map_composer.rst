@@ -274,7 +274,7 @@ to convey.
 
 Let's add a new scale bar.
 
-#. Click on the |ScaleBar| :sup:`Add Scale Bar` button
+#. Click on the |mActionScaleBar.png| :sup:`Add Scale Bar` button
 #. Click on the page and drag a box to place the Scale Bar
 #. Ensure the scale bar units are appropriate for your map (e.g., meters)
 #. The scale bar can be further customized, so take a moment and look at the
