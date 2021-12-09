@@ -263,13 +263,88 @@ This is the result:
    :align: center
    :width: 100%
 
+|basic| |FA| Adding a Scale Bar
+----------------------------------------------------------------------
+
+The map reader also needs to be able to understand the relationship of the 
+distance on the map to the actual distance on the ground.  By adding a
+scale bar, the reader is able to visually interpet the actual distance on
+the ground, which will help them better understand the message the map is trying
+to convey.
+
+Let's add a new scale bar.
+
+#. Click on the |addScaleBar| :sup:`Add Scale Bar` button
+#. Click on the page and drag a box to place the Scale Bar
+#. Ensure the scale bar units are appropriate for your map (e.g., meters)
+#. The scale bar can be further customized, so take a moment and look at the
+   different item properties and adjust them until you find a format you like.
+
+   .. figure:: img/legend_added.png
+      :align: center
+      :width: 100%
+
+|basic| |FA| Adding a North Arrow
+----------------------------------------------------------------------
+
+A North Arrow is also required on your map to provide directional Orientation
+for the user.
+
+#. Click on the |addNorthArrow| :sup:`Add North Arrow` button
+#. Click on the page and drag a box to place the North Arrow
+#. Like the other map elements, the North Arrow can be customized, so take a
+   moment and play with different options until you are pleased with your North
+   Arrow appearance.
+
+|basic| |FA| Adding a Text Box
+----------------------------------------------------------------------
+
+Each map also needs information regarding Map Author, Map Projection and Data
+Source.  For this map, 
+Map Author: *Your Name, Environmental Technician Candidate, Niagara College*
+Projection: UTM NAD83 Zone 17N
+Data Source: Niagara Peninsula Conservation Authority Open Data Portal, 
+St. Catharines Open data Portal, Niagara College GIS Server and M. McNight (2021) 
+
+#. Click on the |addLabel| :sup:`Add Label` button
+#. Click on the page and drag a box to place the text box
+#. In the Item Properties tab, you can edit the text to include the information
+   written above.  Feel free to change text size; typically this information is
+   meant to be discrete, but easily read.
+
+|basic| |FA| Adding a Neatline
+----------------------------------------------------------------------
+
+Optionally, you can add a Neatline, or border, around your map. 
+
+#. Click on the |addShape| :sup:`Add Shape` button
+#. Click on the page and drag a box around all your map elements.
+#. However, you may notice that this box covers all your map elements. To fix
+   this go to the Items browser on the right side of the window.
+
+   .. figure:: img/map_composer_MapItems.png
+      :align: center
+      :width: 100%
+
+   Items can be reorganized by dragging them up or down. Drag the new rectangle
+   to the bottom of the list.
+
 |basic| |FA| Exporting Your Map
 ----------------------------------------------------------------------
 
 .. note::  Did you remember to save your work often?
 
-Finally the map is ready for export! You'll see the export buttons
-near the top left corner of the layout window:
+Finally the map is ready for export! Take a good look at your map and ask yourself,
+Is the initial question asked being answered? The initial question was:
+
+Where are the wild species monitoring projects located on campus in relation to
+different ecosystems?
+
+Make sure your map is tidy, organized and logically presented so the user immediately
+understands what they are looking at. If you feel all these factors are met, it is
+time to export the map.
+
+You'll see the export buttons near the top left corner of the layout window:
 
 * |filePrint| :sup:`Print Layout`: interfaces with a printer.
   Since the printer options will differ depending on the model of
@@ -297,6 +372,8 @@ For our purposes, we're going to use PDF.
 
 #. Click the |saveAsPDF| :sup:`Export as PDF` button
 #. Choose a save location and a file name as usual.
+#. Check the box next to Create Geospatial PDF. In the next lab we will be
+   using this file to perform ground truthing.
    The following dialog will show up.
 
    .. figure:: img/layout_export_pdf.png
@@ -312,6 +389,7 @@ For our purposes, we're going to use PDF.
 #. Open it and see how your layout looks.
 
    Everything is OK?
+
    Congratulations on your first completed QGIS map project!
 
 #. Anything unsatisfying? Go back to the QGIS window, do the
