@@ -3,9 +3,7 @@
 
 The data that you use has to come from somewhere. For most common applications,
 the data exists already; but the more particular and specialized the project,
-the less likely it is that the data will already be available. In such cases,
-you'll need to create your own new data.
-
+the less likely it is that the data will already be available. 
 **The goal for this lesson:** To create a new vector dataset.
 
 |basic| |FA| The Layer Creation Dialog
