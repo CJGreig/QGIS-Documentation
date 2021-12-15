@@ -1,23 +1,24 @@
 |LS| Adding your first layers
 ===============================================================================
 
-We will start the application, and create a basic map to use for examples and
-exercises.
+You are now officially starting Lab 1! This lab will be broken down into several
+sections and tackled over the first few weeks of the course.  Make sure before 
+starting you have QGIS version 3.22 installed and you have created a separate 
+folder for Lab 1, as discussed in our first lecture.  All Lab 1 data should 
+have been downloaded from Blackboard and put in your Lab 1 folder as well.  
+We will now start the application, and create a basic map to use for examples, 
+exercises and Lab 1 deliverables.
 
 **The goal for this lesson:** To get started with an example map.
-
-.. note::  Before starting this exercise, QGIS must be installed on your
-   computer. Also, you should have downloaded the :ref:`sample data
-   <data_downloadlink>` to use.
 
 Launch QGIS from its desktop shortcut, menu item, etc., depending on how you
 configured its installation.
 
-.. note::  The screenshots for this course were taken in QGIS 3.4 running on
-   Linux. Depending on your setup, the screens you encounter may well appear
-   somewhat different. However, all the same buttons will still be available,
-   and the instructions will work on any OS. You will need QGIS 3.4 (the latest
-   version at time of writing) to use this course.
+.. note::  The screenshots for this course were taken in QGIS 3.14 running on
+   Linux and QGIS 3.22 running on Windows. Depending on your setup, the screens you 
+   encounter may well appear somewhat different. However, all the same buttons 
+   will still be available, and the instructions will work on any OS. You will 
+   need QGIS 3.4 (the latest version at time of writing) to use this course.
 
 Let's get started right away!
 
@@ -31,6 +32,24 @@ Let's get started right away!
    .. figure:: img/add_blank_qgis.png
       :align: center
       :width: 100 %
+
+#. The first thing you will do is navigate to `Settings --> Options` at the
+   top of the new window.
+
+   .. figure:: img/Basic_map_settings_options.png
+      :align: center
+      :width: 100 % 
+   
+#. Once in `Options`, you will navigate to `CRS for Projects`
+   and `CRS for Layers` and adjust the settings so they match the image below.
+
+.. figure:: img/Basic_map_CRS.png
+      :align: center
+      :width: 100 %
+
+   .. note:: You have just set a default map projection.  This will be discussed
+   later in the course, but understand that it is important to ensure accurate mapping
+   and geometry calculations. 
 
 #. The :guilabel:`Data Source Manager` dialog allows you to choose the data to
    load depending on the data type. We'll use it to load our dataset:
@@ -48,12 +67,12 @@ Let's get started right away!
    #. Click on the :guilabel:`Vector` tab.
    #. Enable the |radioButtonOn|:guilabel:`File` source type.
    #. Press the :guilabel:`...` button next to :guilabel:`Vector Dataset(s)`.
-   #. Select the :file:`exercise_data/shapefile/ELC_campus.shp` file
-      in your training directory.
+   #. Select the :file:`Lab 1/ELC_campus.shp` file
+      in your working directory.
    #. Click :guilabel:`Open`. You will see the original dialog,
       with the file path filled in.
 
-      .. figure:: img/add_vector_dialog.png
+      .. figure:: img/Basic_map_vector.png
          :align: center
 
    #. Click :guilabel:`Add` here as well. The data you specified will now load:
@@ -77,7 +96,7 @@ your work.
 -------------------------------------------------------------------------------
 
 Repeat the steps above to add the :file:`wild_species.shp` and :file:`rivers.shp`
-layers from the same folder (:file:`exercise_data/shapefile`) to the map.
+layers from the same folder (:file:`Lab 1/`) to the map.
 
 .. admonition:: Answer
    :class: dropdown
@@ -88,7 +107,7 @@ layers from the same folder (:file:`exercise_data/shapefile`) to the map.
 
    .. _figure_basic_map:
 
-   .. figure:: img/basic_map.png
+   .. figure:: img/Basic_map_riversspecies.png
       :align: center
 
       A basic map
@@ -117,8 +136,8 @@ connection to it:
 
 #. Click on the |dataSourceManager| :sup:`Open Data Source Manager` button.
 #. On the left click on the |newGeoPackageLayer| :guilabel:`GeoPackage` tab.
-#. Click on the :guilabel:`New` button and browse to the :file:`training_data.gpkg`
-   file in the :file:`exercise_data` folder you downloaded before.
+#. Click on the :guilabel:`New` button and browse to the :file:`Lab_1.gpkg`
+   file in the :file:`Lab_1` folder you downloaded before.
 #. Select the file and press :guilabel:`Open`. The file path is now added to the
    Geopackage connections list, and appears in the drop-down menu.
 
@@ -129,14 +148,14 @@ You are now ready to add any layer from this GeoPackage to QGIS.
    contained in the GeoPackage file.
 #. Select the :guilabel:`roads` layer and click on the :guilabel:`Add` button.
 
-   .. figure:: img/add_data_dialog_geopackage.png
+   .. figure:: img/Basic_map_geopackage.png
       :align: center
 
    A :guilabel:`roads` layer is added to the :guilabel:`Layers` panel with
    features displayed on the map canvas.
-#. Click on :guilabel:`Close`.
+#. Now do the same for `Buildings`, and then click on :guilabel:`Close`.
 
-Congratulations! You have loaded the first layer from a GeoPackage.
+Congratulations! You have loaded your first layers from a GeoPackage.
 
 
 .. _backlink-vector-load-from-database-1:
@@ -144,10 +163,10 @@ Congratulations! You have loaded the first layer from a GeoPackage.
 |moderate| |TY| Load More Vector Data
 -------------------------------------------------------------------------------
 
-Load the following datasets from the :file:`exercise_data` folder into your map
+Load the following datasets from the :file:`Lab_1` folder into your map
 using any of the methods explained above:
 
-* :guilabel:`buildings`
+* :guilabel:`impervious_surfaces`
 * :guilabel:`water`
 
 .. admonition:: Answer
@@ -160,8 +179,8 @@ using any of the methods explained above:
    * :guilabel:`rivers`
    * :guilabel:`roads`
    * :guilabel:'impervious_surfaces'
-   * :guilabel:`buildings` (taken from :file:`training_data.gpkg`) and
-   * :guilabel:`water` (taken from :file:`exercise_data/shapefile`).
+   * :guilabel:`buildings` (taken from :file:`Lab_1a.gpkg`) and
+   * :guilabel:`water` (taken from :file:`Lab_1/`).
 
 
 |FA| Reordering the Layers
@@ -182,7 +201,7 @@ because other layers are on top of it.
 
 For example, this layer order...
 
-.. figure:: img/incorrect_layer_order.png
+.. figure:: img/Basic_map_legend.png
    :align: center
 
 ... would result in roads and wild_species being hidden as they run *underneath*
@@ -193,7 +212,7 @@ To resolve this problem:
 #. Click and drag on a layer in the Layers list.
 #. Reorder them to look like this:
 
-.. figure:: img/correct_layer_order.png
+.. figure:: img/Basic_map_legendcorrect.png
    :align: center
 
 You'll see that the map now makes more sense visually, with roads and buildings
