@@ -78,50 +78,6 @@ The new layer should appear in your :guilabel:`Layers` panel.
 
 .. _tm_datasources:
 
-|basic| |FA| Data Sources
--------------------------------------------------------------------------------
-
-When you create new data, it obviously has to be about objects that really
-exist on the ground. Therefore, you'll need to get your information from
-somewhere.
-
-There are many different ways to obtain data about objects. For example, you
-could use a GPS to capture points in the real world, then import the data into
-QGIS afterwards. Or you could survey points using a theodolite, and enter the
-coordinates manually to create new features. Or you could use the digitizing
-process to trace objects from remote sensing data, such as satellite imagery
-or aerial photography.
-
-For our example, you'll be using the digitizing approach. Sample raster datasets
-are provided, so you'll need to import them as necessary.
-
-#. Click on |dataSourceManager| :sup:`Data Source Manager` button.
-#. Select |raster| :guilabel:`Raster` on the left side.
-#. In the :guilabel:`Source` panel, click on the :guilabel:`...` button: 
-#. Navigate to :file:`exercise_data/raster/`.
-#. Select the file :file:`3420C_2010_327_RGB_LATLNG.tif`.
-#. Click :guilabel:`Open` to close the dialogue window.
-
-   .. figure:: img/add_raster.png
-     :align: center
-
-#. Click :guilabel:`Add` and :guilabel:`Close`. An image will load into your map.
-
-   .. figure:: img/raster_added.png
-     :align: center
-
-#. If you don't see an aerial image appear, select the new layer, right click,
-   and choose :guilabel:`Zoom to Layer` in the context menu.
-
-   .. figure:: img/zoom_to_raster.png
-     :align: center
-
-#. Click on the |zoomIn| :sup:`Zoom In` button, and zoom to the area highlighted in blue below:
-
-   .. figure:: img/map_area_zoom.png
-     :align: center
-
-
 Now you are ready to digitize these three fields:
 
    .. figure:: img/field_outlines.png
@@ -230,75 +186,6 @@ digitizing until you're done creating the feature as above. Then:
 #. Remember to save your changes by clicking the |saveEdits| :sup:`Save Edits` button.
 #. When done editing, click the |toggleEditing| :sup:`Toggle Editing` button
    to get out of edit mode.
-
-
-|basic| |TY| Digitizing Polygons 
--------------------------------------------------------------------------------
-
-Digitize the school itself and the upper field. Use this image to assist you:
-
-.. figure:: img/field_outlines.png
-     :align: center
-
-Remember that each new feature needs to have a unique ``id`` value!
-
-.. note::  When you're done adding features to a layer, remember to save your
-   edits and then exit edit mode.
-
-.. note:: You can style the fill, outline and label placement and formatting
-   of the ``school_property`` using techniques learnt in earlier
-   lessons.
-
-
-|moderate| |FA| Using Vertex Editor Table
--------------------------------------------------------------------------------
-
-Another way to edit a feature is to manually enter the actual
-coordinate values for each vertex using the :guilabel:`Vertex Editor`
-table.
-
-#. Make sure you are in edit mode on layer ``school_property``.
-#. If not already activated, click on |vertexToolActiveLayer|
-   :sup:`Vertex Tool` button.
-#. Move the mouse over one of the polygon features you created in the
-   ``school_property`` layer and right click on it.
-   This will select the feature and a :guilabel:`Vertex Editor` pane will appear.  
-
-   .. figure:: img/vertex_editor_table.png
-     :align: center
-
-   .. note:: This table contains the coordinates for the vertices of the feature.  
-      Notice there are seven vertices for this feature, but only six are 
-      visually identified in the map area.
-      Upon closer inspection, one will notice that row 0 and 6 have
-      identical coordinates.
-      These are the start and end vertices of the feature geometry,
-      and are required in order to create a closed polygon feature.
-
-#. Click and drag a box over a vertex, or multiple vertices, of the selected feature.
-
-   .. figure:: img/vertex_select.png
-     :align: center
-
-   The selected vertices will change to a color blue and the
-   :guilabel:`Vertex Editor` table will have the corresponding rows
-   highlighted, which contain the coordinates of the vertices.
-   
-   .. figure:: img/vertex_selected.png
-     :align: center
-
-#. To update a coordinate, double left click on the cell in the table
-   that you want to edit and enter the updated value.
-   In this example, the x coordinate of row ``4`` is updated from
-   ``20.4450`` to ``20.4444``.
-
-   .. figure:: img/edit_vertex_in_vertex_editor.png
-     :align: center
-	 
-#. After entering the updated value, hit the enter key to apply the change.
-   You will see the vertex move to the new location in the map window.
-#. When done editing, click the |toggleEditing| :sup:`Toggle Editing`
-   button to get out of edit mode, and save your edits.
 
 |basic| |TY| Digitizing Lines
 -------------------------------------------------------------------------------
