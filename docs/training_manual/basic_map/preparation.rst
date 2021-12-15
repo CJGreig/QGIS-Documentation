@@ -43,7 +43,7 @@ Let's get started right away!
 #. Once in `Options`, you will navigate to `CRS for Projects`
    and `CRS for Layers` and adjust the settings so they match the image below.
 
-.. figure:: img/Basic_map_CRS.png
+   .. figure:: img/Basic_map_CRS.png
       :align: center
       :width: 100 %
 
