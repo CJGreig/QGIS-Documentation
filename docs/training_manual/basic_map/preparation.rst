@@ -2,9 +2,38 @@
 ===============================================================================
 
 You are now officially starting Lab 1! This lab will be broken down into several
-sections and tackled over the first few weeks of the course.  Make sure before 
-starting you have QGIS version 3.22 installed and you have created a separate 
-folder for Lab 1, as discussed in our first lecture.  All Lab 1 data should 
+sections and tackled over the first few weeks of the course.  Before 
+starting, mae sure you have QGIS version 3.22 installed and you have created a separate 
+folder for Lab 1, as discussed in our first lecture.  
+
+Lab 1 will be broken into three parts:
+
+   Part A:  
+   
+#. Introduce you to QGIS interface and functionality
+#. Learn to load vector data, navigate the map canvas and adjust layer 
+   symbology
+#. Explore vector attribute tables, add labels and classify vector data
+#. Create a map in Layout Manager with all necessary map elements and save as
+   a Georeferenced PDF.
+
+   The map will show Niagara College Campus wild species monitoring project locations
+   in relation to ELC classes.
+
+   Part B:
+
+#. Learn to edit layer topology and digitize features
+#. Produce a map based on your ENVR1108 Environmental Ecology term project. 
+
+   Part C:
+
+#. Use the QGIS plugin QField to perform ground truthing of your map from Part B.
+#. Also use a GPS to collect point locations
+#. Upload data from QField and GPS into QGIS
+#. Create a GeoPackage 
+
+
+All Lab 1 data should 
 have been downloaded from Blackboard and put in your Lab 1 folder as well.  
 We will now start the application, and create a basic map to use for examples, 
 exercises and Lab 1 deliverables.
