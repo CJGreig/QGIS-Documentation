@@ -39,7 +39,7 @@ begin by changing the color of the :guilabel:`impervious_surfaces` layer.
 #. In the :guilabel:`Layer Properties` window, select the |symbology|
    :guilabel:`Symbology` tab:
 
-   .. figure:: img/ELC_campus_symbology.pngXXXX
+   .. figure:: img/ELC_campus_symbology.png
       :align: center
 
 #. Click the color select button next to the :guilabel:`Color` label.
@@ -133,7 +133,8 @@ individual changes while symbolizing a layer.
 
 Now that you know how to change simple symbology for layers, the next step is
 to create more complex symbology. QGIS allows you to do this using symbol
-layers.
+layers.  This exercise is meant to teach you how to customize symbology, but DOES
+NOT need to be used when creating your final map product for Lab 1.
 
 #. Go back to the :guilabel:`impervious_surfaces` layer's symbol properties panel (by clicking
    :guilabel:`Simple fill` in the symbol layers tree).
@@ -190,7 +191,8 @@ It's fun! But it probably has too many colors to use in a real map...
 -------------------------------------------------------------------------------
 
 Remembering to zoom in if necessary, create a simple, but not distracting
-texture for the :guilabel:`buildings` layer using the methods above.
+texture for the :guilabel:`buildings` layer using the methods above.  Remember,
+this is for practice, so if you do not want to keep this symbology, you do not have to.
 
 
 .. admonition:: Answer
@@ -219,7 +221,7 @@ having many symbol layers in one symbol can cause unexpected results.
 
 You'll notice that this happens:
 
-.. figure:: img/bad_roads_symbology.png
+.. figure:: img/Basic_map_roadoverlap.png
    :align: center
 
 Well, roads have now a *street* like symbology, but you see that lines are
@@ -257,7 +259,7 @@ To change the order of the symbol layers:
 
    The map will now look like this:
 
-   .. figure:: img/better_roads_symbology.png
+   .. figure:: img/Basic_map_roadnooverlap.png
       :align: center
 
 When you're done, remember to save the symbol itself so as not to lose your
@@ -274,46 +276,7 @@ previously saved style at any time by clicking the :guilabel:`Load Style...`
 button. Before you change a style, keep in mind that any unsaved style you are
 replacing will be lost.
 
-
-|moderate| |TY|
--------------------------------------------------------------------------------
-
-Change the appearance of the :guilabel:`roads` layer again.
-
-Make the roads narrow and yellow, with a thin, pale gray outline and a
-thin black line in the middle. Remember that you may need to change the layer
-rendering order via the :menuselection:`Advanced --> Symbol levels...` dialog.
-
-.. figure:: img/target_road_symbology.png
-   :align: center
-
-
-.. admonition:: Answer
-   :class: dropdown
-
-   To make the required symbol, you need three symbol layers:
-
-   .. figure:: img/answer_road_symbology.png
-      :align: center
-
-   The lowest symbol layer is a broad, solid gray line. On top of it there is a
-   slightly thinner solid yellow line and finally another thinner solid black line.
-
-   If your symbol layers resemble the above but you're not getting the result
-   you want:
-
-   #. Check that your symbol levels look something like this:
-
-      .. figure:: img/answer_road_symbol_levels.png
-         :align: center
-
-   #. Now your map should look like this:
-
-      .. figure:: img/target_road_symbology_answer.png
-         :align: center
-
-
-|moderate| |FA| Symbol layer types
+|moderate| |FA| Symbol layer types (Optional)
 -------------------------------------------------------------------------------
 
 In addition to setting fill colors and using predefined patterns, you can use
