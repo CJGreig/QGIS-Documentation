@@ -10,21 +10,8 @@ and learn about map scale.
 |basic| |FA| Basic Navigation Tools
 -------------------------------------------------------------------------------
 
-Before learning how to navigate within the Map Canvas, let's add some
-layers that we can explore during this tutorial.
-
-#. Open a new blank project and using the steps learnt in :ref:`Create a Map
-   <tm_prepare_a_map>`, load the previously seen ``ELC_campus``, ``roads``
-   and ``buildings`` layers to the project.
-   The result view should look similar to the snippet in
-   :numref:`figure_roads_buildings_added` below (colors do not matter): 
-
-   .. _figure_roads_buildings_added:
-
-   .. figure:: img/roads_buildings_added.png
-      :align: center
-
-      Campus ELC, roads and buildings added
+Before learning how to navigate within the Map Canvas, let's re-open our Lab 1 QGIS
+session from the last lesson.
 
 Let's first learn how to use the Pan Tool.
 
@@ -42,16 +29,13 @@ Next, let's zoom in and take a closer look at the layers we imported.
 
    .. _figure_zoom_in_mapview:
 
-   .. figure:: img/zoom_in.png
+   .. figure:: img/Basic_map_zoomin.png
       :align: center
 
       Zoom in
 
 #. Release the left click.  This will zoom in to include the area that you
    selected with your rectangle.
-
-   .. figure:: img/zoomed_in.png
-     :align: center
 
 #. To zoom out, select the |zoomOut| :sup:`Zoom Out` button and perform the same
    action as you did for zooming in.
@@ -77,21 +61,22 @@ In general, the number to the right of :guilabel:`:` represents how many times
 smaller the object you are seeing in the Map Canvas is to the actual object in
 the real world.
 
-.. figure:: img/map_scale.png
+.. figure:: img/Basic_map_scale.png
    :align: center
 
 You can also use this field to set the Map Scale manually.
 
 #. In the Status Bar, click on the :guilabel:`Scale` textfield.
-#. Type in ``10000`` and press :kbd:`Enter`.  This will redraw the features in the 
-   Map Canvas to reflect the scale you typed in.
-#. Alternatively, click on the options arrow of the :guilabel:`Scale` field to see
+#. Click on the options arrow of the :guilabel:`Scale` field to see
    the preset map scales.
 
-   .. figure:: img/map_scale_options.png
+   .. figure:: img/Basic_map_50000.png
      :align: center
 
-#. Select :guilabel:`1:5000`.  This will also update the map scale in the Map Canvas.
+#. Select :guilabel:`1:50000`.  This will also update the map scale in the Map Canvas.
+#. Alternatively, type in ``5000`` and press :kbd:`Enter`.  This will redraw the features in the 
+   Map Canvas to reflect the scale you typed in.
+
 
 Now you know the basics of navigating the Map Canvas. Check out the User Manual on 
 :ref:`Zooming and Panning<zoom_pan>` to learn about alternative ways of navigating 
