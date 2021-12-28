@@ -51,18 +51,18 @@ begin by changing the color of the :guilabel:`impervious_surfaces` layer.
 |basic| |TY|
 -------------------------------------------------------------------------------
 
-Change the color of the :guilabel:`water` layer to light blue. Try to use the
+Change the color of the :guilabel:`Lakes` layer to light blue. Try to use the
 :guilabel:`Layer Styling` panel instead of the :guilabel:`Layer Properties` menu.
 
 .. admonition:: Solution
    :class: dropdown
 
    * Verify that the colors are changing as you expect them to change.
-   * It is enough to select the :guilabel:`water` layer in the legend and then click
+   * It is enough to select the :guilabel:`Lakes` layer in the legend and then click
      on the |symbology| :sup:`Open the Layer Styling panel` button. Change the color
-     to one that fits the water layer.
+     to one that fits the Lakes layer.
 
-   .. figure:: img/answer_water_blue.png
+   .. figure:: img/Basic_map_lakesstyling.png
       :align: center
 
    If you want to work on only one layer at a time and don't want the
@@ -100,7 +100,7 @@ Now the :guilabel:`impervious_surfaces` layer won't have any lines between areas
 |basic| |TY|
 -------------------------------------------------------------------------------
 
-* Change the :guilabel:`water` layer's symbology again so that it has a
+* Change the :guilabel:`Lakes` layer's symbology again so that it has a
   darker blue outline.
 * Change the :guilabel:`rivers` layer's symbology to a sensible representation
   of waterways.
@@ -114,7 +114,7 @@ individual changes while symbolizing a layer.
 
    Your map should now look like this:
 
-   .. figure:: img/answer_symbology1.png
+   .. figure:: img/Basic_map_lakesstyling.png
       :align: center
 
    * Use the method above to change the colors and styles for all the remaining
@@ -122,11 +122,7 @@ individual changes while symbolizing a layer.
    * Try using natural colors for the objects. For example, a road should not be
      red or blue, but can be gray or black.
    * Also feel free to experiment with different :guilabel:`Fill style` and
-     :guilabel:`Stroke style` settings for the polygons.
-
-   .. figure:: img/answer_symbology2.png
-      :align: center
-
+     :guilabel:`Stroke style` settings for the other polygons.
 
 |moderate| |FA| Adding Symbol Layers
 -------------------------------------------------------------------------------
@@ -200,11 +196,6 @@ this is for practice, so if you do not want to keep this symbology, you do not h
 
    Customize your :guilabel:`buildings` layer as you like, but remember that it
    has to be easy to tell different layers apart on the map.
-
-   Here's an example:
-
-   .. figure:: img/answer_buildings_symbology.png
-      :align: center
 
 
 |moderate| |FA| Ordering Symbol Levels
@@ -347,7 +338,7 @@ Polygon Symbol Layer Types
 
 To see the various options available for polygon data:
 
-#. Change the :guilabel:`Symbol layer type` for the :guilabel:`water` layer, as
+#. Change the :guilabel:`Symbol layer type` for the :guilabel:`Lakes` layer, as
    before for the other layers.
 #. Investigate what the different options on the list can do.
 #. Choose one of them that you find suitable.
@@ -368,33 +359,12 @@ To see the various options available for polygon data:
    .. figure:: img/simple_fill_move_down.png
       :align: center
 
-As a result, you have a textured symbol for the water layer, with the added
+As a result, you have a textured symbol for the Lakes layer, with the added
 benefit that you can change the size, shape and distance of the individual dots
 that make up the texture.
 
 
 .. _backlink-symbology-marker-line:
-
-|moderate| |TY|
--------------------------------------------------------------------------------
-
-Apply a green transparent fill color to the :guilabel:`ELC_campus` layer,
-and change the outline to look like this:
-
-.. figure:: img/marker_line_preview.png
-   :align: center
-
-
-.. admonition:: Answer
-   :class: dropdown
-
-   Here are examples of the symbol structure:
-
-   .. figure:: img/answer_marker_line.png
-      :align: center
-
-   .. figure:: img/answer_marker_line2.png
-      :align: center
 
 |IC|
 -------------------------------------------------------------------------------

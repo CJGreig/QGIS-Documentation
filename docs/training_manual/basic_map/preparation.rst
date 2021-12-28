@@ -196,7 +196,7 @@ Load the following datasets from the :file:`Lab_1` folder into your map
 using any of the methods explained above:
 
 * :guilabel:`impervious_surfaces`
-* :guilabel:`water`
+* :guilabel:`Lakes`
 
 .. admonition:: Answer
    :class: dropdown
@@ -209,7 +209,7 @@ using any of the methods explained above:
    * :guilabel:`roads`
    * :guilabel:'impervious_surfaces'
    * :guilabel:`buildings` (taken from :file:`Lab_1a.gpkg`) and
-   * :guilabel:`water` (taken from :file:`Lab_1/`).
+   * :guilabel:`Lakes` (taken from :file:`Lab_1/`).
 
 
 |FA| Reordering the Layers
