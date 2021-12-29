@@ -101,7 +101,7 @@ feature that we see on the Map Canvas.
    covering Woodend Conservation Area.  The polygon will turn yellow 
    indicating it is selected.
    
-   .. figure:: img/select_polygon.png
+   .. figure:: img/Classification_woodend.png
       :align: center
    
 #. Go back to the :guilabel:`Attribute Table` window, and if you scroll down
@@ -183,12 +183,12 @@ You may now close the attribute table.
 
    * Information about ELC class code for wood ducks is available in the :guilabel:`wild_species` layer. Open its
      attribute table as you did with the :guilabel:`rivers` layer:
-     there is a field called ``ELC_ClassCode``.  By clicking on the ``species`` field name,
+     there is a field called ``CSCode1``.  By clicking on the ``species`` field name,
      records are automatically sorted alphabetically.  If you scroll down to wood duck records, you will find the
      ELC class codes associated with the wood ducks in the adjacent field. We can see that wood ducks are found in
-     XXXX XXXX.
+     FOD (Deciduous Forest) and OAO (Open Aquatic).
 
-   * The ``project_name`` field is the most useful to show as labels for the purpose of our hypothetical map.
+   * The ``Species`` field is the most useful to show as labels for the purpose of our hypothetical map.
 
 |IC|
 -------------------------------------------------------------------------------

@@ -190,10 +190,6 @@ Remembering to zoom in if necessary, create a simple, but not distracting
 texture for the :guilabel:`buildings` layer using the methods above.  Remember,
 this is for practice, so if you do not want to keep this symbology, you do not have to.
 
-
-.. admonition:: Answer
-   :class: dropdown
-
    Customize your :guilabel:`buildings` layer as you like, but remember that it
    has to be easy to tell different layers apart on the map.
 
