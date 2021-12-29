@@ -114,7 +114,7 @@ individual changes while symbolizing a layer.
 
    Your map should now look like this:
 
-   .. figure:: img/Basic_map_lakesstyling.png
+   .. figure:: img/Basic_map_lakesstylingdark.png
       :align: center
 
    * Use the method above to change the colors and styles for all the remaining
