@@ -33,19 +33,19 @@ Snapping toolbar, Raster toolbar, etc.).
 #. Switch from :guilabel:`No Labels` to |labeling| :guilabel:`Single Labels`
 
    You'll need to choose which field in the attributes will be used for the
-   labels. In the previous lesson, you decided that the ``project_name`` field was the
+   labels. In the previous lesson, you decided that the ``Species`` field was the
    most suitable one for this purpose.
 
-#. Select ``project_name`` from the Value list:
+#. Select ``SPECIES`` from the Value list:
 
-   .. figure:: img/select_label_with.png
+   .. figure:: img/Classification_specieslabels.png
       :align: center
 
 #. Click :guilabel:`Apply`
 
 The map should now have labels like this:
 
-.. figure:: img/first_place_names.png
+.. figure:: img/Classification_woodducklabels.png
    :align: center
 
 
@@ -68,7 +68,7 @@ are too far away from their point markers.
 #. Make sure :guilabel:`Text` is selected in the left-hand options list, then
    update the text formatting options to match those shown here:
 
-   .. figure:: img/label_formatting_options.png
+   .. figure:: img/Classification_text9.png
       :align: center
 
 #. Click :guilabel:`Apply`
@@ -81,7 +81,7 @@ are too far away from their point markers.
 #. Select the checkbox next to :guilabel:`Draw text buffer`, then choose
    options to match those shown here:
 
-   .. figure:: img/buffer_options.png
+   .. figure:: img/Classification_buffer.png
       :align: center
 
 #. Click :guilabel:`Apply`
@@ -89,17 +89,38 @@ are too far away from their point markers.
    You'll see that this adds a colored buffer or border to the place labels,
    making them easier to pick out on the map:
 
-   .. figure:: img/buffer_results.png
+   .. figure:: img/Classification_bufferresult.png
+      :align: center
+
+   Now we can address the issue of multiple wood duck labels. Sometimes labels 
+   need to be manually adjusted.  You can use the different tools from
+   the Label Toolbar to modify your labels.  In our case, where we have multiple 
+   wood duck labels, we want to reduce the labels to a single label. To do this:
+
+#. Click |mActionMoveLabel| `Show/Hide Labels and Diagrams` tool and then click on one of the wood
+duck labels.
+
+   A dialogue box will appear; select `id` as shown in the figure below.
+
+   .. figure:: img/Classification_primarykey.png
+      :align: center
+
+#. Click on the individual wood duck labels to remove each label.  Be sure to leave one.
+#. Navigate back to the Label Toolbar and click |mActionShowHideLabels| `Move a Label, 
+   Diagram or Callout` tool, and then click on the last remaining wood ducks label and position 
+   it as shown below.
+
+   .. figure:: img/Classification_woodducklabelsmove.png
       :align: center
 
    Now we can address the positioning of the labels in relation to their point
-   markers.
+   markers. 
 
 #. Select :guilabel:`Placement` from the left-hand options list
 #. Select :guilabel:`Around point` and change the value of
    :guilabel:`Distance` to ``2.0`` Millimeters:
 
-   .. figure:: img/offset_placement_settings.png
+   .. figure:: img/Classification_placement.png
       :align: center
 
 #. Click :guilabel:`Apply`
@@ -107,7 +128,7 @@ are too far away from their point markers.
    You'll see that the labels are no longer overlapping their point markers.
 
 
-|moderate| |FA| Using Labels Instead of Layer Symbology
+|moderate| |FA| Using Labels Instead of Layer Symbology (Optional)
 -------------------------------------------------------------------------------
 
 In many cases, such as point datasets associated with places (e.g., cities, provinces, 
@@ -138,19 +159,16 @@ directly over the points they refer to.
    position of the label in relation to the point marker. In this case, we want the
    label to be centered on the point, so choose the center quadrant:
 
-   .. figure:: img/quadrant_offset_options.png
+   .. figure:: img/Classification_offsetfrompoint.png
       :align: center
 
 #. Hide the point symbols by editing the layer :guilabel:`Symbology` as usual,
    and setting the size of the :guilabel:`Marker` size to ``0.0``:
 
-   .. figure:: img/hide_point_marker.png
+   .. figure:: img/Classification_marker0.png
       :align: center
 
-#. Click :guilabel:`Apply` and you'll see this result:
-
-   .. figure:: img/hide_point_marker_results.png
-      :align: center
+#. Click :guilabel:`Apply`
 
 If you were to zoom out on the map, you would see that some of the labels
 disappear at larger scales to avoid overlapping. Sometimes this is what you
@@ -160,75 +178,29 @@ handling cases like this, which we'll cover in a later exercise in this lesson.
 For now, zoom out and click on the |showUnplacedLabel| button in the toolbar
 and see what happens.
 
-
-|moderate| |TY| Customize the Labels
--------------------------------------------------------------------------------
-
-* Reset the label and symbol settings to have a point marker and a label offset
-  of ``2.0`` Millimeters.
-
-.. admonition:: Answer
-   :class: dropdown
-
-   Your map should now show the marker points and the labels should be offset by
-   2mm. The style of the markers and labels should allow both to be
-   clearly visible on the map:
-
-   .. figure:: img/customised_labels_one.png
-      :align: center
-
-* Set the map to the scale ``1:10000``. You can do this by typing it into
-  the :guilabel:`Scale` box in the :guilabel:`Status Bar`. Modify your labels
-  to be suitable for viewing at this scale.
-
-.. admonition:: Answer
-   :class: dropdown
-
-   One possible solution has this final product:
-
-   .. figure:: img/possible_outcome_map.png
-      :align: center
-
-   To arrive at this result:
-
-   * Use a font size of ``10``
-   * Use an around point placement distance of ``1.5 mm``
-   * Use a marker size of ``3.0 mm``
-   * In addition, this example uses the :guilabel:`Wrap on character` option:
-
-     .. figure:: img/wrap_character_settings.png
-        :align: center
-
-   * Enter a ``space`` in this field and click :guilabel:`Apply` to achieve the
-     same effect. In our case, some of the place names are very long, resulting in
-     names with multiple lines which is not very user friendly. You might find this
-     setting to be more appropriate for your map.
-
-
-
 |moderate| |FA| Labeling Lines
 -------------------------------------------------------------------------------
 
 Now that you know how labeling works, there's an additional problem. Points and
-polygons are easy to label, but what about lines? If you label them the same
-way as the points, your results would look like this:
+polygons are easy to label, but what about lines? 
 
-.. figure:: img/bad_street_labels.png
+#. Activate |labeling| :guilabel:`Single Labels` for the ``roads``
+   layer using the settings shown below.
+
+.. figure:: img/Classification_STREET_NAM.png
+:align: center
+
+What do you notice? If you label them the same way as the points, your results 
+like this:
+
+.. figure:: img/Classification_badstreetnames.png
    :align: center
 
 We will now reformat the ``roads`` layer labels so that they are easy to
 understand.
 
-#. Hide the ``wild_species`` layer so that it doesn't distract you
-#. Activate |labeling| :guilabel:`Single Labels` for the ``roads``
-   layer as you did above for ``wild_species``
-#. Set the font :guilabel:`Size` to ``10`` so that you can see more labels
+#. Set the font :guilabel:`Size` to ``8`` so that you can see more labels
 #. Zoom in towards the ``roads`` layer
-#. In the :guilabel:`Labels` tab's :guilabel:`Placement` tab, choose the
-   following settings:
-
-   .. figure:: img/street_label_settings.png
-      :align: center
 
    You'll probably find that the text styling has used default values and the
    labels are consequently very hard to read. Update the :guilabel:`Text`
@@ -237,51 +209,34 @@ understand.
 
    The map will look somewhat like this, depending on scale:
 
-   .. figure:: img/street_label_formatted.png
-      :align: center
+.. figure:: img/Classification_goodstreetnames.png
+   :align: center
 
-   You'll see that some of the road names appear more than once and that's not
-   always necessary. To prevent this from happening:
-
-#. In the :guilabel:`Labels` tab of the :guilabel:`Layer Properties` dialog,
-   choose the :guilabel:`Rendering` option and select
-   :guilabel:`Merge connected lines to avoid duplicate labels` as shown:
-
-   .. figure:: img/merge_lines_option.png
-      :align: center
-
-#. Click :guilabel:`OK`
-
-   Another useful function is to prevent labels being drawn for features too short
-   to be of notice.
-
-#. In the same :guilabel:`Rendering` panel, set the value of
-   :guilabel:`Suppress labeling of features smaller than ...` to ``5.00 mm``
-   and note the results when you click :guilabel:`Apply`
-
-   Try out different :guilabel:`Placement` settings as well. As we've seen before,
-   the :guilabel:`Horizontal` option is not a good idea in this case, so let's
+   Try out different :guilabel:`Placement` settings as well. The default
+   :guilabel:`Horizontal` option is not a good idea in this case, so let's
    try the :guilabel:`Curved` option instead.
 
 #. Select the :guilabel:`Curved` option in the :guilabel:`Placement` panel of
-   the :guilabel:`Labels` tab
+   the :guilabel:`Labels` tab shown below.
+
+.. figure:: img/Classification_curved.png
+   :align: center
 
 Here's the result:
 
-.. figure:: img/final_street_labels.png
+.. figure:: img/Classification_curvedlabels.png
    :align: center
 
-As you can see, this hides some labels that were previously visible, because
-of the difficulty of making some of them follow twisting street lines while
-still being legible. It makes other labels much more useful since they track
-the roads rather than float in space between them. You can decide which of
-these options to use, depending on what you think seems more useful or what
-looks better.
+   Using `Curved` option actually eliminated duplicate labels.  
+
+#. Another way to remove duplicates is by navigating to the :guilabel:`Labels` tab 
+   of the :guilabel:`Layer Properties` dialog, choose the :guilabel:`Rendering` option 
+   and select :guilabel:`Merge connected lines to avoid duplicate labels`.
 
 |IC|
 -------------------------------------------------------------------------------
 
-You've learned how to use layer attributes to create dynamic labels. This can
+You've learned how to use layer attributes to create labels. This can
 make your map a lot more informative and stylish!
 
 
