@@ -188,7 +188,7 @@ polygons are easy to label, but what about lines?
    layer using the settings shown below.
 
 .. figure:: img/Classification_STREET_NAM.png
-:align: center
+   :align: center
 
 What do you notice? If you label them the same way as the points, your results 
 like this:
