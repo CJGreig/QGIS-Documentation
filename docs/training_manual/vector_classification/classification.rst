@@ -56,7 +56,7 @@ effectively.
 #. Scroll through the different options and make sure to select a colour scheme
    that is appropriate for nominal data.
 
-   .. figure:: img/Classification_goodcolours
+   .. figure:: img/Classification_goodcolours.png
    
 #. Click :guilabel:`OK`
    
