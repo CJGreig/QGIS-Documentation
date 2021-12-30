@@ -168,7 +168,7 @@ directly over the points they refer to.
    .. figure:: img/Classification_marker0.png
       :align: center
 
-#. Click :guilabel:`Apply`
+#. Click :guilabel:`Apply` 
 
 If you were to zoom out on the map, you would see that some of the labels
 disappear at larger scales to avoid overlapping. Sometimes this is what you
