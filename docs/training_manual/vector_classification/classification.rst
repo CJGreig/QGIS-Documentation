@@ -7,7 +7,7 @@ For example, let us say that someone wants to know what each
 ``ELC_campus`` area is used for.
 Using labels, you would get this:
 
-.. figure:: img/bad_landuse_labels.png
+.. figure:: img/Classification_crowdedlabels.png
    :align: center
 
 This makes the map's labeling difficult to read and even overwhelming
@@ -28,48 +28,74 @@ effectively.
    .. figure:: img/ELC_campus_vector_class_categorized.png
       :align: center
 
-#. In the new panel, change the :guilabel:`Value` to ``CSCODE_MAS`` and
+#. In the new panel, change the :guilabel:`Value` to ``CSCODE1`` and
    the :guilabel:`Color ramp` to :guilabel:`Random colors`
 #. Click the button labeled :guilabel:`Classify`
 
-   .. figure:: img/ELC_campus_vector_class_classify.png
+   .. figure:: img/Classification_randomcolor.png
       :align: center
 
+#. Alternatively, you may want to take some time to explore different color
+   ramps. You can click on the :guilabel:`Color ramp` and navigate to
+   `Create new color ramp`, as shown below:
+
+   .. figure:: img/Classification_newramp.png
+      :align: center
+
+#. A 'Color ramp type' dialog box will appear.  Click the dropdown menu,
+   and select Catalog: ColorBrewer, as shown below.
+   
+   .. figure:: img/Classification_colorbrewer.png
+      :align: center
+   
+   ColorBrewer is a catalog of colour schemes for creating maps.
+   There is a website which I recommend visiting, that is
+   great for colour scheme visualization and selection. 
+   Color Brewer 2: https://colorbrewer2.org/#type=sequential&scheme=BuGn&n=3 
+
+#. Scroll through the different options and make sure to select a colour scheme
+   that is appropriate for nominal data.
+
+   .. figure:: img/Classification_goodcolours
+   
 #. Click :guilabel:`OK`
+   
+   This is the colour scheme I decided to use:
 
-   You'll see something like this:
-
-   .. figure:: img/categorisation_result.png
+   .. figure:: img/Classification_result.png
       :align: center
 
 #. Click the arrow (or plus sign) next to ``ELC_campus`` in the
-   :guilabel:`Layers` panel, you'll see the categories explained:
+   :guilabel:`Layers` panel, you'll see the categories explained 
+   (refer to layers panel in the above photo).
 
-   .. figure:: img/categories_explained.png
+#. If you wish to, you can change the color of each ELC
+   class by double-clicking the relevant color block in the
+   `Layers` panel or in the :guilabel:`Layer Properties`
+   dialog:
+
+   .. figure:: img/Classification_symbolselector.png
       :align: center
 
+   Spend some time picking a nice colour scheme, as map aethetics are
+   very important for conveying information effectively. Once you are
+   satisfied with your colour selection, take a look at your map.  
    Now our ELC polygons are colored and are classified so that
    areas with the same ELC are the same color.
 
-#. If you wish to, you can change the symbol of each ELC
-   class by double-clicking the relevant color block in the
-   :guilabel:`Layers` panel or in the :guilabel:`Layer Properties`
-   dialog:
+   Note
+   
+   You may have noticed that there is one category that's empty:
 
-   .. figure:: img/ELC_campus_vector_class_symbolselector.png
+   .. figure:: img/ELC_campus_vector_class_emptyclass.png
       :align: center
 
-Notice that there is one category that's empty:
-
-.. figure:: img/ELC_campus_vector_class_emptyclass.png
-   :align: center
-
-This empty category is used to color any objects which do not have a
-ELC class value defined or which have a *NULL* value.
-It can be useful to keep this empty category so that areas with a
-*NULL* value are still represented on the map.
-You may like to change the color to more obviously represent a blank
-or *NULL* value.
+   This empty category is used to color any objects which do not have a
+   ELC class value defined or which have a *NULL* value.
+   It can be useful to keep this empty category so that areas with a
+   *NULL* value are still represented on the map.
+   You may like to change the color to more obviously represent a blank
+   or *NULL* value. Or, you may choose to remove it.
 
 Remember to save your map now so that you don't lose all your
 hard-earned changes!
@@ -130,7 +156,7 @@ magnitude.
 * For lines, we can use thickness (thin to thick).
 
 In the example above, we used nominal classification to color each
-record in the ``ELC_campus`` layer based on its ``CSCODE_MAS`` attribute.
+record in the ``ELC_campus`` layer based on its ``CSCODE1`` attribute.
 Now we will use ratio classification to classify the records by area m2.
 
 We are going to reclassify the layer, so existing classes will be lost
@@ -229,55 +255,45 @@ Now that we have the data, let's use them to render the ``ELC_campus`` layer.
 
 #. Change the :guilabel:`Value` to ``AREA``
 
-#. Under :guilabel:`Color ramp`, choose the option
-   :guilabel:`Create New Color Ramp...`:
+#. As you did before for your nominal classification, under `Color ramp`, 
+   choose the option :guilabel:`Create New Color Ramp...`.  
 
-   .. figure:: img/ELC_campus_vector_class_colourramp.png
-      :align: center
-
-#. Choose :guilabel:`Gradient` (if it's not selected already) and click
-   :guilabel:`OK`. You will see this:
+#. Feel free to choose the ColorBrewer catalog again, or try `Gradient` 
+   (if it's not selected already) and click :guilabel:`OK`.  If you choose
+   'Gradient', you will see this:
 
    .. figure:: img/gradient_color_select.png
       :align: center
 
    You'll be using this to denote area, with small areas as
-   :guilabel:`Color 1` and large areas as :guilabel:`Color 2`.
-
-#. Choose appropriate colors. Optionally, you can visit Color Brewer 2: 
-https://colorbrewer2.org/#type=sequential&scheme=BuGn&n=3 to select appropriate,
-attractive colour schemes for your map.
-
-To use the colours available on ColorBrewer2, in the QGIS select colour ramp window,
-click on the coloured rectangle to the right of Color 1 and copy and paste the 
-HTML notation found on the ColorBrewer2 wesbite. Do the same for Color 2.  For the
-example, Color 1 is set as #ffffcc and Color 2 is set as #006837.
-
-   In the example, the result looks like this:
-
-   .. figure:: img/ELC_campus_vector_class_gradient.png
-      :align: center
+   :guilabel:`Color 1` and large areas as :guilabel:`Color 2`. If you decide 
+   to use ColorBrewer, be sure to select a gradient colour scheme from 
+   the options.
 
 #. Click :guilabel:`OK`
-#. You can save the colour ramp by selecting
+
+#. If you create a custom colour ramp, you can save the colour ramp by selecting
    :guilabel:`Save Color Ramp...` under the :guilabel:`Color ramp`
-   tab.
+   tab. 
+   
    Choose an appropriate name for the colour ramp and click
    :guilabel:`Save`.
+   
    You will now be able to select the same colour ramp easily under
    :guilabel:`All Color Ramps`.
+
 #. Click :guilabel:`Classify`
 
    Now you will have something like this:
 
-   .. figure:: img/landuse_gradient_selected.png
+   .. figure:: img/Classification_areaclassified.png
       :align: center
 
    Leave everything else as-is.
 
 #. Click :guilabel:`OK`:
 
-.. figure:: img/gradient_result_map.png
+.. figure:: img/Classification_areamap.png
    :align: center
 
 
@@ -302,6 +318,7 @@ example, Color 1 is set as #ffffcc and Color 2 is set as #006837.
 
 Symbology allows us to represent the attributes of a layer in an
 easy-to-read way.
+
 It allows us as well as the map reader to understand the significance
 of features, using any relevant attributes that we choose.
 Depending on the problems you face, you'll apply different
