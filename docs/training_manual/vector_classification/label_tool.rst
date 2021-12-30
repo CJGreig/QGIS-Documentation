@@ -202,10 +202,8 @@ understand.
 #. Set the font :guilabel:`Size` to ``8`` so that you can see more labels
 #. Zoom in towards the ``roads`` layer
 
-   You'll probably find that the text styling has used default values and the
-   labels are consequently very hard to read. Update the :guilabel:`Text`
-   to use a dark-grey or black :guilabel:`Color` and the :guilabel:`Buffer`
-   to use a light-yellow :guilabel:`Color`.
+   For practice, let's update the :guilabel:`Text` to use a dark-grey or black 
+   :guilabel:`Color` and the :guilabel:`Buffer` to use a light-yellow :guilabel:`Color`.
 
    The map will look somewhat like this, depending on scale:
 
@@ -213,7 +211,7 @@ understand.
    :align: center
 
    Try out different :guilabel:`Placement` settings as well. The default
-   :guilabel:`Horizontal` option is not a good idea in this case, so let's
+   :guilabel:`Parallel` option is not a good idea in this case, so let's
    try the :guilabel:`Curved` option instead.
 
 #. Select the :guilabel:`Curved` option in the :guilabel:`Placement` panel of
@@ -227,9 +225,9 @@ Here's the result:
 .. figure:: img/Classification_curvedlabels.png
    :align: center
 
-   Using `Curved` option actually eliminated duplicate labels.  
+   Using `Curved` option actually eliminated duplicate labels at a certain scale.  
 
-#. Another way to remove duplicates is by navigating to the :guilabel:`Labels` tab 
+#. When working with larger datasets, another way to remove duplicates is by navigating to the :guilabel:`Labels` tab 
    of the :guilabel:`Layer Properties` dialog, choose the :guilabel:`Rendering` option 
    and select :guilabel:`Merge connected lines to avoid duplicate labels`.
 
