@@ -293,25 +293,24 @@ Now that we have the data, let's use them to render the ``ELC_campus`` layer.
 
 #. Click :guilabel:`OK`:
 
-.. figure:: img/Classification_areamap.png
-   :align: center
+   .. figure:: img/Classification_areamap.png
+      :align: center
 
 
 |moderate| |TY| Refine the Classification
 ----------------------------------------------------------------------
 
-* Change the values of :guilabel:`Mode` and :guilabel:`Classes` until
-  you get a classification that makes sense.
-
-.. admonition:: Answer
-   :class: dropdown
-
-   The settings you used might not be the same, but with the values
-   :guilabel:`Classes` = ``6`` and :guilabel:`Mode` = :guilabel:`Natural Breaks
-   (Jenks)` (and using the same colors, of course), the map will look like this:
-
-   .. figure:: img/gradient_map_new_mode.png
+*  Take some time, and try each different 'Mode' option. Do the same for 
+   'Classes'; try 4, 5, 6 and 7 classes. As you change the
+   'Mode', take a look at the map and see how your map changes. Also take this
+   opportunity to explore the data histogram, as shown below:  
+   
+   .. figure:: img/Classification_histogram.png
       :align: center
+   
+   Click 'Load Values' to create the histogram.
+
+   Which classification makes the most sense for your data?
 
 |IC|
 ----------------------------------------------------------------------
