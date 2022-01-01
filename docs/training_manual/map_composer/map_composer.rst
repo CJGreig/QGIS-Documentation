@@ -115,7 +115,18 @@ the :menuselection:`Project --> Layouts -->` menu, as in the image below
 ----------------------------------------------------------------------
 
 The goal of our map is to show wild species monitoring locations in relation
-to ELC classes.  Previously, we had performed an ordinal classification of ELC 
+to ELC classes.  Below is my interpretation of the assignment. Feel free to use
+a similar layout, or shuffle it around to make it your own. However, be sure to
+include all the same map elements that my map has.  The for the remainder of this
+lesson will walk you through how to add each element to create your final product
+for Lab 1 Part A.
+
+
+.. figure:: img/Layout_final.png
+      :align: center
+
+
+Previously, we had performed an ordinal classification of ELC 
 polygon area.  Prior to that,we performed a categorical classification of 
 ELC_campus by CSCODE1, and had saved the style.  The style can be reloaded 
 by going to Style at the bottom of the Symbology window. Use this classification
@@ -140,28 +151,21 @@ for the map layout.
 
 #. Click and drag a box on the blank page:
 
-   .. figure:: img/drag_add_map.png
+   .. figure:: img/Layout_addmap.png
       :align: center
 
    The map will appear on the page.
 
 #. Move the map by clicking and dragging it around:
 
-   .. figure:: img/move_map.png
-      :align: center
-
 #. Resize it by clicking and dragging the boxes on the edges:
 
-   .. figure:: img/resize_map.png
-      :align: center
-
-   .. note::  Your map may look a lot different, of course!
+   .. note::  As we go along, your map may look a lot different, of course!
       This depends on how your own project is set up.
       But not to worry! These instructions are general, so they will
       work the same regardless of what the map itself looks like.
 
-#. Be sure to leave margins along the edges, and a space along the
-   top for the title.
+#. Be sure to leave margins along the edges, and a space for the title.
 
 #. Zoom in and out on the page (but not the map!) by using these
    buttons:
@@ -220,7 +224,7 @@ First, let us add a title.
    that both the map and the label are selected.
 #. Look for the |alignLeft| :sup:`Align selected items left` button
    and click on the dropdown arrow next to it to reveal the
-   positioning options and click |alignHCenter|
+   positioning options and click either |alignHCenter| or |alignLeft|.
    :guilabel:`Align center`:
 
    .. figure:: img/align_center_dropdown.png
@@ -232,16 +236,16 @@ First, let us add a title.
    #. Select the label by clicking on it.
    #. Click on the :guilabel:`Item Properties` tab in the side panel
       of the layout window.
-   #. Change the text of the label to "Campus_Ecology":
-
-      .. figure:: img/title_font_alignment.png
-         :align: center
-
+   #. Change the text of the label to something that conveys the theme of our
+      map. I chose "Niagara College Campus Wild Species Monitoring Project Locations":
    #. Use this interface to set the font and alignment options
       under the :guilabel:`Appearance` section:
 
+      .. figure:: img/Layout_titlesettings.png
+         :align: center
+
       #. Choose a large but sensible font (the example will use the
-         default font with a size of ``36``)
+         default font with a size of ``20``)
       #. Set the :guilabel:`Horizontal Alignment` to :guilabel:`Center`.
 
       You can also change the font color, but it's probably best to
@@ -255,12 +259,6 @@ First, let us add a title.
       #. Click the :guilabel:`Frame` checkbox to enable the frame.
          You can also change the frame's color and width.
 
-   In this example, we won't enable the frame, so here is our page so
-   far:
-
-   .. figure:: img/page_so_far.png
-      :align: center
-
    To make sure that you don't accidentally move these elements
    around now that you've aligned them, you can lock items into place:
 
@@ -270,6 +268,7 @@ First, let us add a title.
 
       .. note:: Click the |unlockAll| :sup:`Unlock All Items` button
        in the *Actions* Toolbar to be able to edit the items again.
+       Use this tool as you add new elements to your map.
 
 
 |basic| |FA| Adding a Legend
