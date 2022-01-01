@@ -14,7 +14,69 @@ printer connected.
 Both exporting and printing is handled via the *Print Layout*.
 
 **The goal for this lesson:** To use the QGIS *Print Layout* to create
-a basic map with all the required settings.
+a map with all the required map items, including a map inset.
+
+|basic| |FA| Preparing Data to Create a Inset Map
+----------------------------------------------------------------------
+
+Inset maps are useful to provide spatial orientation for the map user. For
+Lab 1, Part A, we will add an inset to our map. Before we can do that,
+we need to organize our data in the 'Map Canvas'.  To start, we are going
+to create two data groups.
+
+#. Right click on the 'Layers' panel and then navigate to 'Add Group'.
+
+   .. figure:: img/Layout_addgroup.png
+      :align: center
+
+#. Click 'Add Group', and a new item called 'group1' will appear in your 
+   'Layers' panel.
+#. Now you want to add your map layers to your new group. To do this, 
+   click and drag your layers onto of 'group1'.  Your new group should
+   look like this:
+
+   .. figure:: img/Layout_group1.png
+      :align: center
+
+#. Now create a second group, 'group2', which will be used for our map inset.
+
+Next we are going to learn to install a Plugin so that we can add 
+a basemap to our map inset. 
+
+#. Navigate to the top of the QGIS session and click 'Plugins' --> 'Manage
+   and Install Plugins'.
+
+   .. figure:: img/Layout_plugins.png
+      :align: center
+
+#. A dialogue box will appear; enter the information as shown below and click 
+   'Install Plugin'.
+
+   .. figure:: img/Layout_quickmap.png
+      :align: center
+
+Look for the QuickMap Services tool bar amongst your other toolbars near the
+top of your QGIS session.
+
+   .. figure:: img/Layout_quickmapicons.png
+      :align: center
+
+#. Now click on the QuickMap Services icon, and navigate to the 'ESRI Gray (light)'
+   map option as shown below. This will add the basemap to your canvas.
+
+   .. figure:: img/Layout_graylight.png
+      :align: center
+
+#. For now, we do not want the basemap visible, so toggle it off, and drag it onto
+   the 'group2' layer.  Your 'Layers' panel should look like this:
+
+   .. figure:: img/Layout_group12.png
+      :align: center
+
+One last thing, before we start to learn about the 'Layout Manager', we need to add
+the 'NCCampus_Boundary' layer.  This will be in your /Lab_1/ folder.  Order it so it
+is just below the 'wild_species' layer.
+
 
 |basic| |FA| The Layout Manager
 ----------------------------------------------------------------------
@@ -31,20 +93,21 @@ For this reason, it has a tool called the *Layout Manager*.
 
 #. Under :guilabel:`New from Template`, select
    :guilabel:`Empty layout` and press the :guilabel:`Create...` button.
-#. Give the new layout the name of Campus_Ecology and
+#. Give the new layout the name of 'Lab_1' and
    click :guilabel:`OK`.
 #. You will now see the *Print Layout* window:
 
-   .. figure:: img/map_composer_layout.png
+   .. figure:: img/Layout_blank.png
       :align: center
    
 You could also create this new layout via the
 :menuselection:`Project --> New Print Layout...` menu.
 
 Whichever route you take, the new print layout is now accessible from
-the :menuselection:`Project --> Layouts -->` menu, as in the image below.
+the :menuselection:`Project --> Layouts -->` menu, as in the image below 
+(please ignore my other templates).
 
-.. figure:: img/print_composer_menu.png
+.. figure:: img/Layout_layouts.png
    :align: center
 
 
@@ -52,10 +115,11 @@ the :menuselection:`Project --> Layouts -->` menu, as in the image below.
 ----------------------------------------------------------------------
 
 The goal of our map is to show wild species monitoring locations in relation
-to ELC classes.  Previously, we had classified ELC polygon area.  Prior to that,
-we classified ELC_campus by CSCODE_MAS, and had saved the style.  The style can
-be reloaded by going to Style at the bottom of the Symbology window. Use this
-classification for the map layout.
+to ELC classes.  Previously, we had performed an ordinal classification of ELC 
+polygon area.  Prior to that,we performed a categorical classification of 
+ELC_campus by CSCODE1, and had saved the style.  The style can be reloaded 
+by going to Style at the bottom of the Symbology window. Use this classification
+for the map layout.
 
 #. Right-click on the sheet in the central part of the layout window
    and choose :guilabel:`Page properties...` in the context menu.
@@ -212,11 +276,7 @@ First, let us add a title.
 ----------------------------------------------------------------------
 
 The map reader also needs to be able to see what various things on
-the map actually mean.
-In some cases, like the place names, this is quite obvious.
-In other cases, it's more difficult to guess, like the colors of the
-forests.
-Let's add a new legend.
+the map actually mean. Let's add a new legend!
 
 #. Click on the |addLegend| :sup:`Add Legend` button
 #. Click on the page to place the legend, accept the suggested values
@@ -239,29 +299,22 @@ unwanted items.
    :guilabel:`Legend items` group.
 #. Uncheck the |unchecked| :guilabel:`Auto update` box, allowing you
    to directly modify the legend items
-#. Select the entry with :guilabel:`buildings`
+#. Select the entry with 'group2'
 #. Delete it from the legend by clicking the |signMinus| button
 
 You can also rename items.
 
 #. Select a layer from the same list.
 #. Click the |symbologyEdit| :sup:`Edit selected item properties` button.
-#. Rename the layers to ``Places``, ``Roads and Streets``,
-   ``Surface Water``, and ``Rivers``.
+#. Rename the layers and reorder them so they match the image below.
 
-You can also reorder the items:
 
-.. figure:: img/categories_reordered.png
+.. figure:: img/Layout_legenditemorder.png
    :align: center
    :width: 100%
 
 As the legend will likely be widened by the new layer names, you may
 wish to move and resize the legend and or map.
-This is the result:
-
-.. figure:: img/map_composer_result.png
-   :align: center
-   :width: 100%
 
 |basic| |FA| Adding a Scale Bar
 ----------------------------------------------------------------------
@@ -279,10 +332,25 @@ Let's add a new scale bar.
 #. Ensure the scale bar units are appropriate for your map (e.g., meters)
 #. The scale bar can be further customized, so take a moment and look at the
    different item properties and adjust them until you find a format you like.
+   The image below shows the settings I used, but I encourage you to make your
+   own design choices.
 
-   .. figure:: img/legend_added.png
+   .. figure:: img/Layout_scalesettings.png
       :align: center
       :width: 100%
+
+#. To adjust the font, navigate to the 'Display' section, shown below.
+   
+   .. figure:: img/Layout_scaledisplay.png
+      :align: center
+      :width: 100%
+
+#. Click on 'Font' and then adjust the font size.
+
+   .. figure:: img/Layout_scalefont.png
+      :align: center
+      :width: 100%
+
 
 |basic| |FA| Adding a North Arrow
 ----------------------------------------------------------------------
@@ -294,23 +362,87 @@ for the user.
 #. Click on the page and drag a box to place the North Arrow
 #. Like the other map elements, the North Arrow can be customized, so take a
    moment and play with different options until you are pleased with your North
-   Arrow appearance.
+   Arrow appearance. Below are the settings I chose to use:
+
+   .. figure:: img/Layout_Narrow.png
+      :align: center
+      :width: 100%
 
 |basic| |FA| Adding a Text Box
 ----------------------------------------------------------------------
 
 Each map also needs information regarding Map Author, Map Projection and Data
 Source.  For this map, 
-Map Author: *Your Name, Environmental Technician Candidate, Niagara College*
+Map Author: *Your Name*, Environmental Technician Candidate, Niagara College
 Projection: UTM NAD83 Zone 17N
 Data Source: Niagara Peninsula Conservation Authority Open Data Portal, 
-St. Catharines Open data Portal, Niagara College GIS Server and M. McNight (2021) 
+St. Catharines Open data Portal, Ontario GeoHub, M. McNight (2021) 
 
-#. Click on the |Label| :sup:`Add Label` button
+#. Click on the |Label| :sup:`Add Label` button, as you did for your title
 #. Click on the page and drag a box to place the text box
 #. In the Item Properties tab, you can edit the text to include the information
    written above.  Feel free to change text size; typically this information is
-   meant to be discrete, but easily read.
+   meant to be discrete, but easily read. The image below shows the settings I
+   chose:
+
+   .. figure:: img/Layout_mapinfo.png
+      :align: center
+      :width: 100%
+
+The font can be modified by clicking on 'Font' in the 'Appearance' section.
+
+
+|basic| |FA| Adding an Map Inset
+----------------------------------------------------------------------
+
+To add an inset map, navigate back to your 'Map Canvas' window. Toggle off your
+'group1' layer, and toggle on your 'group 2' layer, which will activate your basemap.  
+Now zoom out so you can see most of Ontario.
+
+#. Now add the inset map the same way you added your initial map.
+#. Place it in a corner, and set the settings so they are the same as/similar 
+   to the image below:
+
+   .. figure:: img/Layout_map2setting.png
+      :align: center
+      :width: 100%
+
+Once you are happy with your map inset position and scale, add a rectangle to show
+roughly where Niagara College campus is located in the map inset.
+
+#. Click on the |addBasicShape| :sup:`Add Shape` button
+#. Click on the basemap and drag a box around the approximate area of Niagara College 
+   campus.
+
+.. figure:: img/Layout_mapinset.png
+      :align: center
+      :width: 100%
+
+
+|basic| |FA| Adding a Polyline Feature
+----------------------------------------------------------------------
+
+To create bracket to denote that the single wood duck label is associated with
+multiple points, we can use the Add Node tool. 
+
+#. Click on the |addNode| :sup:`Add Node tool` button
+#. Select 'Add Polyline'.
+#. Now, using the same approach used when digitizing/editing your vector data,
+   create a polyline feature that resembles the image below.
+
+   .. figure:: img/Layout_polylines.png
+      :align: center
+      :width: 100%
+
+The feature is actually in 2 parts. The symbology can be edited by clicking 
+on the dropdown arrow of the 'Main Properties' and then clicking on 
+'Configure Symbol...'. You can design it to look however you like,
+but feel free to use the settings I used, shown below.  
+
+ .. figure:: img/Layout_polylinessettings.png
+      :align: center
+      :width: 100%
+
 
 |basic| |FA| Adding a Neatline
 ----------------------------------------------------------------------
@@ -320,14 +452,16 @@ Optionally, you can add a Neatline, or border, around your map.
 #. Click on the |addBasicShape| :sup:`Add Shape` button
 #. Click on the page and drag a box around all your map elements.
 #. However, you may notice that this box covers all your map elements. To fix
-   this go to the Items browser on the right side of the window.
+   this go to the 'Items Browser' on the right side of the window. Items can 
+   be reorganized by dragging them up or down. Reorder all of your layers so they 
+   look similar to the image below.
 
-   .. figure:: img/map_composer_MapItems.png
+
+   .. figure:: img/Layout_itemorder.png
       :align: center
       :width: 100%
 
-   Items can be reorganized by dragging them up or down. Drag the new rectangle
-   to the bottom of the list.
+   
 
 |basic| |FA| Exporting Your Map
 ----------------------------------------------------------------------
@@ -376,7 +510,7 @@ For our purposes, we're going to use PDF.
    using this file to perform ground truthing.
    The following dialog will show up.
 
-   .. figure:: img/layout_export_pdf.png
+   .. figure:: img/Layout_exportpdf.png
       :align: center
    
 #. You can safely use the default values now and click
