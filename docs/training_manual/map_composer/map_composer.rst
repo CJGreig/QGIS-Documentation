@@ -287,7 +287,7 @@ the map actually mean. Let's add a new legend!
 
    .. figure:: img/legend_added.png
       :align: center
-      :width: 100%
+      
 
 |moderate| |FA| Customizing Legend Items
 ----------------------------------------------------------------------
@@ -311,7 +311,7 @@ You can also rename items.
 
 .. figure:: img/Layout_legenditemorder.png
    :align: center
-   :width: 100%
+   
 
 As the legend will likely be widened by the new layer names, you may
 wish to move and resize the legend and or map.
@@ -337,19 +337,19 @@ Let's add a new scale bar.
 
    .. figure:: img/Layout_scalesettings.png
       :align: center
-      :width: 100%
+      
 
 #. To adjust the font, navigate to the 'Display' section, shown below.
    
    .. figure:: img/Layout_scaledisplay.png
       :align: center
-      :width: 100%
+      
 
 #. Click on 'Font' and then adjust the font size.
 
    .. figure:: img/Layout_scalefont.png
       :align: center
-      :width: 100%
+      
 
 
 |basic| |FA| Adding a North Arrow
@@ -366,7 +366,7 @@ for the user.
 
    .. figure:: img/Layout_Narrow.png
       :align: center
-      :width: 100%
+      
 
 |basic| |FA| Adding a Text Box
 ----------------------------------------------------------------------
@@ -387,7 +387,7 @@ St. Catharines Open data Portal, Ontario GeoHub, M. McNight (2021)
 
    .. figure:: img/Layout_mapinfo.png
       :align: center
-      :width: 100%
+      
 
 The font can be modified by clicking on 'Font' in the 'Appearance' section.
 
@@ -405,7 +405,7 @@ Now zoom out so you can see most of Ontario.
 
    .. figure:: img/Layout_map2setting.png
       :align: center
-      :width: 100%
+      
 
 Once you are happy with your map inset position and scale, add a rectangle to show
 roughly where Niagara College campus is located in the map inset.
@@ -416,7 +416,7 @@ roughly where Niagara College campus is located in the map inset.
 
 .. figure:: img/Layout_mapinset.png
       :align: center
-      :width: 100%
+
 
 
 |basic| |FA| Adding a Polyline Feature
@@ -432,7 +432,7 @@ multiple points, we can use the Add Node tool.
 
    .. figure:: img/Layout_polylines.png
       :align: center
-      :width: 100%
+
 
 The feature is actually in 2 parts. The symbology can be edited by clicking 
 on the dropdown arrow of the 'Main Properties' and then clicking on 
@@ -459,7 +459,6 @@ Optionally, you can add a Neatline, or border, around your map.
 
    .. figure:: img/Layout_itemorder.png
       :align: center
-      :width: 100%
 
    
 
