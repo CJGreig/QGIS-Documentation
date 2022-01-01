@@ -508,7 +508,7 @@ For our purposes, we're going to use PDF.
    using this file to perform ground truthing.
    The following dialog will show up.
 
-   .. figure:: img/Layout_exportpdf.png
+   .. figure:: img/Layout_pdfexport.png
       :align: center
    
 #. You can safely use the default values now and click
