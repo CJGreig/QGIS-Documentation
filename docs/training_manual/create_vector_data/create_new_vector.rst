@@ -4,7 +4,9 @@
 The data that you use has to come from somewhere. For most common applications,
 the data exists already; but the more particular and specialized the project,
 the less likely it is that the data will already be available. 
-**The goal for this lesson:** To create a new vector dataset.
+
+For this part of Lab 1 Part B, you will be digitizing the habitat parcels you mapped
+in your Environmental Ecoloy course!
 
 |basic| |FA| The Layer Creation Dialog
 -------------------------------------------------------------------------------
@@ -13,19 +15,22 @@ Before you can add new vector data, you need a vector dataset to add it to. In
 our case, you'll begin by creating new data entirely, rather than editing an
 existing dataset. Therefore, you'll need to define your own new dataset first.
 
-#. Open QGIS and create a new blank project.
-#. Navigate to and click on the menu entry
-   :menuselection:`Layer --> Create Layer --> New Shapefile Layer`. 
+#. Building on your Lab 1 Part B assignment, navigate to your /Lab_1
+   folder in the Browser panel.
+
+#. Right click on your /Lab_1 folder and go to :menuselection:`New --> Shapefile`.
    You'll be presented with the :guilabel:`New Shapefile Layer` dialog, which will
    allow you to define a new layer.
 
-   .. figure:: img/create_vector_layer.png
+   .. figure:: img/Topo_newshapefile.png
      :align: center
 
 #. Click :guilabel:`...` for the :guilabel:`File name` field.
    A save dialog will appear.
-#. Navigate to the :file:`exercise_data` directory.
-#. Save your new layer as :file:`school_property.shp`.
+#. You should already be in your /Lab_1 folder, but if not, navigate to 
+   the :file:`exercise_data` directory.
+#. Save your new layer as :file:`ELC_ecology.shp`, or a name that you feel is
+   appropriate and has meaning.
 
    It's important to decide which kind of dataset you want at this stage. Each
    different vector layer type is "built differently" in the background, so once
@@ -36,7 +41,7 @@ existing dataset. Therefore, you'll need to define your own new dataset first.
 
 #. For :guilabel:`Geometry Type`, select :guilabel:`Polygon` from the drop down menu:
 
-   .. figure:: img/polygon_selected.png
+   .. figure:: img/Topo_newshapepoly.png
      :align: center
 
    This has no impact on the rest of the dialog, but it will cause the correct
@@ -45,78 +50,43 @@ existing dataset. Therefore, you'll need to define your own new dataset first.
    The next field allows you to specify the Coordinate Reference System,
    or CRS. CRS is a method of associating numerical coordinates with a
    position on the surface of the Earth.
-   See the User Manual on :ref:`Working with Projections <label_projections>`
-   to learn more.
    
-   For this example we will use the default CRS associated with this
-   project, which is WGS84.
-
-   .. figure:: img/default_crs.png
-     :align: center
+   If you recall, we set the project projection in our very first module. Therefore,
+   your CRS should already be set to NAD83 UTM Zone 17N.
 
    Next there is a collection of fields grouped under :guilabel:`New Field`.
    By default, a new layer has only one attribute, the ``id`` field (which you
    should see in the :guilabel:`Fields list`) below. However, in order for the
    data you create to be useful, you actually need to say something about the
    features you'll be creating in this new layer. For our current purposes, it
-   will be enough to add one field called ``name`` that will hold ``Text data``
+   will be enough to add one field called ``ClassCode`` that will hold ``Text data``
    and will be limited to text length of ``80`` characters.
 
-#. Replicate the setup below, then click the :guilabel:`Add to Fields List` button:
+#. Replicate the setup below, then click the :guilabel:`Add to Fields List` button.
+   Check that your dialog now looks like this:
 
-   .. figure:: img/new_attribute.png
-     :align: center
-
-#. Check that your dialog now looks like this:
-
-   .. figure:: img/new_attribute_added.png
+   .. figure:: img/Topo_newshapesettings.png
      :align: center
 
 #. Click :guilabel:`OK`
 
 The new layer should appear in your :guilabel:`Layers` panel.
 
-.. _tm_datasources:
+Now you are ready to digitize your Environmental Ecology habitat polygons.
 
-Now you are ready to digitize these three fields:
+Before starting to digitize, be sure to toggle of the ``ELC_campus`` layer and
+make sure your new shapefile is above the aerial image in the 'Layers' panel, by 
+selecting ``ELC_ecology`` layer and drag it to the top.
 
-   .. figure:: img/field_outlines.png
-     :align: center
+Also, make sure 'Snapping' is on, so if your polygons share nodes and edges, you can
+add topology.
 
-Before starting to digitize, let's move the ``school_property`` layer above the aerial image.
 
-#. Select ``school_property`` layer in the :guilabel:`Layers` pane and drag it to the top.
-
-.. figure:: img/move_school_layer.png
-     :align: center
-
-In order to begin digitizing, you'll need to enter **edit mode**. GIS software
-commonly requires this to prevent you from accidentally editing or deleting
-important data. Edit mode is switched on or off individually for each layer.
-
-To enter edit mode for the ``school_property`` layer:
-
-#. Click on the ``school_property`` layer in the :guilabel:`Layers` panel to select it.
-#. Click on the |toggleEditing| :sup:`Toggle Editing` button.
-
-   If you can't find this button, check that the :guilabel:`Digitizing` toolbar is
-   enabled. There should be a check mark next to the :menuselection:`View -->
-   Toolbars --> Digitizing` menu entry.
-
-   As soon as you are in edit mode, you'll see that some digitizing tools have become
-   active:
-
-     - |capturePolygon| :sup:`Capture Polygon`
-     - |vertexToolActiveLayer| :sup:`Vertex Tool`
-
-   Other relevant buttons are still inactive, but will become active when
-   we start interacting with our new data.
-
-   Notice that the layer ``school_property`` in the :guilabel:`Layers` panel now
-   has the pencil icon, indicating that it is in edit mode.
+In order to begin digitizing, you'll need to enter 'Edit' mode for the ``ELC_ecology`` 
+layer, as you did while editing your other layers from the previous lesson. 
 
 #. Click on the |capturePolygon| :sup:`Capture Polygon` button to begin digitizing
-   our school fields.
+   your habitat polygons.
 
    You'll notice that your mouse cursor has become a crosshair. This allows you to
    more accurately place the points you'll be digitizing. Remember that even when
@@ -124,42 +94,36 @@ To enter edit mode for the ``school_property`` layer:
    rolling the mouse wheel, and you can pan around by holding down the mouse wheel
    and dragging around in the map.
 
-   The first feature you'll be digitizing is the |schoolAreaType1|:
+   Typically you want to digitize at a fixed scale that balances accuracy but also
+   allows you to digitize fairly quickly, without getting too caught up in fine details.
+   For this assignment, let's set our scale to 1:1500, as shown below, and lock it, by
+   clicking the lock.
 
-   .. figure:: img/school_area_one.png
+   .. figure:: img/Topo_lockscale.png  
      :align: center
 
-#. Start digitizing by clicking on a point somewhere along the edge of the field.
+   You can still zoom in and out, but we want to maintain a relatively constant scale to
+   ensure our digitizing is consistent.
+
+#. Start digitizing by clicking on a point somewhere along the edge of your habitat polygon.
 #. Place more points by clicking further along the edge, until the shape you're
-   drawing completely covers the field.
-  
-   .. figure:: img/school_field_outline.png
-     :align: center
-
+   drawing completely encapsulates your habitat area.
 #. After placing your last point, right click to finish drawing the polygon.
    This will finalize the feature and show you the :guilabel:`Attributes` dialog.
-#. Fill in the values as below:
-
-   .. figure:: img/school_area_one_attributes.png
-     :align: center
+#. For 'id' enter '001' and for ClassCode enter the ELC class you think it is. I entered
+   FOD for my example polygon.
 
 #. Click :guilabel:`OK`, and you have created a new feature!
 
-   .. figure:: img/new_feature.png
+   .. figure:: img/Topo_polyexample.png
      :align: center
 
-#. In the :guilabel:`Layers` panel select the ``school_property`` layer.
+#. In the :guilabel:`Layers` panel select the ``ELC_ecology`` layer.
 #. Right click and choose :guilabel:`Open Attribute Table` in the context menu.
-
-   .. figure:: img/open_attribute_table.png
-     :align: center
 
    In the table you will see the feature you just added.
    While in edit mode you can update the attributes data by double click on the cell
    you want to update.
-
-   .. figure:: img/feature_table.png
-     :align: center
 
 #. Close the attribute table.
 #. To save the new feature we just created, click on |saveEdits| :sup:`Save Edits` button.
@@ -173,63 +137,12 @@ digitizing until you're done creating the feature as above. Then:
 #. Move the mouse to the correct location of the vertex, and left click.
    This will move the vertex to the new location.
 
-   .. figure:: img/select_vertex.png
-     :align: center
-   .. figure:: img/moved_vertex.png
-     :align: center
-
-   The same procedure can be used to move a line segment, but you will need to
-   hover over the midpoint of the line segment.
-
    If you want to undo a change, you can press the |undo| :sup:`Undo` button or :kbd:`Ctrl+Z`.
 
 #. Remember to save your changes by clicking the |saveEdits| :sup:`Save Edits` button.
+#. Now continue to digitize the rest of your habitat polygons.
 #. When done editing, click the |toggleEditing| :sup:`Toggle Editing` button
    to get out of edit mode.
-
-|basic| |TY| Digitizing Lines
--------------------------------------------------------------------------------
-We are going to digitize two routes which are not already marked on the roads layer;
-one is a path, the other is a track.
-Our path runs along the southern edge of the suburb of Railton, starting and
-ending at marked roads:
-
-.. figure:: img/path_start_end.png
-     :align: center
-
-Our track is a little further to the south:
-
-.. figure:: img/track_start_end.png
-     :align: center
-
-#. If the *roads* layer is not yet in your map, then add the :file:`roads`
-   layer from the GeoPackage file :file:`training-data.gpkg` included in the
-   :file:`exercise_data` folder of the training data you downloaded.
-   You can read :ref:`load_geopackage` for a how-to.
-#. Create a new ESRI Shapefile line dataset called ``routes.shp`` in the 
-   :file:`exercise_data` directory, with attributes ``id`` and ``type``
-   (use the approach above to guide you.)
-#. Activate edit mode on the :guilabel:`routes` layer.
-#. Since you are working with a line feature, click on the
-   |captureLine| :sup:`Add Line` button to initiate line
-   digitizing mode.
-#. One at a time, digitize the path and the track on the ``routes`` layer.
-   Try to follow the routes as accurately as possible, adding additional points along
-   corners or turns.
-#. Set the ``type`` attribute value to ``path`` or ``track``.
-#. Use the :guilabel:`Layer Properties` dialog to add styling to your routes.
-   Feel free to use different styles for paths and tracks.
-#. Save your edits and toggle off editing mode by pressing the
-   |toggleEditing| :sup:`Toggle Editing` button.
-
-.. admonition:: Answer
-   :class: dropdown
-
-   The symbology doesn't matter, but the results should look more or less like
-   this:
-
-   .. figure:: img/routes_layer_result.png
-      :align: center
 
 
 |IC|
@@ -243,6 +156,13 @@ usual, and then the feature is created.
 
 Knowing how to digitize is important because it's a very common activity in GIS
 programs.
+
+You are now almost done Lab 1 Part B. Please create a map showing your habitat polygons
+in relation to the wild species management projects. Feel free to use the same 'Map Layout'
+from Lab 1 Part A, or go ahead and change the layout completely - so long as you have all the
+required map elements.
+
+Well done!
 
 |WN|
 -------------------------------------------------------------------------------
