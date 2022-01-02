@@ -194,7 +194,7 @@ for the map layout.
    :menuselection:`Save Project`.
    This is a convenient shortcut to the one in the main dialog.
 
-|basic| |FA| Adding a Title
+|basic| |FA| Adding a Title 
 ----------------------------------------------------------------------
 
 Now your map is looking good on the page, but your readers/users are
