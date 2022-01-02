@@ -1,12 +1,17 @@
 |LS| Feature Topology
 ======================================================================
 
-Topology is defined as the spatial relationships between neighbouring features.
-Topology is a useful aspect of vector data layers, because it minimizes errors
-such as overlap or gaps.
+Topology in simple terms refers to the shared vertices/nodes and edges adjacent 
+polygon features,and connectivity between line features. Topology is a useful 
+aspect of vector data layers, because it minimizes errors such as overlap or 
+gaps. If you look at our polygon datasets, only 'ELC_campus' has feature topology. 
+The other polygon datasets represent stand alone features that do not share any 
+nodes or edges. The line features, 'rivers' and 'roads' also have feature topology, 
+as various features are connected creating a network.
 
-For example: if two features share a border, and you edit the border using
-topology, then you won't need to edit first one feature, then another, and
+Topological editing is useful when two features share a border, because when you edit
+the border of one feature, the border of the other feature will automatically update.
+That way you won't need to edit first one feature, then another, and
 carefully line up the borders so that they match. Instead, you can edit their
 shared border and both features will change at the same time.
 
@@ -97,49 +102,12 @@ You should see the following map:
 .. figure:: img/raster_step_one.png
    :align: center
 
-|moderate| |FA| Snapping
-----------------------------------------------------------------------
-
-Snapping makes topological editing easier.
-This will allow your mouse cursor to snap to other objects while you
-digitize. It is good practice to set snapping options at the beginning
-of each editing session
-
-To set snapping options:
-
-#. Navigate to the menu entry
-   :menuselection:`Project --> Snapping Options...`.
-#. Set up your :guilabel:`Snapping options` dialog to activate the
-   all layers with :guilabel:`Type` *vertex* and tolerance
-   ``12`` pixels:
-
-   .. figure:: img/set_snapping_options.png
-      :align: center
-
-#. Make sure that the box in the :guilabel:`Avoid overlap` column is
-   checked.
-#. Leave the dialog.
-
-If you experiment with the tool, you may notice that the snapping
-options can prevent you from creating a ring inside a polygon.
-So you are advised to turn off snapping before cutting a hole.
-
-#. Disable snapping for the ``landuse`` layer using the |snapping|
-   :sup:`Enable Snapping` button (or use the shortcut :kbd:`s`).
-#. Use the |addRing| :sup:`Add Ring` tool to create a hole in the
-   middle of a polygon geometry.
-#. Draw a polygon over the target feature, as if you were using the
-   |capturePolygon| :sup:`Add polygon` tool.
-#. When you right-click, the hole will be visible.
-#. Remove the hole you just created using the |deleteRing|
-   :sup:`Delete Ring` tool.
-   Click inside the hole to delete it.
 
 |basic| |FA| Deleting Polygons and Editing Existing Shapefiles
 ----------------------------------------------------------------------
 
 You probably noticed that there are a few extra buildings that are
-no longer on the new base map.  We want to remove these buildings
+no longer on the basemap.  We want to remove these buildings
 from the ``buildings`` layer. However, we do not want to edit the
 existing ``buildings`` shapefile. To avoid this, we will make a copy:
 
@@ -178,12 +146,15 @@ Now that you are in edit mode, you are ready to delete a feature.
 #. Click on |mActionSelectRectangle| :sup:`Select Features by Area or Single Click` button.
 #. Navigate to the feature you would like to remove, and click it.
 #. Once clicked, you can push delete on your keyboard. If you make an error, you can use
-   keyboard short-cut CTRL Z to undo.
+   keyboard short-cut CTRL Z to undo. 
 
-You will also notice there is a new building next to the campus barn in the new base map.
-
- .. figure:: img/school_area_one.png
+ .. figure:: img/Topo_buildingsdelete.png
      :align: center
+
+#. Now delete all the buildings that are no longer visible on the basemap.
+
+You may have also noticed that there are a few new buildings on the basemap.  We want to
+map these new features. To do this, we will perform digitizing.  
 
 #. To digitize a feature click on the |capturePolygon| :sup:`Capture Polygon` 
    button to begin digitizing the new buildings.
@@ -198,32 +169,32 @@ You will also notice there is a new building next to the campus barn in the new 
 #. Place more points by clicking further along the edge, until the shape you're
    drawing completely covers the building.
   
-   .. figure:: img/school_field_outline.png
+   .. figure:: img/Topo_digitize.png
      :align: center
 
 #. After placing your last point, right click to finish drawing the polygon.
    This will finalize the feature and show you the :guilabel:`Attributes` dialog.
-#. Fill in the values as below:
+#. Leave the attribute field blank for now. Click :guilabel:`OK`.
 
-   .. figure:: img/school_area_one_attributes.png
+   .. figure:: img/Topo_newattribute.png
      :align: center
 
-#. Click :guilabel:`OK`, and you have created a new feature!
+#. You have created a new feature!
 
-   .. figure:: img/new_feature.png
+   .. figure:: img/Topo_newfeature.png
      :align: center
+
+#. Navigate to the attribute table and 
 
 #. In the :guilabel:`Layers` panel select the ``buildings_new`` layer.
 #. Right click and choose :guilabel:`Open Attribute Table` in the context menu.
 
-   .. figure:: img/open_attribute_table.png
-     :align: center
+   In the table you will see the feature you just added. While in edit mode you 
+   can update the attributes data by double click on the cell you want to update. 
+   Take a look at the different 'UniqueID' values. We will discuss this in class, 
+   but for now, enter '001' and leave the other fields empty.
 
-   In the table you will see the feature you just added.
-   While in edit mode you can update the attributes data by double click on the cell
-   you want to update.
-
-   .. figure:: img/feature_table.png
+   .. figure:: img/Topo_attributetable.png
      :align: center
 
 #. Close the attribute table.
@@ -236,15 +207,15 @@ digitizing until you're done creating the feature as above. Then:
 #. Click on |vertexToolActiveLayer| :sup:`Vertex Tool` button.
 #. Hover the mouse over a vertex you want to move and left click on the vertex.
 #. Move the mouse to the correct location of the vertex, and left click.
-   This will move the vertex to the new location.
+   This will move the vertex to the new location. The same procedure can be 
+   used to move a line segment, but you will need to hover over the midpoint 
+   of the line segment. The image below shows how I updated the polygon, and 
+   also shows how each vertex is highlighted, with the red 'X' at the midpoint.  
+   If you click the red 'X', a new vertex can be added and dragged to add a new 
+   vertex to your polygon.
 
-   .. figure:: img/select_vertex.png
+   .. figure:: img/Topo_buildingupdate.png
      :align: center
-   .. figure:: img/moved_vertex.png
-     :align: center
-
-   The same procedure can be used to move a line segment, but you will need to
-   hover over the midpoint of the line segment.
 
    If you want to undo a change, you can press the |undo| :sup:`Undo` button or :kbd:`Ctrl+Z`.
 
@@ -252,24 +223,58 @@ digitizing until you're done creating the feature as above. Then:
 #. When done editing, click the |toggleEditing| :sup:`Toggle Editing` button
    to get out of edit mode.
 
-|moderate| |FA| Correct Topological Features
+
+|moderate| |TY| Tool: Add Ring
 ----------------------------------------------------------------------
 
 Topology features can sometimes need to be updated.
-In our study area, you may notice that with the updated base map, the buildings, 
-roads and impervious surfaces no longer align with the base map. We will start
-by editing `impervious_surfaces`.
+In our study area, you may notice that with the new basemap, the buildings, 
+roads, lakes and impervious surfaces no longer align with the base map. We will start
+by editing `impervious_surfaces`. Remember, we will first make a copy as we did
+for `buildings_new`. We will call it `impervious_surfaces_new`.
 
-.. figure:: img/zoom_to.png
+The |addRing| :sup:`Add Ring` tool allows you to add an interior ring
+to a polygon feature (cut a hole in the polygon), as long as the hole
+is completely contained within the polygon (touching the boundary is
+OK).
+For the parking lot along Taylor Rd., you may notice the polygon covers
+an area that has trees.  Use the tool to cut out these areas.
+
+#. First, make sure you are in edit mode for ``impervious_surfaces`` 
+#. Then click the |addRing| :sup:`Add Ring` tool to start
+
+   You may find digitizing an accurate ring easier if you adjust the
+   symbology, so there is 'No Brush', and just a border.
+
+   .. figure:: img/Topo_nobrush.png
+      :align: center
+
+#. Then simply digitize along the boundary of the feature you are wanting
+   to cut out
+#. Once done, right click to complete the polygon. Once you you change the 
+   symbology back to 'Solid' fill, you will have something that looks like this:
+
+   .. figure:: img/Topo_ring.png
+      :align: center
+
+   Include these edits in your map for Lab 1 Part B.
+
+|moderate| |FA| Correct Topological Features
+----------------------------------------------------------------------
+
+.. figure:: img/Topo_eastpark.png
    :align: center
 
-We are going to use the *Vertex Tool* to edit the existing polygons.
+We are going to use the *Vertex Tool* to edit the 'East Parking Lot' from the
+``impervious_surfaces`` layer, so that it aligns with the basemap. We used 
+this same tool when we were editing our 'building' polygon that we digitized.
 
-#. Select the |vertexToolActiveLayer| :sup:`Vertex Tool` tool.
-#. Choose the north parking lot of ``impervious_surfaces``, select a vertex, and move it to the
-   edge of the parking lot shown on the base map:
+#. Select the |vertexToolActiveLayer| :sup:`Vertex Tool`.
+#. Hover over the 'East Parking Lot' (which will show all the vertices highlighted
+   in red) select a vertex, and move it to the edge of the parking lot shown on 
+   the basemap:
 
-   .. figure:: img/corner_selected_move.png
+   .. figure:: img/Topo_parkinglotedit.png
       :align: center
 
 #. Click on the other vertices and continue to drag them to the edge of the
@@ -277,59 +282,95 @@ We are going to use the *Vertex Tool* to edit the existing polygons.
 
    The correct border looks like this:
 
-   .. figure:: img/areas_joined.png
+   .. figure:: img/Topo_newboundary.png
       :align: center
 
+Undo these changes, as we will next use another topological editing tool to achieve
+the same goal.
 
-|moderate| |FA| Tool: Simplify Feature
+
+|moderate| |FA| Snapping
 ----------------------------------------------------------------------
 
-Continuing on the same layer, we will test the |simplifyFeatures|
-:sup:`Simplify Feature` tool:
+For this next task, we will activate 'Snapping'. Snapping makes topological 
+editing easier. This will allow your mouse cursor to snap to other objects 
+while you digitize. 
 
-#. Click on it to activate it.
-#. Click on one of the areas which you joined using either the
-   *Vertex Tool* or *Add Feature* tool.
-   You will see this dialog:
+To set snapping options:
 
-   .. figure:: img/simplify_line_dialog.png
+#. Navigate to the menu entry
+   :menuselection:`Project --> Snapping Options...`.
+#. Set up your :guilabel:`Snapping options` dialog to match the settings
+   shown below.
+
+   .. figure:: img/Topo_snapping.png
       :align: center
 
-#. Modify the :guilabel:`Tolerance` and watch what happens:
+#. Exit the dialog.
 
-   .. figure:: img/simplify_line_example.png
+If you experiment with the tool, you may notice that the snapping
+options can prevent you from creating a ring inside a polygon, or 
+sometimes may snap to an unwanted vertex. If these issues are occurring, 
+turn off snapping or adjust the tolerance.
+
+Now, let's take a moment to explore the topology ``ELC_campus`` layer.
+
+#. Enter editing mode for ``ELC_campus``.
+#. Zoom in on an area with multiple polygons, and hover your mouse over various
+   adjacent polygons. 
+
+   .. figure:: img/Topo_sharedvertices.png
       :align: center
 
-   This allows you to reduce the number of vertices.
+   What do you notice about the vertices? They are all perfectly aligned! This is
+   topology!
 
-#. Click :guilabel:`OK`
+#. Now select the |vertexToolActiveLayer| :sup:`Vertex Tool`, and begin to edit the
+   the border of one of the polygons. As you move the vertices, you should notice that
+   the edge of the adjacent polygon is automatically moving as well.
 
-The advantage of this tool is that it provides you with a simple and
-intuitive interface for generalization.
-But notice that the tool ruins topology.
-The simplified polygon no longer shares boundaries with its adjacent
-polygons, as it should.
-So this tool is better suited for stand-alone features.
+   .. figure:: img/Topo_autochange.png
+      :align: center
 
-Before you go on, set the polygon back to its original state by
-undoing the last change.
+#. Now undo these changes, and exit 'Edit' mode.
 
 
-|moderate| |TY| Tool: Add Ring
+|moderate| |FA| Tool: Reshape Features
 ----------------------------------------------------------------------
 
-The |addRing| :sup:`Add Ring` tool allows you to add an interior ring
-to a polygon feature (cut a hole in the polygon), as long as the hole
-is completely contained within the polygon (touching the boundary is
-OK).
-For the parking lot along Taylor Rd., you may notice the polygon covers
-areas that has trees.  Use the tool to cut out these areas.
+The |reshape| :sup:`Reshape Features` tool is used to extend a polygon
+feature or cut away a part of it (along the boundary). We will use it
+to extend the East Parking Lot. So undo your previous edits, and we will
+start again with reshaping the East Parking Lot.
 
-.. admonition:: Answer
-   :class: dropdown
+Extending:
 
-   .. figure:: img/ring_tool_result.png
+#. Select the polygon using the |selectRectangle|
+   :sup:`Select Features by area or single click` tool.
+#. Left-click inside the polygon to start drawing.
+#. Draw a shape outside the polygon. The last vertex should be back
+   inside the polygon.
+#. Right-click to finish the shape:
+
+   .. figure:: img/Topo_reshapeadd.png
       :align: center
+
+
+Cut away a part:
+
+#. Select the polygon using the |selectRectangle|
+   :sup:`Select Features by area or single click` tool.
+#. Click outside the polygon.
+#. Draw a shape inside the polygon. The last vertex must be back
+   outside the polygon.
+#. Right-click outside the polygon.
+
+Note:
+
+You may need to touch up the border by using the 
+|vertexToolActiveLayer| :sup:`Vertex Tool`.
+
+Include these edits in your map for Lab 1 Part B.
 
 
 |moderate| |TY| Tool: Add Part
@@ -341,171 +382,54 @@ For example, if you have digitized the boundaries of mainland South
 Africa, but you haven't yet added the Prince Edward Islands, you
 would use this tool to create them.
 
-#. Select the polygon to which you wish to add the part by using the
+#. Select the 'East Parking Lot' polygon by using the
    |selectRectangle| :sup:`Select Features by area or single click`
    tool.
-#. Use the :guilabel:`Add Part` tool to add an outlying area.
-#. Delete the part you just created using the |deletePart|
-   :sup:`Delete Part` tool.
 
-   .. Note:: Click inside the part to delete it.
-
-.. admonition:: Answer
-   :class: dropdown
-
-   #. First select the |largeLandUseArea|:
-
-      .. figure:: img/park_selected.png
+   .. figure:: img/Topo_addPart.png
          :align: center
 
-   #. Now add your new part:
+#. Use the :guilabel:`Add Part` tool to add a small section of parking lot.
 
-      .. figure:: img/new_park_area_answer.png
+   .. figure:: img/Topo_partadded.png
          :align: center
 
-   #. Undo your edit before continuing with the exercise for the next tool.
+Include these edits in your map for Lab 1 Part B.
 
-
-|moderate| |FA| Tool: Reshape Features
-----------------------------------------------------------------------
-
-The |reshape| :sup:`Reshape Features` tool is used to extend a polygon
-feature or cut away a part of it (along the boundary).
-
-Extending:
-
-#. Select the polygon using the |selectRectangle|
-   :sup:`Select Features by area or single click` tool.
-#. Left-click inside the polygon to start drawing.
-#. Draw a shape outside the polygon. The last vertex should be back
-   inside the polygon.
-#. Right-click to finish the shape:
-
-   .. figure:: img/reshape_step_one.png
-      :align: center
-
-   This will give a result similar to:
-
-   .. figure:: img/reshape_result.png
-      :align: center
-
-Cut away a part:
-
-#. Select the polygon using the |selectRectangle|
-   :sup:`Select Features by area or single click` tool.
-#. Click outside the polygon.
-#. Draw a shape inside the polygon. The last vertex must be back
-   outside the polygon.
-#. Right-click outside the polygon:
-
-   .. figure:: img/reshape_inverse_example.png
-     :align: center
-
-   The result of the above:
-
-   .. figure:: img/reshape_inverse_result.png
-      :align: center
-
-
-|moderate| |TY| Tool: Split Features
-----------------------------------------------------------------------
-
-The |splitFeatures| :sup:`Split Features` tool is similar to the
-|reshape| :sup:`Reshape Features` tool, except that it does not delete
-either of the two parts.
-Instead, it keeps them both.
-
-We will use the tool to split a corner from a polygon.
-
-#. First, select the ``landuse`` layer and re-enable snapping for it.
-
-#. Select the |splitFeatures| :sup:`Split Features` tool and click on
-   a vertex to begin drawing a line.
-
-#. Draw the bounding line.
-
-#. Click a vertex on the "opposite" side of the polygon you wish to
-   split and right-click to complete the line:
-
-   .. figure:: img/split_feature_example.png
-      :align: center
-
-#. At this point, it may seem as if nothing has happened.
-   But remember that the ``landuse`` layer is rendered without
-   border lines, so the new division line will not be shown.
-#. Use the |selectRectangle|
-   :sup:`Select Features by area or single click` tool to select the
-   part you just split out; the new feature will now be highlighted:
-
-   .. figure:: img/new_corner_selected.png
-      :align: center
-
-
-.. _backlink-create-vector-topology-4:
 
 |hard| |TY| Tool: Merge Features
 ----------------------------------------------------------------------
 
-Now we will re-join the feature you just split out to the remaining
-part of the polygon:
+Now we will join multiple features from the ``Rivers`` layer. 
 
-#. Experiment with  the |mergeFeatures|:sup:`Merge Selected Features`
-   and |mergeFeatAttributes|
-   :sup:`Merge Attributes of Selected Features` tools.
-#. Note the differences.
+#. Ensure you have created a new ``Rivers`` layer (i.e., Rivers_new) and
+   the new layer is in 'Edit' mode, then navigate to the area of the
+   map shown below.
 
-
-.. admonition:: Answer
-   :class: dropdown
-
-   * Use the :guilabel:`Merge Selected Features` tool, making sure to first select
-     both of the polygons you wish to merge.
-   * Use the feature with the :guilabel:`OGC_FID` of ``1`` as the source of your
-     attributes (click on its entry in the dialog, then click the :guilabel:`Take
-     attributes from selected feature` button):
-
-   If you're using a different dataset, it is highly likely that your original
-   polygon's :guilabel:`OGC_FID` will not be ``1``. Just choose the feature
-   which has an :guilabel:`OGC_FID`.
-
-   .. figure:: img/merge_feature_dialog.png
+   .. figure:: img/Topo_river.png
       :align: center
 
-   Using the :guilabel:`Merge Attributes of Selected Features` tool will keep the
-   geometries distinct, but give them the same attributes.
+#. First select all the line segments you wish to merge using the 
+   |selectRectangle| :sup:`Select Features by area or single click`
+   tool while holding down Ctrl on your keyboard. There should be 7 segments.
 
-#. Select the :guilabel:`landuse` layer and enter edit mode
-   (|toggleEditing|)
-#. Check (under :menuselection:`View --> Toolbars`) that the
-   :guilabel:`Advanced Digitizing` toolbar is enabled.
-#. Zoom to this area (enable layers and labels if necessary):
-
-   .. figure:: img/zoom_to.png
+   .. figure:: img/Topo_riverselect.png
       :align: center
 
-#. Digitize this new (fictional) area:
+#. Then click the :guilabel:`Merge Selected Features` tool.  A dialog box will appear.
 
-   .. figure:: img/new_park_area.png
+#. Select 'Take all attributes from the Line feature with the longest length' option
+
+   .. figure:: img/Topo_mergedialog.png
       :align: center
 
-#. When prompted, give it an *OGC_FID* of :kbd:`999`, but feel free to
-   leave the other values unchanged.
-
-   If you are careful while digitizing, and allow the cursor to snap to
-   the vertices of adjoining areas, you'll notice that there won't be
-   any gaps between your new area and the existing adjacent areas.
-
-#. Note the |undo| :sup:`undo`
-   and |redo| :sup:`redo` tools in the
-   :guilabel:`Advanced Digitizing` toolbar.
-
-Now that you have completed editing the ``impervious_surfaces`` layer, be sure to
+Now that you have completed editing the ``rivers_new`` layer, be sure to
 save all changes by clicking on the |toggleEditing| :sup:`Toggle Editing` button. 
 
 |moderate| |TY| Tool: Reshape a Line Feature
 ----------------------------------------------------------------------
 
-Now, reshape the road so that it aligns with the new base map. Be sure
+Now, reshape the roads so that it aligns with the new base map. Be sure
 to save all your edits!
 
 
@@ -515,6 +439,9 @@ to save all your edits!
 Topology editing is a powerful tool that allows you to create and modify
 objects quickly and easily, while ensuring that they remain topologically
 correct.
+
+Be sure to update your new buildings, lakes and impervious surfaces so that
+they match the basemap! Do NOT update the ELC_campus layer (too much work)!
 
 
 |WN|

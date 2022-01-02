@@ -283,9 +283,6 @@ the map actually mean. Let's add a new legend!
 #. A legend is added to the layout page, showing layers symbology
    as set in the main dialog.
 #. As usual, you can click and move the item to where you want it:
-
-   .. figure:: img/legend_added.png
-      :align: center
       
 
 |moderate| |FA| Customizing Legend Items
