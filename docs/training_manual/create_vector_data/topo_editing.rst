@@ -319,7 +319,7 @@ Now, let's take a moment to explore the topology ``ELC_campus`` layer.
 #. Zoom in on an area with multiple polygons, and hover your mouse over various
    adjacent polygons. 
 
-   .. figure:: img/Topo_sharedvertices.png
+   .. figure:: img/Topo_sharevertices.png
       :align: center
 
    What do you notice about the vertices? They are all perfectly aligned! This is
@@ -347,8 +347,9 @@ Extending:
 
 #. Select the polygon using the |selectRectangle|
    :sup:`Select Features by area or single click` tool.
-#. Left-click inside the polygon to start drawing.
-#. Draw a shape outside the polygon. The last vertex should be back
+#. Hover over the southern most vertex, so that you can see the purple snapping
+   box appear, and then left-click on the vertex to start drawing.
+#. Draw a shape to extend the parking lot outside the polygon. The last vertex should be back
    inside the polygon.
 #. Right-click to finish the shape:
 
@@ -447,10 +448,8 @@ they match the basemap! Do NOT update the ELC_campus layer (too much work)!
 |WN|
 ----------------------------------------------------------------------
 
-Now you know how to digitize the shape of the objects easily, but
-adding attributes is still a bit of a headache!
-Next we will show you how to use forms, making attribute editing
-simpler and more effective.
+Now you know how to digitize the shape of the objects easily! Now we will create
+a new shapefile!
 
 
 .. Substitutions definitions - AVOID EDITING PAST THIS LINE
