@@ -1,14 +1,71 @@
-|LS| An Overview of the Interface
+|LS| Welcome to GIS Applications: Lab 1 Part A
 ===============================================================================
 
-We will explore the QGIS user interface so that you are familiar with the
-menus, toolbars, map canvas and layers list that form the basic structure of
-the interface.
+You are now officially starting Lab 1! This lab will be broken down into several
+sections and tackled over the first few weeks of the course.  Before 
+starting, make sure you have QGIS version 3.22 installed and you have created a separate 
+folder for Lab 1, as discussed in our first lecture. You should have the Lab_1 folder
+downloaded from BlackBoard, as it contains all the data for this lab. For all of Lab 1, 
+you will be working with several vector datasets associated with Niagara College Campus,
+including:
+
+#. wild species monitoring project locations
+#. rivers
+#. roads
+#. lakes
+#. buildings
+#. parking lots
+#. ELC polygons  
+
+Lab 1 will be broken into three parts:
+
+   Part A:  
+   
+#. Learn to load vector data, navigate QGIS and adjust layer symbology
+#. Explore vector attribute tables, add labels and classify vector data
+#. Create a map in Layout Manager with all necessary map elements and save as
+   a Georeferenced PDF.
+
+Deliverable 1: Create a thematic map of Niagara College Campus wild species monitoring 
+project locations in relation to ELC classes.
+
+   Part B:
+
+#. Learn to edit vector data using topology
+#. Learn to digitize features by interpreting aerial imagery
+#. Produce a map based on your ENVR1108 Environmental Ecology term project.
+
+Delieverable 2: Create a thematic map of habitat availability for an animal 
+group found on campus.
+
+   Part C:
+
+#. Use the QGIS plugin QField or Avenza to perform ground truthing of your map 
+   from Part B
+#. Use a GPS unit to collect point locations
+#. Record coordinates by hand and enter in a CSV document
+#. Upload data from QField, GPS unit and CSV into QGIS
+#. Create a GeoPackage 
+
+
+The goal of Lab 1 Part A is to (1) introduce you to QGIS and (2) help you develop 
+fundamental skills regarding thematic map creation and design. Part A will 
+be broken down into 3 modules,and each consecutive week you will be given time 
+to work on the module in class. This week, you will be working on Module 2 
+(Module 1 was downloading the course software in Lecture 1). We will explore 
+the QGIS user interface so that you are familiar with the menus, toolbars, 
+map canvas and layers list that form the basic structure of the interface. 
+When you are done this module, you will know how to:
+
+#. Import vector data as a shapefile and from a GeoPackage
+#. Navigate QGIS map canvas and use basic tools
+#. Modify and select appropriate symbology for point, line and polygon spatial 
+   entities
 
 **The goal for this lesson:** To understand the basics of the QGIS user
 interface.
 
-|basic| |TY|: The Basics
+|basic| |TY|: An Overview of the Interface
 -------------------------------------------------------------------------------
 
 .. _figure_gui_numbered:
@@ -67,6 +124,8 @@ and once you have found the folder, right click on it and click on ``Add as a
 Favorite``. You should then be able to see your folder in the |favourites|
 :guilabel:`Favorites` item.
 
+Now try to find your /Lab_1 folder!
+
 .. tip:: It can happen that the folders added to Favorite item have a really
   long name: don't worry right-click on the path and choose ``Rename Favorite...``
   to set another name.
@@ -85,6 +144,8 @@ accessible via the menus. For example, if you remove the :guilabel:`File`
 toolbar (which contains the :guilabel:`Save` button), you can still save your
 map by clicking on the :guilabel:`Project` menu and then clicking on
 :guilabel:`Save`.
+
+Now try turning on your 'Labels' toolbar!
 
 |basic| The Map Canvas
 ...............................................................................
@@ -143,7 +204,7 @@ Try to find each of these tools on your screen. What is their purpose?
 4. |checkbox|:guilabel:`Render`
 5. |measure|
 
-.. note:: If any of these tools is not visible on the screen, try enabling
+.. note:: If any of these tools are not visible on the screen, try enabling
    some toolbars that are currently hidden. Also keep in mind that if there
    isn't enough space on the screen, a toolbar may be shortened by hiding some
    of its tools. You can see the hidden tools by clicking on the double right

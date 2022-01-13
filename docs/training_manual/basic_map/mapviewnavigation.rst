@@ -10,8 +10,8 @@ and learn about map scale.
 |basic| |FA| Basic Navigation Tools
 -------------------------------------------------------------------------------
 
-Before learning how to navigate within the Map Canvas, let's re-open our Lab 1 QGIS
-session from the last lesson.
+Before learning how to navigate within the Map Canvas, let's re-open/continue working
+our Lab_1.qgz session from the last lesson.
 
 Let's first learn how to use the Pan Tool.
 
@@ -22,8 +22,7 @@ Let's first learn how to use the Pan Tool.
 Next, let's zoom in and take a closer look at the layers we imported.
 
 #. In the `Map Navigation Toolbar`, click on the |zoomIn| :sup:`Zoom In` button.
-#. Move your mouse to approximately the top left area of where there is the highest 
-   density of buildings and roads.
+#. Move your mouse close to the lagoons.
 #. Left click and hold. 
 #. Then drag the mouse, which will create a rectangle, and cover the lagoons (:numref:`figure_zoom_in_mapview`).
 
@@ -74,13 +73,13 @@ You can also use this field to set the Map Scale manually.
      :align: center
 
 #. Select :guilabel:`1:50000`.  This will also update the map scale in the Map Canvas.
-#. Alternatively, type in ``5000`` and press :kbd:`Enter`.  This will redraw the features in the 
-   Map Canvas to reflect the scale you typed in.
+#. Alternatively, type in ``5000`` and press :kbd:`Enter`.  This will redraw the 
+   features in the Map Canvas to reflect the scale you typed in.
 
 
-Now you know the basics of navigating the Map Canvas. Check out the User Manual on 
-:ref:`Zooming and Panning<zoom_pan>` to learn about alternative ways of navigating 
-the Map Canvas.
+Now you know the basics of navigating the Map Canvas. If you want more instructions,
+check out the User Manual on :ref:`Zooming and Panning<zoom_pan>` to learn about 
+ways of navigating the Map Canvas.
 
 |IC|
 -------------------------------------------------------------------------------

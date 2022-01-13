@@ -53,7 +53,7 @@ Repeat this process for all 9 of your points.  Instruction on how to import thes
 follow in the next sections.
 
 
-|basic| |TY| Preparing and using QField for the field
+|moderate| |TY| Preparing and using QField for the field
 -------------------------------------------------------------------------------
 
 In our very first class you were asked to download the QField app onto your phone.  Please ensure
@@ -131,7 +131,7 @@ Now we want to make sure all our project settings are properly formatted for our
 
 #. Navigate to the 'Project' tab at the top of your QGIS session, and click 'Properties'.
 
-   .. figure:: img/PartC_projprop.png
+   .. figure:: img/PartC_profprop.png
       :align: center 
 
 #. Open up 'Data Sources' to make sure all our data are identifiable and searchable.
@@ -165,11 +165,11 @@ Ok, it all looks good! Now we are ready to pack our project for QField!
 
 #. Click OK. This will take you back to the 'Package Project for QField' dialog. Make note of the
    'Project' and 'Export Directory' sections.  In the image below, my project is called Campus_Ecology, 
-   but your project may be called Lab_1, or something else. As for 'Export Directory', QField automatically
-   creates a folder on your computer.  Make note of its location. Alternatively, you can continue
-   to save your files in your /Lab_1 folder. However, if you do so, I suggest creating a new folder
-   within your /Lab_1 folder titled export (e.g., /Lab_1/export). Regardless, just make sure you know
-   where it is saved :).
+    but your project may be called Lab_1, or something else. As for 'Export Directory', QField automatically
+    creates a folder on your computer.  Make note of its location. Alternatively, you can continue
+    to save your files in your /Lab_1 folder. However, if you do so, I suggest creating a new folder
+    within your /Lab_1 folder titled export (e.g., /Lab_1/export). Regardless, just make sure you know
+    where it is saved :).
 
 #. Click OK.
 #. Now we will navigate to where the export folder is saved. You should have the same files as shown
@@ -194,16 +194,16 @@ mobile QField app.
       :align: center
 
 #. Next click the 'Open local file' button.  This will take you to a new page title 'Select a 
-   QGIS project or dataset'
+QGIS project or dataset'
 #. You will upload your files by clicking 'Internal Storage'
 #. Once on the 'Internal Storage' page navigate to the 'Download' folder (or whatever folder 
-   your data are stored in)
+your data are stored in)
 
    .. figure:: img/PartC_download.png
       :align: center
 
 #. Once your folder has been opened navigate and click on the '.qgs' file. Mine is titled 
-   'Campus_Ecology_qfield.qgs'
+'Campus_Ecology_qfield.qgs'
 
    .. figure:: img/PartC_qgs.png
       :align: center
@@ -399,7 +399,7 @@ You have now successfully converted a '.csv' file into a GeoPackage table! Now l
 same for our QField file.
 
 
-|TY| Uploading QField Data to QGIS
+|moderate| |TY| Uploading QField Data to QGIS
 -------------------------------------------------------------------------------
 
 After collecting data in the field with 'QField', the app automatically updates the associated
@@ -431,7 +431,7 @@ files.
    but there a few things I want you to try out before we move onto Lab 2.
 
 
-Exploring the Measure Tool and Joins
+|moderate| |TY| Exploring the Measure Tool and Joins
 -------------------------------------------------------------------------------
 
 This section is meant to introduce you to three new tools: Measure Tool, Table Join tool and Join
@@ -495,13 +495,13 @@ Ok, moving on to the Join tools!
 
    Note
 
-   Join Layer:    The layer we are trying to get elevation from i.e., 'GPS_groundtruth
-   Join Field:    refers to the field from the 'GPS_groundtruth' layer that matches the 
+   Join Layer =   the layer we are trying to get elevation from i.e., 'GPS_groundtruth
+   Join Field =   refers to the field from the 'GPS_groundtruth' layer that matches the 
                   field from the 'CSV_groundtruth' layer
-   Target Field:  The field from 'CSV_groundtruth' that matches the field of 'GPS_groundtruth'. 
+   Target Field = The field from 'CSV_groundtruth' that matches the field of 'GPS_groundtruth'. 
                   In this example, they both happen to be called fid, but the names of the 
                   fields do not need to be the same, so long as the values match
-   Joined Field:  You can select which fields you would like to add to your 'CSV_groundtruth' layer.
+   Joined Field=  You can select which fields you would like to add to your 'CSV_groundtruth' layer.
                   We only want ele (elevation)
 
 #. Click OK. Then go and look at the attribute table for 'CSV_groundtruth':

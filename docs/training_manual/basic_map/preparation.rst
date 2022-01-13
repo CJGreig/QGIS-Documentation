@@ -1,43 +1,6 @@
 |LS| Adding your first layers
 ===============================================================================
 
-You are now officially starting Lab 1! This lab will be broken down into several
-sections and tackled over the first few weeks of the course.  Before 
-starting, mae sure you have QGIS version 3.22 installed and you have created a separate 
-folder for Lab 1, as discussed in our first lecture.  
-
-Lab 1 will be broken into three parts:
-
-   Part A:  
-   
-#. Introduce you to QGIS interface and functionality
-#. Learn to load vector data, navigate the map canvas and adjust layer 
-   symbology
-#. Explore vector attribute tables, add labels and classify vector data
-#. Create a map in Layout Manager with all necessary map elements and save as
-   a Georeferenced PDF.
-
-   The map will show Niagara College Campus wild species monitoring project locations
-   in relation to ELC classes.
-
-   Part B:
-
-#. Learn to edit layer topology and digitize features
-#. Produce a map based on your ENVR1108 Environmental Ecology term project. 
-
-   Part C:
-
-#. Use the QGIS plugin QField to perform ground truthing of your map from Part B.
-#. Also use a GPS to collect point locations
-#. Upload data from QField and GPS into QGIS
-#. Create a GeoPackage 
-
-
-All Lab 1 data should 
-have been downloaded from Blackboard and put in your Lab 1 folder as well.  
-We will now start the application, and create a basic map to use for examples, 
-exercises and Lab 1 deliverables.
-
 **The goal for this lesson:** To get started with an example map.
 
 Launch QGIS from its desktop shortcut, menu item, etc., depending on how you
@@ -46,10 +9,7 @@ configured its installation.
 .. note::  The screenshots for this course were taken in QGIS 3.14 running on
    Linux and QGIS 3.22 running on Windows. Depending on your setup, the screens you 
    encounter may well appear somewhat different. However, all the same buttons 
-   will still be available, and the instructions will work on any OS. You will 
-   need QGIS 3.4 (the latest version at time of writing) to use this course.
-
-Let's get started right away!
+   will still be available, and the instructions will work on any OS. 
 
 .. _tm_prepare_a_map:
 
@@ -77,7 +37,7 @@ Let's get started right away!
       :width: 100 %
 
    .. note:: You have just set a default map projection.  This will be discussed
-   later in the course, but understand that it is important to ensure accurate mapping
+   in lecture next week, but understand that it is important to ensure accurate mapping
    and geometry calculations. 
 
 #. The :guilabel:`Data Source Manager` dialog allows you to choose the data to
@@ -116,8 +76,7 @@ Congratulations! You now have a basic map. Now would be a good time to save
 your work.
 
 #. Click on the :guilabel:`Save As` button: |fileSaveAs|
-#. Save the map under a :file:`solution` folder next to :file:`exercise_data`
-   and call it :file:`basic_map.qgz`.
+#. Save the map in the '/Lab_1 folder', and call it :file:'Lab_1.qgz'.
 
 .. _backlink-interface-preparation-1:
 
@@ -148,7 +107,7 @@ layers from the same folder (:file:`Lab 1/`) to the map.
 
 Databases allow you to store a large volume of associated data in one file. You
 may already be familiar with a database management system (DBMS) such as
-Libreoffice Base or MS Access. GIS applications can also make use of databases.
+Microsoft Access. GIS applications can also make use of databases.
 GIS-specific DBMSes (such as PostGIS) have extra functions, because they need to
 handle spatial data.
 
@@ -165,7 +124,7 @@ connection to it:
 
 #. Click on the |dataSourceManager| :sup:`Open Data Source Manager` button.
 #. On the left click on the |newGeoPackageLayer| :guilabel:`GeoPackage` tab.
-#. Click on the :guilabel:`New` button and browse to the :file:`Lab_1.gpkg`
+#. Click on the :guilabel:`New` button and browse to the :file:`Lab_1a.gpkg`
    file in the :file:`Lab_1` folder you downloaded before.
 #. Select the file and press :guilabel:`Open`. The file path is now added to the
    Geopackage connections list, and appears in the drop-down menu.
@@ -192,8 +151,10 @@ Congratulations! You have loaded your first layers from a GeoPackage.
 |moderate| |TY| Load More Vector Data
 -------------------------------------------------------------------------------
 
-Load the following datasets from the :file:`Lab_1` folder into your map
-using any of the methods explained above:
+Now go to the 'Browser' panel and navigate to your :file:`Lab_1` folder. You should 
+be able to all of your layers in the folder. Load the following datasets from the 
+:file:`Lab_1` folder into your map by dragging and dropping the following two layers
+onto your map canvas: 
 
 * :guilabel:`impervious_surfaces`
 * :guilabel:`Lakes`
@@ -219,10 +180,6 @@ The layers in your Layers list are drawn on the map in a certain order. The
 layer at the bottom of the list is drawn first, and the layer at the top is
 drawn last. By changing the order that they are shown on the list, you can
 change the order they are drawn in.
-
-.. note:: You can alter this behavior using the :guilabel:`Control rendering
-   order` checkbox beneath the :guilabel:`Layer Order` panel. We will
-   however not discuss this feature yet.
 
 The order in which the layers have been loaded into the map is probably not
 logical at this stage. It's possible that the road layer is completely hidden

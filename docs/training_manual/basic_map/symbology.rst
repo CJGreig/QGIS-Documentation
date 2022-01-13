@@ -79,7 +79,7 @@ its color. Next we want to eliminate the lines between the different impervious 
 
 #. Open the :guilabel:`Layer Properties` window for the :guilabel:`impervious_surfaces`
    layer.
-
+   
    Under the |symbology| :guilabel:`Symbology` tab, you will see the same kind
    of dialog as before. This time, however, you're doing more than just quickly
    changing the color.
