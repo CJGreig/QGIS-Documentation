@@ -94,11 +94,11 @@ are too far away from their point markers.
 
    Now we can address the issue of multiple wood duck labels. Sometimes labels 
    need to be manually adjusted.  You can use the different tools from
-   the Label Toolbar to modify your labels.  In our case, where we have multiple 
+   the 'Label Toolbar' to modify your labels.  In our case, where we have multiple 
    wood duck labels, we want to reduce the labels to a single label. To do this:
 
 #. Click |mActionMoveLabel| `Show/Hide Labels and Diagrams` tool and then click on one of the wood
-duck labels.
+   duck labels.
 
    A dialogue box will appear; select `id` as shown in the figure below.
 
@@ -128,7 +128,7 @@ duck labels.
    You'll see that the labels are no longer overlapping their point markers.
 
 
-|moderate| |FA| Using Labels Instead of Layer Symbology (Optional)
+|moderate| |FA| Using Labels Instead of Layer Symbology (OPTIONAL)
 -------------------------------------------------------------------------------
 
 In many cases, such as point datasets associated with places (e.g., cities, provinces, 
@@ -191,7 +191,7 @@ polygons are easy to label, but what about lines?
    :align: center
 
 What do you notice? If you label them the same way as the points, your results 
-like this:
+look like this:
 
 .. figure:: img/Classification_badstreetnames.png
    :align: center

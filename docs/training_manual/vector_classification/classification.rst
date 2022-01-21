@@ -3,9 +3,8 @@
 
 Labels are a good way to communicate information such as the names of
 individual places, but they can't be used for everything.
-For example, let us say that someone wants to know what each
-``ELC_campus`` area is used for.
-Using labels, you would get this:
+For example, let us say that someone wants to know the class series for each
+``ELC_campus`` polygon. Using labels, you would get this:
 
 .. figure:: img/Classification_crowdedlabels.png
    :align: center
@@ -43,7 +42,7 @@ effectively.
       :align: center
 
 #. A 'Color ramp type' dialog box will appear.  Click the dropdown menu,
-   and select Catalog: ColorBrewer, as shown below.
+   and select Catalog: 'ColorBrewer', as shown below.
    
    .. figure:: img/Classification_colorbrewer.png
       :align: center
@@ -77,7 +76,7 @@ effectively.
    .. figure:: img/Classification_symbolselector.png
       :align: center
 
-   Spend some time picking a nice colour scheme, as map aethetics are
+   Spend some time picking a nice colour scheme, as map aesthetics are
    very important for conveying information effectively. Once you are
    satisfied with your colour selection, take a look at your map.  
    Now our ELC polygons are colored and are classified so that
@@ -181,7 +180,8 @@ problem: they don't have a size field, so we'll have to make one.
 #. Enter edit mode by clicking the |toggleEditing|  :sup:`Toggle editing`
    button
 #. Add a new column of decimal type, called ``AREA``, using the
-   |newAttribute| :sup:`New field` button: 
+   |newAttribute| :sup:`New field` button. Be sure to set the type
+   to 'Decimal number'. 
 
    .. figure:: img/ELC_campus_vector_class_addfield.png
       :align: center
@@ -197,10 +197,8 @@ are five different types:
    Text (string)
    Date 
 
-Attribute data can be stored as one of these five field types.  The five
-data types and their uses will be discussed in later lectures.  For now,
-understand that data can be stored as numbers, characters or dates, and
-based on the data type, data can be manipulated, classified and categorized
+Attribute data can be stored as one of these five field types: numbers, characters or 
+dates, and based on the data type, data can be manipulated, classified
 in different ways. 
 
 #. Click :guilabel:`OK`
@@ -239,8 +237,8 @@ in different ways.
       click the column header to refresh the data).
 
    .. note:: If you recall, at the beginning of this project we set the
-      ellipsoid to WGS84 and the project's area unit to meters, therefore
-      the rendered area values will be in square meters.
+      ellipsoid to NAD83 UTM Zone 17N, therefore the rendered area values 
+      will be in square meters.
 
 #. Press |saveEdits| to save the edits and exit the edit mode with
    |toggleEditing| :sup:`Toggle editing`
@@ -301,7 +299,7 @@ Now that we have the data, let's use them to render the ``ELC_campus`` layer.
 ----------------------------------------------------------------------
 
 *  Take some time, and try each different 'Mode' option. Do the same for 
-   'Classes'; try 4, 5, 6 and 7 classes. As you change the
+   'Classes'; try 5 and  6 classes. As you change the
    'Mode', take a look at the map and see how your map changes. Also take this
    opportunity to explore the data histogram, as shown below:  
    

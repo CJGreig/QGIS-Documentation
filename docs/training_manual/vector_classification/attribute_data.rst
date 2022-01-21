@@ -3,10 +3,9 @@
 |LS| Vector Attribute Data
 ===============================================================================
 
-Vector data is arguably the most common kind of data in the daily
+Vector data are arguably the most commonly used type of data in the daily
 use of GIS. The vector model represents the location and shape of geographic
-features using points, lines and polygons (and for 3D data also surfaces and
-volumes), while their other properties are included as attributes (often presented
+features using points, lines and polygons, while their other properties are included as attributes (often presented
 as a table in QGIS).
 
 Up to now, none of the changes we have made to the map have been influenced by
@@ -31,9 +30,7 @@ represent **where** objects are in space, but also tells you **what** those
 objects are.
 
 From the previous exercise, you should have the ``ELC_campus`` layer
-loaded in your map. If it is not loaded, then you can find the 
-:file:`ELC_campus.shp` *ESRI Shapefile* format dataset in directory 
-:file:`exercise_data/shapefile`.
+loaded in your map.
 
 The polygons representing the ELC polygons constitute the **spatial data**,
 but we can learn more about the ELC polygons by exploring the
@@ -162,7 +159,7 @@ You may now close the attribute table.
 
 #. How many fields are available in the :guilabel:`rivers` layer?
 #. Open the attribute table for the :guilabel:`wild_species` layer.
-   Tell us a bit about the ``ELC_ClassCode`` of the wood ducks in the wild_species 
+   Tell us a bit about the ``CSCode1`` (ELC class series code) of the wood ducks in the wild_species 
    dataset. 
    If we are creating a map showing the location of different field project monitoring sites,
    Which field would be the most useful to represent in label form, and why?

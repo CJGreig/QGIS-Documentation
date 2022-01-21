@@ -2,7 +2,7 @@
 
 |LS| Choropleth Mapping: Toronto Street Tree Density in Relation to Median Income 
 and Population Density
-===============================================================================
+-------------------------------------------------------------------------------
 
 So far we have discussed four different types of classification, including nominal,
 ordinal, interval and ratio. The map for Lab 1 Part A was a nominal classification.
@@ -37,8 +37,8 @@ this assignment: (1) a tabular dataset and (2) spatial dataset, as well as the
 Toronto Street Tree dataset, as previously mentioned.  
 
 #. Let's start by opening a new QGIS session.
-#. Navigate to the 'Browser' panel and add the three tables within it to your
-   QGIS session
+#. Navigate to the 'Browser' panel and add the three tables within the 'Lab_2'
+   GeoPackage to your QGIS session.
 
    .. figure:: img/Lab2A_3files.png
      :align: center
@@ -142,7 +142,174 @@ The correct census tract polygons should be highlighted in yellow, as shown belo
    .. figure:: img/Lab2A_righttorontoselect.png
      :align: center
 
-#. Now 
+#. Now we want to save the selected features.  This can be done by right clicking
+   on 'CT_Toronto' layer, and go to 'Export --> Save Selected Features As...'. Name 
+   it 'CT_Toronto_City' and fill out the dialog box as you have done before, and be 
+   sure to save it to the 'Lab_2' GeoPackage. 
+
+   .. figure:: img/Lab2A_saveselfeatas.png
+     :align: center
+
+   Once saved, check your 'Lab_2' GeoPackage in the 'Browser' panel.  If it is not
+   there, use click the 'Refresh' button.
+
+   .. figure:: img/Lab2A_refresh.png
+     :align: center
+
+   If the new layer has a strange name, change it to 'CT_Toronto_City' the same way
+   you have done before.
+
+We now want to get a count of the number of street trees that fall within each 
+census tract.  We want to do this so we can calculate density (# of trees/CT area 
+(km2).
+
+#. Navigate to the 'Vector' tab, then go to 'Analysis Tools --> Count Points in
+   Polygon'.
+
+   .. figure:: img/Lab2A_cntpntpoly.png
+     :align: center
+
+#. Name the new layer CT_Toronto_City_pntcnt, and fill in the tool as shown below. 
+   Remember to add your new layer to the 'Lab_2' GeoPackage. Make sure the new layer
+   is added to the 'Map Canvas'.
+
+   .. figure:: img/Lab2A_cntpntsettings.png
+     :align: center
+
+We now want to use the non-spatial, or tabular dataset.  But how do we incorporate
+non-spatial data in GIS? Remember at the end of Lab 1 Part C, we performed a table
+join? We will now do that to link the non-spatial data with a spatial dataset.
+
+Open both the 'CT_data' and 'CT_Toronto_City_pntcnt' attribute tables and take a look
+at the different fields. Between the two attribute tables, do you notice any two fields
+that look similar?
+
+   .. figure:: img/Lab2A_tablecompare.png
+     :align: center
+
+I would say, fields 'ctuid' and 'GEO_UID' look fairly similar. Let's try to join them.
+
+#. Do the same as we did at the end of Lab 1 Part C.  Right click on 'CT_Toronto_City_pntcnt'
+   and click 'Properties'.  Once the window opens, click the 'Join' tab.
+
+#. Click the '+' and fill out the tool.  Remember, we are joining the 'CT_Toronto_City_pntcnt'
+   and 'CT_data' by the fields 'ctuid' and 'GEO_UID'.
+
+#. Once you have completed the 'Join', go look at the attribute table for 'CT_Toronto_City_pntcnt'
+   and scroll through the joined fields.
+
+   .. figure:: img/Lab2A_joinnullspng.png
+     :align: center
+   
+   What do you notice? That's right, there are NULL values. Something went wrong with our
+   Join. Let's compare the two tables again. You may notice that certain values of the
+   'GEO_UID' are only seven characters in length, compared to the 'ctuid' that are all
+   consistenty 10 characters.  We need to create a new column with values that match 
+   'ctuid' perfectly. Here's how.
+
+   .. figure:: img/Lab2A_tablecompare.png
+     :align: center
+
+#. Open the 'CT_Data' attribute table and go to the 'Field Calculator'.
+
+#. Once open, fill out the field calculator as shown below. What the formula is doing,
+   is adding '.00' to the end of all values in the 'GEO_UID' field that have a length
+   of seven characters.
+
+   .. figure:: img/Lab2A_fieldcalc.png
+     :align: center
+
+   Check your new 'ctuid' values and make sure each value as 10 characters. Yes? Let's 
+   try that Join again.
+
+#. We have to remove this join. Go back to the 'Join' tab, and remove the join by selecting 
+   'Join Layer' and then click the '-'.
+
+   .. figure:: img/Lab2A_removejoin.png
+     :align: center
+
+#. Now redo the Join. Remember, the 'Join Field' and 'Target Field' will now both be 
+   'ctuid'. Check your results and make sure there are no more (or very few) NULL values.
+
+#. Now that we have the data joined, we need to export the joined file. Do as you have done
+   before. Name the file 'CT_Toronto_join', and save it in your 'Lab_2' GeoPackage.
+
+We now want to calculate tree density. The new 'CT_Toronto_join' layer has a field that
+represents the area of the census tract, 'AREA_KM2'.  We will perform a field calculation 
+to determine tree density.
+
+#. Let's start by adding a new field called 'TREES_KM2' to the 'CT_Toronto_join' layer.
+
+   .. figure:: img/Lab2A_newfielddensity.png
+     :align: center
+
+#. Once the new field is added, go to the field calculator and populate the tool with
+   the information shown below.
+
+   .. figure:: img/Lab2A_treedensity.png
+     :align: center
+
+   The formula is dividing the number of trees within each census tract by the census tract
+   area.
+
+#. Now we want to do the same calculations, but for population density this time. Repeat
+   the two previous steps, using the same formula, except instead of number of trees, use
+   POPULATION/AREA_KM2.
+
+We have finally completed our data processing! We are ready to perform our classification.
+
+|basic| |FA| Creating a choropleth map
+-------------------------------------------------------------------------------
+  
+As we did with Lab 1, we will classify our data.  Remember, you only have to create maps for
+Street Tree density and either median income or population density.  However, I would like
+you to classify all three variables.
+
+#. We are going to the change symbology for 'CT_Toronto_join'. Navigate to 'Properties -->
+   Symbology'.
+
+#. Set the symbol type to 'Graduated', and then change the value to 'MEDIAN_INCOME'. But wait,
+   'MEDIAN_INCOME', does not show up. Why do you think that is?
+
+   .. figure:: img/Lab2A_noincome.png
+     :align: center
+
+#. While in 'Properties', navigate to the 'General Information' tab, and inspect the metadata.
+   What type of data is 'MEDIAN_INCOME'? String! So it is technically qualitative, therefore can
+   not be classified using graduated symbology. We will need to add a new field with the same
+   'MEDIAN_INCOME' values, but make it a numeric value. 
+
+#. To do this, we need to create a new field, call it 'MEDIAN_INCOME_num', make it type 'integer'.
+
+#. Once the field is created, you can populate it in the 'Field Calculator', by entering this 
+   formula: 'MEDIAN_INCOME_num = 'MEDIAN_INCOME'.
+
+#. Once that is completed proceed to the Symbology window again, and classify 'MEDIAN_INCOME_num'
+   using 'Graduated' symbology. 
+
+#. However, we want to classify the same layer using three different variables, so let's duplicate
+   'CT_Canada_join' twice, so there are three copies.
+
+#. We then want to rename each copy so we don't get them confused.  One at a time, right click on 
+   both copies and the original, and go to 'Rename'.  Give them each a name associated with the
+   variable being classified.
+
+   .. figure:: img/Lab2A_renamelayer.png
+     :align: center
+
+#. Select an appropriate classification. As we discussed in class, quantile, is likely the most
+   appropriate classification technique, but Natural Breaks is also acceptable. We also discussed
+   that 5 classes is generally the most appropriate number of classes, but sometimes 6 works as 
+   well.  Just remember, whatever you decided on, you need to have the same classification and number
+   of classes for each of the 3 variables.
+
+   .. figure:: img/Lab2A_classification.png
+     :align: center
+
+   Be sure to look at the histogram while you are trying to decide number of classes and classification
+
+   .. figure:: img/Lab2A_hist.png
+     :align: center
 
    A row is called a **record** and is associated with a **feature**
    in the Canvas Map, such as a polygon.
