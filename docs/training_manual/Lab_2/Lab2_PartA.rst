@@ -279,7 +279,8 @@ you to classify all three variables.
    not be classified using graduated symbology. We will need to add a new field with the same
    'MEDIAN_INCOME' values, but make it a numeric value. 
 
-#. To do this, we need to create a new field, call it 'MEDIAN_INCOME_num', make it type 'integer'.
+#. To do this, we need to create a new field, call it 'MEDIAN_INCOME_num', make it type 'Decimal
+   Number'.
 
 #. Once the field is created, you can populate it in the 'Field Calculator', by entering this 
    formula: 'MEDIAN_INCOME_num = 'MEDIAN_INCOME'.
@@ -306,124 +307,144 @@ you to classify all three variables.
    .. figure:: img/Lab2A_classification.png
      :align: center
 
-   Be sure to look at the histogram while you are trying to decide number of classes and classification
+   Be sure to look at the histogram while you are trying to decide number of classes and classification.
 
    .. figure:: img/Lab2A_hist.png
      :align: center
 
-   A row is called a **record** and is associated with a **feature**
-   in the Canvas Map, such as a polygon.
-   A column is called a **field** (or an **attribute**), and has a name that helps
-   describe it, such as ``name`` or ``id``.
-   Values in the cells are known as **attribute values**.
-   These definitions are commonly used in GIS, so it is good to become
-   familiar with them.
+   You have now classified your three variables! Now take a moment and look at how spatial patterns
+   of high/low street tree density coincides with areas of both high/low median income and population 
+   density. Do you notice any interesting patterns? Based on what you observe, select either median
+   income or population density to (1) create a map and (2) use in the next section of Lab 2
+   Part A.
 
-   In the ``ELC_campus`` layer, there are 82 **features** (noted at the top of the 
-   attribute table window), which are represented by the polygons we see on the Map Canvas. 
 
-   .. Note:: In order to understand what the **fields** and **attribute values** 
-      represent, one may need to find documentation (or metadata) describing 
-      the meaning of the attribute values.
-
-      The ``ELC_campus`` layer was obtained fromt the Niagara Peninsula Conservation 
-      Authority open data portal: https://gis-npca-camaps.opendata.arcgis.com/. The website
-      has many natural resources spatial datasets available for online viewing and download.
-      There is metadata available for each dataset, which helps users better understand 
-      the data they are working with.
-
-      For the ``ELC_campus`` dataset, the abstract is as follows:
-
-      The NPCA Natural Areas Inventory (NAI) Ecological Land Classification (ELC) Community 
-      Series (CS) level DRAFT feature class is a polygon fabric serving as base inventory of
-      natural area features (i.e. Mixed Meadow, Swamp Thicket).
-      
-      The NPCA Natural Areas Inventory (NAI) Ecological Land Classification (ELC)
-      Community Series (CS) level DRAFT feature class is a polygon fabric serving as 
-      base inventory of natural area features (i.e. Mixed Meadow, Swamp Thicket). 
-      Communities are interpreted from 2006 10 cm (Niagara) and 30 cm (Haldimand) 
-      colour orthoimagery using a 1:1000 interpretive threshold. Feature geometry 
-      linework was specified to meet a 1:2000 scale generalization threshold and the 
-      minimum mapping unit used was 0.1 hectares although features may have been captured 
-      beyond (better than) these standards. Some wetland community polygons come from the 
-      MNR Ontario Wetland Evaluation System data. The data forms a scientifically-defensible 
-      baseline for use in planning decisions and policy development and will be linked to 
-      associated ecological survey data collected in the field under various protocols. 
-      The dataset when completed will correspond to the extent of the Niagara Watershed. 
-      
-
-Next, let's see how a record in the attribute table is linked to a polygon 
-feature that we see on the Map Canvas.
-
-#. Go back to the main QGIS window.
-#. In the :guilabel:`Attributes Toolbar`, click on the |selectRectangle| 
-   :sup:`Select Feature` button.  
-#. Make sure the ``ELC_campus`` layer is still selected in the 
-   :guilabel:`Layers` panel.
-#. Move your mouse to the Map Canvas and left click on the largest polygon
-   covering Woodend Conservation Area.  The polygon will turn yellow 
-   indicating it is selected.
-   
-   .. figure:: img/Classification_woodend.png
-      :align: center
-   
-#. Go back to the :guilabel:`Attribute Table` window, and if you scroll down
-   to the bottom of the table you should see a record (row) highlighted.  
-   These are the attribute values of the selected polygon.
-   
-   .. figure:: img/ELC_campus_vector_class_selectrecord1.png
-     :align: center
-
-You can also select a feature using the Attribute Table.
-
-#. In the :guilabel:`Attribute Table` window, on the far left, click on a 
-   row number of a record that is currently not selected.
-
-   .. figure:: img/ELC_campus_vector_class_selectrecord2.png
-     :align: center
-
-#. Go back to the main QGIS window and look at the Map Canvas. You should 
-   see a different polygon colored yellow.  
-#. To deselect the feature, go to the :guilabel:`Attribute Table` window 
-   and click on |deselectActiveLayer| :sup:`Deselect all features from the layer` button.
-
-Sometimes there are many features shown on the Map Canvas and it might be difficult
-to see which feature is selected from the Attribute Table.  Another way to 
-identify the location of a feature is to use the :guilabel:`Flash Feature`
-tool.
-
-#. In the :guilabel:`Attribute Table`, right-click on any cell in the
-   row that has the attribute value ``113554`` for the field ``OBJECTID``.
-#. In the context menu, click on :guilabel:`Flash Feature` and watch the 
-   Map Canvas.  
-
-   .. figure:: img/ELC_campus_vector_class_flashfeature.png
-     :align: center
-   
-   You should see the polygon flash red a few times.  If you missed it, 
-   try it again.
-
-Another useful tool is the :guilabel:`Zoom to Feature` tool, that tells QGIS to 
-zoom to the feature of interest.
-
-#. In the :guilabel:`Attribute Table`, right-click on  any cell in the
-   row that has the attribute value ``113554`` for the field ``OBJECTID``.
-#. In the context menu, click on :guilabel:`Zoom to Feature`
-
-   .. figure:: img/ELC_campus_vector_class_zoomtofeature.png
-     :align: center
-
-   Look at the Map Canvas.  The polygon should now occupy the extent
-   of the Map Canvas area.  
-   
-You may now close the attribute table.
-
-.. _backlink-vector-explore-attribute-data:
-
-|basic| |TY| Exploring Vector Data Attributes
+|moderate| |TY| Introduction to Vector Overlay Analyses and Expressions
 -------------------------------------------------------------------------------
 
-#. How many fields are available in the :guilabel:`rivers` layer?
+We are now going to start exploring overlay analyses! We are going to use the 'Select by Location' 
+tool to enhance our ability to extract patterns of occurence.  So far we have used our eyes to 
+explore patterns of occurrence between street tree density and population density/median income.  
+However, we now want to know exactly where these patterns are occuring.
+
+*The following instructions outline an EXAMPLE to complete this assignment.*
+
+In my example for this assignment, I have chosen to look at areas of low street tree density and
+low median income. I want to subset my two spatial datasets so that they only show the census
+tracts that have low street tree density amd low median income.  To start, I will subset my 
+street tree density layer. To do this, I will use the 'Select by Expression' tool found in 
+the attribute table dialog, and use a standard query language (SQL) expression to subset my dataset.
+However, to be able to subset my dataset, I need to select a 'Threshold' value that defines 
+'low street tree density'.  This value has to come from somewhere meaningful - you can never just
+select an arbitrary value to use as a threshold. In this case it is importat to look at your histogram.
+
+#. Start by opening your 'Properties' window and navigating to the 'Symbology' tab. 
+
+#. Select the 'Histogram' tab and click 'Load Values'.
+
+   .. figure:: img/Lab2A_hist.png
+     :align: center
+
+What do you observe about this histogram? I see a small clustering of low, similar values on the
+left side of the histogram. Perhaps that could be your threshold value? 
+
+   .. figure:: img/Lab2A_classification.png
+     :align: center
+
+Alternatively, you could use the upper value of your lowest class range. That is what I decided to
+do, therefore 592 is my threshold that defines 'low street tree density'. You can choose another
+method for determining a threshold, so long as you can back it up with a reason for your decision. 
+
+Now that we have our threshold, we can subset our dataset using an expression.
+
+#. Close your 'Properties' window and open your 'Attribute Table'.
+
+#. Click on the 'Select by Expression' icon.
+
+
+   .. figure:: img/Lab2A_selectbyexp.png
+     :align: center
+
+
+#. A dialog box will open. Enter the expression as shown below but *USE YOUR THRESHOLD VALUE*
+   and click 'Select Features'. 
+
+
+   .. figure:: img/Lab2A_lessthan592.png
+     :align: center
+
+
+#. Exit out of the 'Select by Expression' window and 'Attribute Table'.  You should notice a series
+   of census tract polygons are highlighted yellow. These are all of your lowest street tree
+   density values!
+
+#. We want to save these selected features as a layer in our GeoPackage. Right click on your
+   Street Tree Density layer, and go to 'Export --> Save Selected Features As', and save your
+   new layer in your 'Lab_2' GeoPackage, giving it a meaningful name e.g., 'TreeDensity_low'.
+
+   .. figure:: img/Lab2A_saveselect.png
+     :align: center
+
+   *Now, you have to do all of the same steps listed above to create a new layer for either median
+   income or population density.*  Once that is completed, we can move onto the final step of our
+   analysis.
+
+   We will now use our two new layers e.g., 'TreeDensity_low' and 'MedianIncome_low' to perform
+   a 'spatial selection' to identify areas where there are both low tree density and low median
+   income.
+
+#. Navigate to the 'Vector' tab, and go to 'Research Tools --> Select by Location'. A dialog window
+   will open.
+
+   The 'Select by Location' tool works by comparing two layers and determing which features
+   spatially interact based on a seletec 'spatial relationship'.  In the dialog window, you 
+   will see there are several options for 'Where the features (geomtric predicate)'.  These 
+   options are called 'spatial relationships'. For our project, we will use 'contain' for our 
+   spatial relationship, as we want to know which census tracts have both low income and low 
+   tree density. Based on what we know about topology, if we used 'intersect' or 'touch', 
+   polygons that share boundaries would also be selected, which we do not want for this analysis.
+
+#. Use the settings below, and click run.
+
+   .. figure:: img/Lab2A_saveselect.png
+     :align: center
+
+#. Exit out of the 'Select by Location' window. You should see census tracts that are both
+   low tree density and low median income highlighted in yellow.
+
+#. Now, as you did for both 'TreeDensity_low' and 'MedianIncome_low' layers, create a new
+   layer for your 'Select by Location' selection.  Call it something like, 
+   'Toronto_lowtrees_lowincome'.  This is what my layer looks like - but yours will likely
+   look different!
+
+   .. figure:: img/Lab2A_lowselectbyloc.png
+     :align: center
+
+You have now completed your analysis! Congratulations! Now, create (1) a map showing 'Street Tree
+Density' classification, (2) a map showing either 'Median Income' or 'Population Density'
+classification, and (3) a map of your 'Select by Location' selection.
+
+In addition to the three maps, please write a brief paragraph describing the parameters you used
+for this analysis, including:
+
+   #. Classification mode used to classify both classified maps (i.e., street tree density and 
+      median income OR population density),
+   #. Thresholds used to subset both datasets (i.e., street tree density and 
+      median income OR population density) and
+   #. The method used to select both Thresholds.
+   
+
+
+
+
+
+
+
+
+
+
+
+How many fields are available in the :guilabel:`rivers` layer?
 #. Open the attribute table for the :guilabel:`wild_species` layer.
    Tell us a bit about the ``ELC_ClassCode`` of the wood ducks in the wild_species 
    dataset. 
