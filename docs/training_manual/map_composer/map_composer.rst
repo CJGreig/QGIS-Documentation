@@ -3,7 +3,7 @@
 
 Now that you've got a map, you need to be able to print it or to
 export it to a document.
-The reason is, a GIS map file is not an image. Rather, it saves the
+The reason is, a QGIS project is not an image. Rather, it saves the
 state of the GIS program, with references to all the layers, their
 labels,colors, etc.
 So for someone who doesn't have the data or the same GIS program
@@ -13,10 +13,23 @@ computer can read, as well as printing out the map if you have a
 printer connected.
 Both exporting and printing is handled via the *Print Layout*.
 
+Remember, our map for Lab 1 Part A is meant to answer the following question:
+
+Where are the wild species monitoring projects located on campus in relation to
+different ecosystems?
+
+Therefore, your map should show the locations of wild species
+management projects in relation to ELC classes on campus.
+In Module 3, we performed a ratio (graduated) classification of ELC 
+polygon area and a nominal (categorized) classification of 
+ELC_campus by CSCODE1, and had saved the style.  The style can be reloaded 
+by going to 'Style' at the bottom of the Symbology window. Use this classification
+for the map layout.
+
 **The goal for this lesson:** To use the QGIS *Print Layout* to create
 a map with all the required map items, including a map inset.
 
-|basic| |FA| Preparing Data to Create a Inset Map
+|basic| |FA| Preparing Data to Create an Inset Map
 ----------------------------------------------------------------------
 
 Inset maps are useful to provide spatial orientation for the map user. For
@@ -32,7 +45,7 @@ to create two data groups.
 #. Click 'Add Group', and a new item called 'group1' will appear in your 
    'Layers' panel.
 #. Now you want to add your map layers to your new group. To do this, 
-   click and drag your layers onto of 'group1'.  Your new group should
+   click and drag your layers onto 'group1'.  Your new group should
    look like this:
 
    .. figure:: img/Layout_group1.png
@@ -49,8 +62,8 @@ a basemap to our map inset.
    .. figure:: img/Layout_plugins.png
       :align: center
 
-#. A dialogue box will appear; enter the information as shown below and click 
-   'Install Plugin'.
+#. A dialogue box will appear; enter 'QuickMapServices' in the search bar
+   the information as shown below and click 'Install Plugin'.
 
    .. figure:: img/Layout_quickmap.png
       :align: center
@@ -68,14 +81,14 @@ top of your QGIS session.
       :align: center
 
 #. For now, we do not want the basemap visible, so toggle it off, and drag it onto
-   the 'group2' layer.  Your 'Layers' panel should look like this:
+   the 'group2' layer.  
+   
+#. One last thing, before we start to learn about the 'Layout Manager', we need to add
+   the 'NCCampus_Boundary' layer.  This will be in your /Lab_1/ folder.  Order it so it
+   is just below the 'wild_species' layer. Your 'Layers' panel should look like this:
 
    .. figure:: img/Layout_group12.png
       :align: center
-
-One last thing, before we start to learn about the 'Layout Manager', we need to add
-the 'NCCampus_Boundary' layer.  This will be in your /Lab_1/ folder.  Order it so it
-is just below the 'wild_species' layer.
 
 
 |basic| |FA| The Layout Manager
@@ -104,7 +117,7 @@ You could also create this new layout via the
 :menuselection:`Project --> New Print Layout...` menu.
 
 Whichever route you take, the new print layout is now accessible from
-the :menuselection:`Project --> Layouts -->` menu, as in the image below 
+the :menuselection:`Project --> Layouts -->` menu, as shown in the image below 
 (please ignore my other templates).
 
 .. figure:: img/Layout_layouts.png
@@ -116,24 +129,26 @@ the :menuselection:`Project --> Layouts -->` menu, as in the image below
 
 The goal of our map is to show wild species monitoring locations in relation
 to ELC classes.  Below is my interpretation of the assignment. Feel free to use
-a similar layout, or shuffle it around to make it your own. However, be sure to
-include all the same map elements that my map has.  The for the remainder of this
-lesson will walk you through how to add each element to create your final product
-for Lab 1 Part A.
+a similar layout, or shuffle it around to make it your own, so long as the layout
+is balanced and easy to read. Be sure to include all the same map elements that 
+my map and that the layout is balanced. The remainder of this lesson will walk 
+you through how to add each element to create your final product for Lab 1 Part A.
+
+Just as a heads-up, the 'Add Map' feature is a bit finicky; it is challenging to
+set it to the position and scale that you want at times, but please be patient, and
+read the instructions carefully.
 
 
 .. figure:: img/Layout_final.png
       :align: center
 
 
-Previously, we had performed an ordinal classification of ELC 
-polygon area.  Prior to that,we performed a categorical classification of 
-ELC_campus by CSCODE1, and had saved the style.  The style can be reloaded 
-by going to Style at the bottom of the Symbology window. Use this classification
-for the map layout.
-
 #. Right-click on the sheet in the central part of the layout window
    and choose :guilabel:`Page properties...` in the context menu.
+
+.. figure:: img/Layout_pageproperties.png
+      :align: center
+
 #. Check that the values in the :guilabel:`Item Properties` tab are
    set to the following:
 
@@ -149,31 +164,29 @@ for the map layout.
    With this tool activated, you will be able to place a map on the
    page.
 
-#. Click and drag a box on the blank page:
+#. Click and drag a box on the blank page. The map will appear on the page.
+   Reposition it by clicking and dragging it around. Be sure to leave margins 
+   along the edges, and a space for the title. 
 
    .. figure:: img/Layout_addmap.png
       :align: center
 
-   The map will appear on the page.
+#. You can set the scale of the map using the 'Item Properties' tab, and entering
+   8000 for the 'Scale' under 'Main Properties.
 
-#. Move the map by clicking and dragging it around:
+   .. figure:: img/Layout_mapscale8000.png
+      :align: center
 
-#. Resize it by clicking and dragging the boxes on the edges:
+IMPORTANT
 
-   .. note::  As we go along, your map may look a lot different, of course!
-      This depends on how your own project is set up.
-      But not to worry! These instructions are general, so they will
-      work the same regardless of what the map itself looks like.
+Be sure to 'Lock Layers' as shown in the image above.
 
-#. Be sure to leave margins along the edges, and a space for the title.
-
-#. Zoom in and out on the page (but not the map!) by using these
+#. Zoom in and out on the page (but not the map!!) by using these
    buttons:
 
    |zoomFullExtent| |zoomIn| |zoomOut|
 
-#. Zoom and pan the map in the main QGIS window.
-   You can also pan the map using the |moveItemContent|
+#. You can also pan the map using the |moveItemContent|
    :sup:`Move item content` tool.
 
    The map view updates as you zoom in or zoom out.
@@ -191,8 +204,10 @@ for the map layout.
    you must save your project.
 
 #. Go to the :menuselection:`Layout -->` |fileSave|
-   :menuselection:`Save Project`.
+   :menuselection:`Save Project`, and call it 'Lab_1'.
    This is a convenient shortcut to the one in the main dialog.
+
+#. Before adding any other items, be sure to 
 
 |basic| |FA| Adding a Title 
 ----------------------------------------------------------------------
@@ -207,39 +222,42 @@ First, let us add a title.
 #. Click on the page, above the map, accept the suggested values in
    the :guilabel:`New Item Properties` dialog, and a label will
    appear at the top of the map.
-#. Resize it and place it in the top center of the page.
+#. Resize it and place it somewhere at the top of the page.
    It can be resized and moved in the same way that you resized and
    moved the map.
 
    As you move the title, you'll notice that guidelines appear to
    help you position the title in the center of the page.
 
-   However, there is also a tool in the Actions Toolbar to help
+   However, OPTIONALLY, there is also a tool in the Actions Toolbar to help
    position the title relative to the map (not the page):
 
    |alignLeft|
 
 #. Click the map to select it
-#. Hold in :kbd:`Shift` on your keyboard and click on the label so
-   that both the map and the label are selected.
+#. Hold in :kbd:`Shift` on your keyboard and click on the title so
+   that both the map and the title are selected.
 #. Look for the |alignLeft| :sup:`Align selected items left` button
    and click on the dropdown arrow next to it to reveal the
-   positioning options and click either |alignHCenter| or |alignLeft|.
-   :guilabel:`Align center`:
+   positioning options and click either |alignLeft|.
+   :guilabel:`Align Left`:
 
    .. figure:: img/align_center_dropdown.png
       :align: center
 
-   Now the label frame is centered on the map, but not the contents.
-   To center the contents of the label:
+   Now the title frame is aligned on the left of the map.
+   
+#. To center the contents of the title we will use the 'Item Properties' tab.
+   To do this:
 
-   #. Select the label by clicking on it.
+   #. Select the title by clicking on it.
    #. Click on the :guilabel:`Item Properties` tab in the side panel
       of the layout window.
-   #. Change the text of the label to something that conveys the theme of our
-      map. I chose "Niagara College Campus Wild Species Monitoring Project Locations":
-   #. Use this interface to set the font and alignment options
-      under the :guilabel:`Appearance` section:
+   #. Change the text of the title to something that conveys the theme of our
+      map. I chose "Niagara College Campus Wild Species Monitoring Project 
+      Locations and ELC Classes".
+   #. Now, using under the :guilabel:`Appearance` section, set the alignment
+      options as shown below:
 
       .. figure:: img/Layout_titlesettings.png
          :align: center
@@ -250,6 +268,11 @@ First, let us add a title.
 
       You can also change the font color, but it's probably best to
       keep it black as per the default.
+
+   .. figure:: img/Layout_title.png
+         :align: center
+
+   OPTIONAL
 
    #. The default setting is not to add a frame to the title's text box.
       However, if you wish to add a frame, you can do so:
@@ -281,8 +304,8 @@ the map actually mean. Let's add a new legend!
 #. Click on the page to place the legend, accept the suggested values
    in the :guilabel:`New Item Properties` dialog,
 #. A legend is added to the layout page, showing layers symbology
-   as set in the main dialog.
-#. As usual, you can click and move the item to where you want it:
+   as set in your QGIS session.
+#. As usual, you can click and move the item to where you want it.
       
 
 |moderate| |FA| Customizing Legend Items
@@ -302,12 +325,17 @@ You can also rename items.
 
 #. Select a layer from the same list.
 #. Click the |symbologyEdit| :sup:`Edit selected item properties` button.
-#. Rename the layers and reorder them so they match the image below.
+#. Rename the layers and reorder them so they match the image below (note:
+   ELC Class is the ELC_campus layer, which I collapsed so all items could
+   be seen in the screenshot. My map layer is also called Map 3, but yours
+   may be called Map 1).
 
 
 .. figure:: img/Layout_legenditemorder.png
    :align: center
    
+.. figure:: img/Layout_legend.png
+   :align: center
 
 As the legend will likely be widened by the new layer names, you may
 wish to move and resize the legend and or map.
@@ -325,7 +353,7 @@ Let's add a new scale bar.
 
 #. Click on the|addScalebar| :sup:`Add Scale Bar` button
 #. Click on the page and drag a box to place the Scale Bar
-#. Ensure the scale bar units are appropriate for your map (e.g., meters)
+#. Ensure the scale bar units are appropriate for your map (e.g., metres)
 #. The scale bar can be further customized, so take a moment and look at the
    different item properties and adjust them until you find a format you like.
    The image below shows the settings I used, but I encourage you to make your
@@ -346,12 +374,16 @@ Let's add a new scale bar.
    .. figure:: img/Layout_scalefont.png
       :align: center
       
+Here is my map so far:
+
+   .. figure:: img/Layout_scale.png
+      :align: center
 
 
 |basic| |FA| Adding a North Arrow
 ----------------------------------------------------------------------
 
-A North Arrow is also required on your map to provide directional Orientation
+A North Arrow is also required on your map to provide directional orientation
 for the user.
 
 #. Click on the |northArrow| :sup:`Add North Arrow` button
@@ -362,17 +394,22 @@ for the user.
 
    .. figure:: img/Layout_Narrow.png
       :align: center
-      
+
+Map update:
+
+   .. figure:: img/Layout_northarrow.png
+      :align: center
 
 |basic| |FA| Adding a Text Box
 ----------------------------------------------------------------------
 
 Each map also needs information regarding Map Author, Map Projection and Data
-Source.  For this map, 
+Source and date.  For this map, this information is listed below:
+
 Map Author: *Your Name*, Environmental Technician Candidate, Niagara College
-Projection: UTM NAD83 Zone 17N
-Data Source: Niagara Peninsula Conservation Authority Open Data Portal, 
-St. Catharines Open data Portal, Ontario GeoHub, M. McNight (2021) 
+Projection: NAD83 UTM Zone 17N
+Data Source: Niagara Peninsula Conservation Authority Open Data Portal (2006, 2019), 
+Niagara Open Data (2018), Ontario GeoHub (2022), C. Greig and M. McKnight (2021)
 
 #. Click on the |Label| :sup:`Add Label` button, as you did for your title
 #. Click on the page and drag a box to place the text box
@@ -388,12 +425,12 @@ St. Catharines Open data Portal, Ontario GeoHub, M. McNight (2021)
 The font can be modified by clicking on 'Font' in the 'Appearance' section.
 
 
-|basic| |FA| Adding an Map Inset
+|basic| |FA| Adding a Map Inset
 ----------------------------------------------------------------------
 
-To add an inset map, navigate back to your 'Map Canvas' window. Toggle off your
-'group1' layer, and toggle on your 'group 2' layer, which will activate your basemap.  
-Now zoom out so you can see most of Ontario.
+To add an inset map, navigate back to your 'Map Canvas' window in your QGIS session. 
+Toggle off your 'group1' layer, and toggle on your 'group 2' layer, which will 
+activate your basemap. Now zoom out so you can see most of Ontario.
 
 #. Now add the inset map the same way you added your initial map.
 #. Place it in a corner, and set the settings so they are the same as/similar 
@@ -402,6 +439,9 @@ Now zoom out so you can see most of Ontario.
    .. figure:: img/Layout_map2setting.png
       :align: center
       
+IMPORTANT
+
+Be sure to 'Lock Layers' as shown above.
 
 Once you are happy with your map inset position and scale, add a rectangle to show
 roughly where Niagara College campus is located in the map inset.
@@ -413,6 +453,10 @@ roughly where Niagara College campus is located in the map inset.
 .. figure:: img/Layout_mapinset.png
       :align: center
 
+Map update:
+
+.. figure:: img/Layout_inset.png
+      :align: center
 
 
 |basic| |FA| Adding a Polyline Feature
@@ -435,10 +479,13 @@ on the dropdown arrow of the 'Main Properties' and then clicking on
 'Configure Symbol...'. You can design it to look however you like,
 but feel free to use the settings I used, shown below.  
 
- .. figure:: img/Layout_polylinessettings.png
+ .. figure:: img/Layout_polylinesettings.png
       :align: center
-      :width: 100%
+   
+Map update:
 
+   .. figure:: img/Layout_polylinebracket.png
+      :align: center
 
 |basic| |FA| Adding a Neatline
 ----------------------------------------------------------------------
@@ -466,12 +513,15 @@ Optionally, you can add a Neatline, or border, around your map.
 Finally the map is ready for export! Take a good look at your map and ask yourself,
 Is the initial question asked being answered? The initial question was:
 
-Where are the wild species monitoring projects located on campus in relation to
-different ecosystems?
+*Where are the wild species monitoring projects located on campus in relation to
+different ecosystems?*
 
 Make sure your map is tidy, organized and logically presented so the user immediately
 understands what they are looking at. If you feel all these factors are met, it is
 time to export the map.
+
+   .. figure:: img/Layout_final.png
+      :align: center 
 
 You'll see the export buttons near the top left corner of the layout window:
 
@@ -501,8 +551,7 @@ For our purposes, we're going to use PDF.
 
 #. Click the |saveAsPDF| :sup:`Export as PDF` button
 #. Choose a save location and a file name as usual.
-#. Check the box next to Create Geospatial PDF. In the next lab we will be
-   using this file to perform ground truthing.
+#. Check the box next to Create Geospatial PDF. 
    The following dialog will show up.
 
    .. figure:: img/Layout_pdfexport.png
@@ -528,9 +577,8 @@ For our purposes, we're going to use PDF.
 
 |IC|
 ----------------------------------------------------------------------
-Now you know how to create a basic static map layout. We can go a step
-further and create a map layout that adapts dynamically, with more
-layout items.
+Now you know how to create a map layout! This marks the end of Lab 1
+Part A. Next week we will start editing and creating data!
 
 
 .. Substitutions definitions - AVOID EDITING PAST THIS LINE
