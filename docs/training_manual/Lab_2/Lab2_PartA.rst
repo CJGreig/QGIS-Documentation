@@ -435,62 +435,6 @@ for this analysis, including:
    
 
 
-
-
-
-
-
-
-
-
-
-How many fields are available in the :guilabel:`rivers` layer?
-#. Open the attribute table for the :guilabel:`wild_species` layer.
-   Tell us a bit about the ``ELC_ClassCode`` of the wood ducks in the wild_species 
-   dataset. 
-   If we are creating a map showing the location of different field project monitoring sites,
-   Which field would be the most useful to represent in label form, and why?
-
-.. admonition:: Answer
-   :class: dropdown
-
-   * There should be 45 fields in the :guilabel:`rivers` layer:
-
-     #. Select the layer in the :guilabel:`Layers` panel.
-     #. Right-click and choose :guilabel:`Open Attribute Table`, or press the |openTable|
-        button on the :guilabel:`Attributes Toolbar`.
-     #. Count the number of columns.
-
-     A quicker approach could be to double-click the :guilabel:`rivers` layer, 
-     open the :menuselection:`Layer properties --> Fields` tab, where you will 
-     find a numbered list of the table's fields.
-
-   * Information about ELC class code for wood ducks is available in the :guilabel:`wild_species` layer. Open its
-     attribute table as you did with the :guilabel:`rivers` layer:
-     there is a field called ``CSCode1``.  By clicking on the ``species`` field name,
-     records are automatically sorted alphabetically.  If you scroll down to wood duck records, you will find the
-     ELC class codes associated with the wood ducks in the adjacent field. We can see that wood ducks are found in
-     FOD (Deciduous Forest) and OAO (Open Aquatic).
-
-   * The ``Species`` field is the most useful to show as labels for the purpose of our hypothetical map.
-
-|IC|
--------------------------------------------------------------------------------
-
-You now know how to use the attribute table to see what is actually in the data
-you're using. Any dataset will only be useful to you if it has the attributes
-that you care about. If you know which attributes you need, you can quickly
-decide if you're able to use a given dataset, or if you need to look for
-another one that has the required attribute data.
-
-|WN|
--------------------------------------------------------------------------------
-
-Different attributes are useful for different purposes. Some of them can be
-represented directly as text for the map user to see. You'll learn how to do
-this in the next lesson.
-
-
 .. Substitutions definitions - AVOID EDITING PAST THIS LINE
    This will be automatically updated by the find_set_subst.py script.
    If you need to create a new substitution manually,
