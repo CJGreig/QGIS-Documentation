@@ -15,7 +15,7 @@ nested levels, as shown below.
 
 Read the following information to learn more about a community series.
    
-   .. figure:: img/add_raster.png
+   .. figure:: img/Create_communityseriesdescrip.png
      :align: center
 
 
@@ -34,11 +34,11 @@ please refer to the images below to get an idea of % cover for when you are doin
 your interpretation.
 
 
-   .. figure:: img/add_raster.png
+   .. figure:: img/Create_cover.png
      :align: center
 
 
-   .. figure:: img/add_raster.png
+   .. figure:: img/Create_covertable.png
      :align: center
 
 
@@ -233,7 +233,7 @@ digitizing until you're done creating the feature as above. Then:
    If you want to undo a change, you can press the |undo| :sup:`Undo` button or :kbd:`Ctrl+Z`.
 
 #. Remember to save your changes by clicking the |saveEdits| :sup:`Save Edits` button.
-#. Now continue to digitize the rest of your habitat polygons.
+#. Now continue to digitize the rest of your community series polygons.
 #. When done editing, click the |toggleEditing| :sup:`Toggle Editing` button
    to get out of edit mode.
 
