@@ -1,54 +1,185 @@
-.. index:: Expressions
+|LS| Lab 2 Part B: Street Tree Management Priority Mapping
+===============================================================================
 
-.. _vector_expressions:
+For Lab 2 Part B, you will be selecting one census tract from your 'Select by
+Location' output, and creating a street tree management plan for the street
+trees that fall within the census tract. Your deliverable will be a field map, that employs 
+proper symbology that indicates five different categories for street
+tree management, and priortiy ranking. You will have to write a 1 - 2 page report outlining
+the five street tree management classes you chose to use, and explain the rational for 
+each managementclass, using references.  A list of references must be included with the 
+report (not included in the 1-2 pages).
 
-************
-Expressions
-************
+This lab will have you working with:
 
-.. only:: html
+#. More geoprocessing tools
+#. Summary statistics
+#. Expressions
+#. Classifying point data
 
-   .. contents::
-      :local:
-      :depth: 2
+As we are approaching the second half of the semester, and you have all been working in
+QGIS for several weeks, lab instructions will become less specific, which will require
+you to rely on your team and also on using only QGIS sources to assist you with 
+completing the lab.
+
+Below is an example of the map I created for the assignment.  Note my five classes.
+Selecting my classes, I focused on the following topics:
+
+.. figure:: img/Create_communityseries.png
+     :align: center
+
+LDD moth treatment: 
+
+#. Which species are most susceptible?
+#. Which age class is most vulnerable?
+#. Which areas have the highest density of vulnerable trees?
+#. Which trees have the highest quality canopy?
+
+Ash trees monitoring and treatment:
+
+#. Which trees have the highest quality canopy?
+#. Which trees are most likely to become hazard trees?
+#. Are they European Ash or Native? 
+
+Invasive species:
+
+#. Which species are a priority for removal? 
+   #. Small DBH (don't require a permit)
+   #. Seed trees?
+   #. High quality canopy?
+   #. Most agressive regeneration strategies?
+   #. Highest density
+
+
+|basic| |FA| Subsetting data
+-------------------------------------------------------------------------------
+
+For this section of the lab, we will start by subsetting both the
+'Select by Location' output (my example was 'Toronto_lowtrees_lowincome'),
+and 'Street Tree' dataset.
+
+#. You will start by creating a new QGIS project (we are not building off
+   of Lab 2 Part A), and adding the 'Select by Location' output and 'Street
+   Tree' layers.
+
+#. We then want to subset the 'Select by Location' layer first. Take a look
+   at your different census tract features and decide whichtract you want to
+   use for your management plan. There is really no criteria for this, use
+   your own discretion, but do not choose the same as mine. Use the 'Select 
+   Features by Area or Single Click' icon, and click on the census tract you 
+   want to use.
+
+   .. figure:: img/Lab2B_selectpoly.png
+     :align: center
+
+#. As you did before, export the selected feature. Save it in your 'Lab_2'
+   GeoPackage, giving it a meaningful name. I called mine 'CT_0378_24':
+   CT = census tract and the number is the census tract number.
+
+#. We now will subset our 'Street Tree' dataset by using the 'Clip' tool.
+   Navigate to the 'Vector' tab and then 'Geoprocessing Tools --> Clip'.
+
+   .. figure:: img/Lab2B_clip.png
+     :align: center
+
+#. Fill out the clip tool as shown below. Be sure to save it to your
+   'Lab_2' GeoPackage. I called mine 'StreetTree_CTclip'.
+
+   .. figure:: img/Lab2B_clipsavetogeo.png
+     :align: center
+
+#. We then want to look at the summary statistics of our new subsetted
+   'StreetTree_CTclip' layer. Go to the 'Processing' tab --> 'Toolbox'.
+   The 'Processing Toolbox' panel will appear on the right side. In the search
+   bar, type 'Statistics by categories', and select this option.
+
+   .. figure:: img/Lab2B_statsbycat.png
+     :align: center
+
+#. We want to calculate summary statistics for the 'BOTANICAL' field. To
+   do this, we will set 'Field to calculate statistics on' as 'BOTANICAL'
+   using the dropdown menu. Then under 'Field(s) with categories', click the 
+   '...'. Another window will open. Select 'BOTANICAL', as shown below. Be
+   sure to save your summary statistics to your 'Lab_2' GeoPackage.
+
+
+   .. figure:: img/Lab2B_statscatsettings.png
+     :align: center
+
+
+   .. figure:: img/Lab2B_statsfields.png
+     :align: center
+
+#. Open your new table and inspect the content. The field you will be most
+   interested in is the count field, as this provides a total for each species.
+   This is where you have to begin to do some research. Figure out what five
+   categories you will be creating for your priority management plan. As you can see,
+   my area has a lot of Norway Maple (Acer platanoides), which is an invasive 
+   species. Linden (Tilia cordata) are also invasive. Given the current LDD
+   moth outbreak, it is a good idea to consider which native trees are most
+   susceptible to this pest. Ash species are also always important to consider.
+   Here is the list of topics you can consider for creating your priority management
+   plan. Feel free to add additional topics.
+
+   .. figure:: img/Lab2B_botstats.png
+     :align: center
+
+LDD moth treatment: 
+
+#. Which species are most susceptible?
+#. Which age class is most vulnerable?
+#. Which areas have the highest density of vulnerable trees?
+#. Which trees have the highest quality canopy?
+
+Ash trees monitoring and treatment:
+
+#. Which trees have the highest quality canopy?
+#. Which trees are most likely to become hazard trees?
+#. Are they European Ash or Native? 
+
+Invasive species:
+
+#. Which species are a priority for removal? 
+   #. Small DBH (don't require a permit)
+   #. Seed trees?
+   #. High quality canopy?
+   #. Most agressive regeneration strategies?
+   #. Highest density
+
+Rare species
+
+
+|basic| |FA| Subsetting data using Expressions
+-------------------------------------------------------------------------------
 
 Based on layer data and prebuilt or user defined functions, **Expressions**
-offer a powerful way to manipulate attribute value, geometry and variables
-in order to dynamically change the geometry style, the content or position
-of the label, the value for diagram, the height of a layout item,
-select some features, create virtual field, ...
+offer a powerful way to manipulate attribute values and geometry.
 
-.. note:: A list of the default functions and variables for writing expressions
-   can be found at :ref:`functions_list`, with detailed information and examples.
-
-.. _expression_builder:
 
 The Expression string builder
 =============================
 
 Main dialog to build expressions, the :guilabel:`Expression string builder`
-is available from many parts in QGIS and, can particularly be accessed when:
+is available from many parts in QGIS, most commonly:
 
-* clicking the |expression| button;
-* :ref:`selecting features <sec_selection>` with the |expressionSelect|
-  :sup:`Select By Expression...` tool;
+* :ref:`selecting features <sec_selection>` with the |expressionSelect| 
+  :sup:`Select By Expression...` tool (found in attribute table);
 * :ref:`editing attributes <calculate_fields_values>` with e.g. the
-  |calculateField| :sup:`Field calculator` tool;
-* manipulating symbology, label or layout item parameters with the |dataDefined|
-  :sup:`Data defined override` tool (see :ref:`data_defined`);
-* building a :ref:`geometry generator <geometry_generator_symbol>` symbol layer;
-* doing some :ref:`geoprocessing <label_processing>`.
+  |calculateField| :sup:`Field calculator` tool (found in attribute table);
+
 
 The Expression builder dialog offers access to the:
 
-* :ref:`Expression tab <functions_list>` which, thanks to a list of predefined
-  functions, helps to write and check the expression to use;
+* :ref:`Expression tab <functions_list>` which, has a list of predefined
+  functions, that helps to write and check expressions;
 * :ref:`Function Editor tab <function_editor>` which helps to extend the list of
   functions by creating custom ones.
 
 The Interface
 -------------
 
+At this point, we have used 'Expression builder' when calculting a new AREA variable 
+in Lab 1, and for creating a new 'Median_Income_num' value in Lab 2 Part A. 
 The :guilabel:`Expression` tab provides the main interface to write expressions
 using functions, layer fields and values. It contains the following widgets:
 
@@ -66,10 +197,9 @@ using functions, layer fields and values. It contains the following widgets:
   * Corresponding variables, function names and field names to the input text
     are shown below: use the :kbd:`Up` and :kbd:`Down` arrows to browse the
     items and press :kbd:`Tab` to insert in the expression or simply click
-    on the wished item.
-  * Function parameters are shown while filling them.
+    on the item that is wished to be used.
 
-  QGIS also checks the expression rightness and highlights all the errors using:
+  QGIS also checks whether the expression is correct and highlights all the errors using:
 
   * *Underline*: for unknown functions, wrong or invalid arguments;
   * *Marker*: for every other error (eg, missing parenthesis, unexpected
@@ -112,14 +242,6 @@ using functions, layer fields and values. It contains the following widgets:
   * Display the list of :guilabel:`All Unique` or :guilabel:`10 Samples` values.
     Also available from right-click.
 
-    When the field is mapped with another layer or a set of values, i.e. if the
-    :ref:`field widget <edit_widgets>` is of *RelationReference*, *ValueRelation*
-    or *ValueMap* type, it's possible to list all the values of the mapped field
-    (from the referenced layer, table or list). Moreover, you can filter this
-    list to |checkbox| :guilabel:`Only show values in use` in the current field.
-
-  Double-clicking a field value in the widget adds it to the expression editor.
-
   .. tip::
 
    The right panel, showing functions help or field values, can be
@@ -136,6 +258,7 @@ Writing an expression in QGIS follows some rules:
 #. **The dialog defines the context**: if you are used to SQL, you probably
    know queries of the type *select features from layer where condition*
    or *update layer set field = new_value where condition*.
+
    A QGIS expression also needs all these information but the tool you use
    to open the expression builder dialog provides parts of them.
    For example, giving a layer (``buildings``) with a field (``height``):
@@ -144,6 +267,7 @@ Writing an expression in QGIS follows some rules:
      you want to "select features from buildings". The **condition** is the
      only information you need to provide in the expression text widget,
      e.g. type ``"height" > 20`` to select buildings that are higher than 20.
+   
    * with this selection made, pressing the |calculateField| :sup:`Field calculator`
      button and choosing "height" as :guilabel:`Update existing field`, you already
      provide the command "update buildings set height = ??? where height > 20".
@@ -205,6 +329,47 @@ Some use cases of expressions
 
   The previous expression could also be used to define which features
   to label or show on the map.
+
+Now that you have an introduction to the 'Expression Builder', we will use this
+tool to subset our 'StreetTree_CTclip' layer to create a new layer with only
+street trees that will be part of your priority management plan. You will use
+the criteria you decided on to subset the dataset. For example, my six classes
+are:
+
+Very High Priority: Ash spp. > 30 cm DBH
+Very High Priority: Oak spp. > 10 cm DBH
+High Priority: Oak spp. < = 10 cm DBH
+Moderte Priority: Norway Maple < = 20 cm DBH
+Low Priority: Norway Maple > 20 cm and < 40 cm DBH
+Very Low Priority: Morway Maple > = 40 cm DBH
+
+Based on these classes, I used the expression builder to subset:
+
+Ash spp. > 30 cm DBH 
+Oak spp.
+Norway Maple
+
+In the expression builder, which is accessed through the attribute table
+for 'Toronto_StreetTree_CTclip', the expressions looked like this:
+
+BOTANICAL LIKE 'Fraxinus%' AND DBH_TRUNK > 30
+BOTANICAL LIKE 'Quercus%'
+BOTANICAL LIKE 'Acer platanoides%'
+
+#. Open the attribute table for 'Toronto_StreetTree_CTclip', and click on the
+   'Select Features using Expression' icon.
+
+#. Explore the 'Expression Builder', and then enter your expressions to subset
+   your dataset. This will take practice. Discuss this with your team, and bounce
+   ideas off of each other. Once you have clicked 'Select Features', check your
+   attribute table to ensure all the correct features have been selected, as shown
+   below.
+
+   .. figure:: img/Lab2B_expression.png
+     :align: center
+
+
+
 
 .. Substitutions definitions - AVOID EDITING PAST THIS LINE
    This will be automatically updated by the find_set_subst.py script.
