@@ -578,6 +578,135 @@ Tools --> Join Attributes by Location'
    .. figure:: img/PartC_attcode.png
       :align: center
 
+
+|moderate| |TY| Using Avenza for Groudtruthing: Uploading your Module 5 Map
+-------------------------------------------------------------------------------
+
+#. Start by sending your Module 5 map from your computer to your phone. This can be done by email, Airdrop,
+   Google Drive, etc. If emailed, it must be then downloaded to your phone. 
+
+#. We will then download the 'Avenza Maps: Offline Mapping' app from the Appstore
+   on your phone.
+
+#. Once downloaded, open Avenza.
+
+You will see at the bottom of the app, there are three tabs: 'My Maps', 'Layers', 'Store'.
+
+   .. figure:: img/PartC_attcode.png
+      :align: center
+
+#. Click the 'My Maps' tab. 
+
+   .. figure:: img/PartC_attcode.png
+      :align: center
+
+#. You will see an orange button with '+' sign in the bottom right corner. Click it. 
+   An option will appear that says 'Download or import a map'. Click that.
+
+   .. figure:: img/PartC_attcode.png
+      :align: center
+
+#. This is where you will access your map. If downloaded to your phone, you can access
+   it through your 'Downloads'. If sent through 'Google Drive', select the 'Google Drive'
+   icon.  I am assuming their will be an Airdrop icon for those with IOS.
+
+   .. figure:: img/PartC_attcode.png
+      :align: center
+
+#. Click your map PDF document. This will take you automatically back to your 'My Maps'
+   tab.
+
+   .. figure:: img/PartC_attcode.png
+      :align: center
+
+You have uploaded your map! This is all you need to do prior to coming to class. If you
+are having issues with this, we can figure it out in class.
+
+
+|moderate| |TY| Using Avenza for Groudtruthing: Collecting field data points
+-------------------------------------------------------------------------------
+
+Now let's head to the field!
+
+#. Click your 'Lab1_PartB' map, which is found under the 'MyMaps' tab.
+
+You should see a blue GPS point. That is you! Take a moment an look at the functions
+of Avenza. The target symbol (bottom left corner) can be used to centre the map over
+your GPS location. This should be clicked when dropping a pin. The pin immediately to
+the right of the target symbol is used to drop a pin location. You will use this at
+each of the 9 locations you will be visiting. 
+
+   .. figure:: img/PartC_attcode.png
+      :align: center
+
+#. The coordinates to the right of the pin need to be set to UTM - NAD83. Single click on
+   the coordinates, and a series of coordinate options will appear. Select UTM - NAD83, 17N.
+
+#. Now you are ready to drop pins. Click the target symbol to centre your map over your
+   GPS, then click the pin next to it. Once clicked, a new window will open. 
+   Give it a name using this convention:
+
+EXAMPLE:
+
+FOD001, FOD002, FOD003, MAS001, MAS002, MAS003, etc.
+
+   If you make a mistake and drop a pin in an incorrect location. Click the pin on the map.
+   A label will appear. Click the label. A new editing window will open. In the top right
+   corner, there will be a 3 stacked dots icon. Click the icon, and then click delete.
+
+   .. figure:: img/PartC_attcode.png
+      :align: center
+
+   .. figure:: img/PartC_attcode.png
+      :align: center
+   
+#. Continue collecting data points at all 9 locations, using the three methods.
+
+
+|moderate| |TY| Using Avenza for Groudtruthing: Exporting field data points
+-------------------------------------------------------------------------------
+
+#. Once you are done collecting your 9 data points with Avenza, click the back
+   arrow at the top left of the app.
+
+#. This will take you back to 'MyMaps'. But now we want to export our layer. Click
+   the 'Layers' tab at the bottom of the screen.
+
+   .. figure:: img/PartC_attcode.png
+      :align: center
+
+#. Then click your 'Layer' file.
+
+   .. figure:: img/PartC_attcode.png
+      :align: center
+
+#. A new window will open. Click the 3 stacked lines icon in the bottom right corner,
+   and select 'Export Layers'.
+
+   .. figure:: img/PartC_attcode.png
+      :align: center
+
+#. Change the file name to 'KML_groundtruth.kml'. Make syre the format is KML.
+
+   .. figure:: img/PartC_attcode.png
+      :align: center
+
+#. Click 'Export'. Export options will appear. I used Google Drive to export my layer
+   to my computer.
+
+
+|moderate| |TY| Using Avenza for Groudtruthing: Importing field data points to QGIS
+-------------------------------------------------------------------------------
+
+#. Go back to your computer. Go to where you exported your layer, e.g., Google Drive.
+   Download 'KML_groundtruth'.
+
+#. Go to QGIS. As you would with a vector layer, drag and drop the 'KML_groundtruth'
+   layer from your 'Browser' panel. Your file will probably be in your 'Downloads' folder.
+
+#. Once the layer has been added, drag and drop the 'KML_groundtruth' into your 'Lab1_PartC'
+   GeoPackage in the Browser panel. Once in the GeoPackage, rename it back to 'KML_groundtruth'.
+
 |IC|
 -------------------------------------------------------------------------------
 
