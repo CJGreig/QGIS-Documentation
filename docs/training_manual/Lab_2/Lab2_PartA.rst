@@ -1,7 +1,6 @@
 .. _tm_working_vector_data:
 
-|LS| Choropleth Mapping: Toronto Street Tree Density in Relation to Median Income 
-and Population Density
+Choropleth Mapping: Toronto Street Tree Density vs. socioeconomic variables
 -------------------------------------------------------------------------------
 
 So far we have discussed four different types of classification, including nominal,
