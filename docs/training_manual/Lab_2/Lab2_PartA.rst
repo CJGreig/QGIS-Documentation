@@ -12,20 +12,26 @@ We also practiced making a ratio classification when we mapped area for the
 Now we are going to create choropleth maps. A choropleth map is defined as "a 
 thematic map that displays a quantitative attribute using ordinal classes. Areas 
 are shaded according to their value and a range of shading classes'. Choropleth
-maps are most often 
+maps are most often used for mapping statistical data across government or
+administrative boundaries. Choropleth maps are created using normalized data,
+never raw data. 
 
 For Lab 2 Part A we will be creating two choropleth maps for the city of Toronto; 
-one will be Toronto Street Tree Density and the other will be your choice of either
-median income or population density.  With these two maps, we will visually interpret
-spatial patterns and determine whether there is an association between both variables.
-You will then choose a pattern you would like to investigate further, by picking a
-threshold value to subset your dataset, using standard query language (SQL). Once data
-are subset, you will used the geoprocessing tool called 'Intersection' to identify
-areas that overlap from both maps.
+one will be of Toronto Street Tree Density and the other will be your choice of either
+median income or population density.  For this lab, we are exploring the concept of
+unequal distribution of natural resources in urban spaces.  It is known that
+areas of low income or high population density typically have lower access to green
+infrastructure.  With the Toronto Street Tree Density map and your
+choice of median income or population density, you will visually interpret
+spatial patterns and determine whether you can see a pattern of low income and low
+street tree density or high population density and low street tree density. 
+You will then define a threshold value to subset your dataset for both variables, using 
+standard query language (SQL). Once both datasets are subset, you will use the vector 
+research tool called 'Select by Location' to identify areas that overlap from both maps.
 
 The deliverable for this portion of the assignment will be three maps: (1) Street Tree
 density map, (2) a median income or population density map and (3) a map showing
-your 'Intersection' output.
+your 'Select by Location' output.
 
 |basic| |FA| Preparing and processing census data
 -------------------------------------------------------------------------------

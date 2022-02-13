@@ -7,7 +7,7 @@ trees that fall within the census tract. Your deliverable will be a field map, t
 proper symbology that indicates five different categories for street
 tree management, and priortiy ranking. You will have to write a 1 - 2 page report outlining
 the five street tree management classes you chose to use, and explain the rational for 
-each managementclass, using references.  A list of references must be included with the 
+each management class, using references.  A list of references must be included with the 
 report (not included in the 1-2 pages).
 
 This lab will have you working with:
@@ -19,7 +19,7 @@ This lab will have you working with:
 
 As we are approaching the second half of the semester, and you have all been working in
 QGIS for several weeks, lab instructions will become less specific, which will require
-you to rely on your team and also on using only QGIS sources to assist you with 
+you to rely on your team and also on using online QGIS sources to assist you with 
 completing the lab.
 
 Below is an example of the map I created for the assignment.  Note my five classes.
@@ -149,7 +149,7 @@ Invasive species:
 Rare species
 
 
-|basic| |FA| Subsetting data using Expressions
+|basic| |FA| Subsetting and classifying data using Expressions
 -------------------------------------------------------------------------------
 
 Based on layer data and prebuilt or user defined functions, **Expressions**
@@ -352,22 +352,135 @@ Norway Maple
 In the expression builder, which is accessed through the attribute table
 for 'Toronto_StreetTree_CTclip', the expressions looked like this:
 
-BOTANICAL LIKE 'Fraxinus%' AND DBH_TRUNK > 30
-BOTANICAL LIKE 'Quercus%'
+BOTANICAL LIKE 'Fraxinus%' AND DBH_TRUNK > 30 OR
+BOTANICAL LIKE 'Quercus%' OR
 BOTANICAL LIKE 'Acer platanoides%'
 
 #. Open the attribute table for 'Toronto_StreetTree_CTclip', and click on the
    'Select Features using Expression' icon.
 
-#. Explore the 'Expression Builder', and then enter your expressions to subset
-   your dataset. This will take practice. Discuss this with your team, and bounce
-   ideas off of each other. Once you have clicked 'Select Features', check your
+#. Explore the 'Expression Builder', and then enter your expression to 
+   subset your dataset. This will take practice. Discuss this with your team, and bounce
+   ideas off of each other. Using the operator 'OR' will likely be useful. 
+   Once you have clicked 'Select Features', check your
    attribute table to ensure all the correct features have been selected, as shown
    below.
 
    .. figure:: img/Lab2B_expression.png
      :align: center
 
+   Once you are sure that your expression has selected the correct features from the 
+   'Toronto_StreetTree_CTclip', navigate to your 'Toronto_StreetTree_CTclip' in your
+   layers panel, and right click 'Export --> Save Selected Features As...'. Save your
+   new layer to you 'Lab2' GeoPackage.  For my example, I called my new layer
+   'CT_0378_24_Priority'.
+
+#. Once you have your new layer, we want to classify each feature into your priority
+   classes you chose. To do this, we will create another expression. For my example,
+   my expression looks like this. Yours will be different, but use my example as A
+   framework for your to work off of.
+
+   .. figure:: img/Lab2B_fieldcalcvar1.png
+     :align: center
+
+#. Once you have clicked 'OK', go back to your attribute table for your '_Priority' layer
+   and check to make sure your features were classified correctly.
+
+   .. figure:: img/Lab2B_attcheck.png
+     :align: center
+
+You have now completed processing your data. Now you can create a map. 
+
+|basic| |FA| Mapping specifications
+-------------------------------------------------------------------------------
+
+You will now create a map that a forestry field technician could use to perform field
+visits, to carry out the priority management plan you created. You must include all
+the required map elements:
+
+#. Title
+#. Legend
+#. Scale 
+#. North arrow or grid
+#. Map author (cartographer) 
+#. Map projection 
+#. Data Sources and date of data creation
+#. Production Date
+
+ and some optional elements:
+
+#. Neatline
+#. Inset map
+#. Labels
+
+.. figure:: img/Lab2B_prioritymap.png
+     :align: center
+ 
+Refer to Module 4 from Lab 1 Part A if you forget how to add some of these elements. 
+In the bottom right corner of the above map, you probably noticed that that there
+was an additional inset map. This inset map is showing an area on my map that
+has a lot of clustered points, so I have zoomed in on that particular area to
+show more detail. I also included an 'A', which can be added the same way that you
+would add a title. I would like you to include a similar inset map, as well as
+an inset map showing all of Toronto.
+
+You also want your map to have a basemap, so that the field technicians can find
+access routes, places to park, etc. When creating my map, I found it helpful to 
+adjust the opacity of the basemap:
+
+   .. figure:: img/Lab2B_transparency50.png
+     :align: center
+     
+You also want your street tree priority treatment plan clearly
+conveyed, so the field technicians know which street trees to visit first. 
+The field you created in the previous step would be considered ordinal, as the data 
+were qualitative, but also had an order. For ordinal data, especially when dealing 
+with priority classes, a diverging colour scheme can be used. The example map I 
+created has a standard colour scheme that intuitively is associated with priority
+rankings. For your map, I encourage you to use the same colour scheme. Additionally, 
+you may notice that I have two high priority classes. Because of this, I used 
+different point symbology to differentiate between the different classes. This is
+a standard way to classifying qualitative point data.
+
+   .. figure:: img/Lab2B_classified.png
+     :align: center
+
+
+Additionally, you may notice that I used a grid for this map, as opposed to a north
+arrow. For this lab, I would like you to use a grid. To do so:
+
+#. In the 'Layout Manager' window, after you have drawn your main map, navigate to the 'Grid'
+   section of 'Item Properties'. Click the green '+'. This will add 'Grid 1'.
+
+   .. figure:: img/Lab2B_addgrid.png
+     :align: center
+
+#. You will then click 'Modify Grid...'. A new window will open. Fill out the window as shown
+   below.
+
+   .. figure:: img/Lab2B_gridappearance.png
+     :align: center
+
+   Then scroll down to adjust the 'Draw Coordinates'
+
+   .. figure:: img/Lab2B_griddrawcoordinates.png
+     :align: center
+
+Congratulations! You have completed Lab 2!  For Part A, you must submit:
+
+#. Street Tree density map,
+#. a median income or population density map and 
+#. a map showing your 'Intersection' output.
+#. a 1 - 2 page (double spaced, 11 font) discussion regarding the spatial patterns you see, and what
+   you think that means. 
+
+For Part B, you must submit:
+
+#. Priority Management Plan field map
+#. 1 - 2 page report (double spaced, 11 font) outlining the five street tree management 
+classes you chose to use, and explain the rational for 
+each management class, using references.  A list of references must be included with the 
+report (not included in the 1-2 pages).
 
 
 
